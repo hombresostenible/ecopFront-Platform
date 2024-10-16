@@ -1,0 +1,51 @@
+.title {
+    color: #f28705;
+    letter-spacing: 1px;
+}
+.label {
+    margin-bottom: 5px;
+}
+.input {
+    border-radius: 5px;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.button__Submit {
+    height: 40px;
+    width: 200px;
+    margin: 0 10px;
+    border-radius: 4px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    cursor: pointer;
+    transition: 300ms all ease;
+    background: #0a31bf;
+}
+.button__Cancel {
+    color: #f8f9fa;
+    height: 40px;
+    width: 200px;
+    margin: 0 10px;
+    border-radius: 4px;
+    background: #f28705;
+}
+.button__Cancel:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Edit {
+    border: 1px solid #718bd8;
+    color: #0a31bf;
+    border-radius: 5px;
+    height: 35px;
+    background: rgba(113, 139, 216, 0.7);
+}
+.button__Edit:hover {
+    border: 1px solid #0a31bf;
+    cursor: pointer;
+}

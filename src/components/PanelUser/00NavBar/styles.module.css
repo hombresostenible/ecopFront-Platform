@@ -1,0 +1,136 @@
+.container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.logo{
+    height: 35px;
+}
+.container__Navigation {
+    height: 70px;
+}
+.container__Services {
+    height: 70px;
+    width: 70px;
+}
+.hover__Icon_Question {
+    color: #f28705;
+    font-size: 30px;
+}
+.icon__Question {
+    color: #343a40;
+    font-size: 25px;
+}
+.icon__Question:hover {
+    cursor: pointer;
+}
+.menu {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    top: 70px;
+    right: 0;
+    z-index: 1;
+    background: white;
+    width: 400px;
+}
+.title__Sub_Menu {
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #000;
+    opacity: 0.75;
+}
+.link__NavBar {
+    color: #343a40;
+    opacity: 0.75;
+}
+.link__NavBar:hover {
+    opacity: 1;
+}
+.active {
+    color: #4361ee;
+    width: 270px;
+    width: 100%;
+    margin: 0 0 0 -10px;
+    padding: 0 0 0 10px;
+}
+.hover__Icon_Services {
+    color: #f28705;
+    font-size: 35px;
+}
+.icon__Services {
+    font-size: 30px;
+    color: #343a40;
+}
+.icon__Services:hover {
+    cursor: pointer;
+}
+.container__Notification {
+    height: 70px;
+    width: 70px;
+}
+.icon__Notification {
+    font-size: 25px;
+    color: #343a40;
+}
+.notification {
+    height: 35px;
+    width: 35px;
+    top: 5px;
+    right: 0px;
+    border-radius: 50%;
+    background: #f28705;
+    border: 3px solid white;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+}
+.container__Configuration {
+    height: 70px;
+    width: 70px;
+}
+.icon__Configuration {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.logo__User {
+    max-height: 40px;
+    max-width: 40px;
+}
+.container__Logout {
+    height: 70px;
+    width: 70px;
+}
+.icon__Logout {
+    font-size: 25px;
+    color: #d90429;
+}
+
+
+/* ---------- RESPONSIVE (600 PX) ---------- */
+@media screen and (max-width: 600px) {
+    .logo{
+        height: 25px;
+    }
+    .container__Services{
+        width: 45px;
+    }
+    .container__Notification{
+        width: 45px;
+    }
+    .container__Configuration{
+        width: 45px;
+    }
+    .icon__Configuration {
+        height: 40px;
+        width: 40px;
+    }
+    .logo__User {
+        max-height: 30px;
+        max-width: 30px;
+    }
+    .container__Logout{
+        width: 45px;
+    }
+}

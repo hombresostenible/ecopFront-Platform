@@ -1,0 +1,40 @@
+.container__Download_File {
+    width: 600px;
+    margin: auto;
+}
+.download__File {
+    width: 150px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #f28705;
+    color: #f8f9fa;
+    transition: 300ms all ease;
+}
+.download__File:hover {
+    background: #0a31bf;
+    cursor: pointer;
+}
+.success {
+    height: 50px;
+    width: 400px;
+}
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.subtitle {
+    color: #f28705;
+}
+.link__Section {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    width: 360px;
+    height: 80px;
+    color: #0a31bf;
+}
+.link__Section:hover {
+    background: #dee2e6;
+}

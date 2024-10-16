@@ -1,0 +1,60 @@
+.title {
+    color: #f28705;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.card__Section {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    height: 120px;
+    width: 300px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.card__Section:hover {
+    .image {
+        transform: rotate(5deg) scale(1.1);
+    }
+}
+.container__Image {
+    background: #adb5bd;
+    height: 120px;
+    width: 100px;
+}
+.image {
+    width: 60px;
+    transition: transform 0.3s ease;
+}
+.card__Title {
+    width: 200px;
+    color: #0a31bf;
+}
+
+
+/* ---------- RESPONSIVE (600 PX) ---------- */
+@media screen and (max-width: 500px) {
+    .title {
+        font-size: 35px;
+    }
+    .question {
+        font-size: 20px;
+    }
+    .card__Section {
+        height: 120px;
+        width: 250px;
+    }
+    .container__Image {
+        width: 80px;
+    }
+    .image {
+        width: 50px;
+        transition: transform 0.3s ease;
+    }
+    .card__Title {
+        width: 170px;
+    }
+    .subTitle {
+        font-size: 18px;
+    }
+}

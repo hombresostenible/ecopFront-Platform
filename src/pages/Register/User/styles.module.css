@@ -1,0 +1,145 @@
+.container {
+    min-width: 100%;
+}
+.container__Register_User {
+    height: 100vh;
+}
+.register__User {
+    max-width: 600px;
+    margin: 100px 0;
+}
+.logo {
+    height: 80px;
+}
+.errors__Register {
+    top: 20px;
+    color: #718bd8;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Back {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    margin: 0 20px 0 0;
+    background: #ced4da;
+    color: #212529;
+}
+.button__Back:hover {
+    background: #495057;
+    transition: 300ms all ease;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.link {
+    font-weight: 600;
+}
+.tertiary__Title {
+    font-weight: 700;
+    color: #718bd8;
+    margin: 0 0 30px 0;
+}
+.container__Info {
+    width: 600px;
+}
+.info {
+    width: 600px;
+}
+.label {
+    margin-bottom: 5px;
+}
+.required__Information {
+    color: #d90429;
+    font-weight: 600;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 3px;
+}
+.input {
+    border-radius: 5px;
+    margin: 0 0 30px 0;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    top: 65px;
+}
+.icon {
+    z-index: 1;
+    top: 35px;
+    right: 10px;
+    font-size: 20px;
+    color: #718bd8;
+}
+.icon:hover {
+    cursor: pointer;
+}
+.container__Accepted_Policy {
+    max-width: 600px;
+    padding: 0 0 20px 0;
+}
+.text__Accepted_Policy {
+    width: 500px;
+}
+.text__Danger_Accepted_Policy {
+    top: 42px;
+}
+.checkbox {
+    height: 30px;
+    width: 30px;
+}
+.checkbox:hover {
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}
+
+
+/* ---------- RESPONSIVE (500 PX) ---------- */
+@media screen and (max-width: 500px) {
+    .logo {
+        height: 50px;
+    }
+    .container__Form {
+        width: 100%;
+    }
+    .form {
+        width: 100%;
+    }
+    .container__Info {
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+    }
+    .label {
+        width: 100%;
+    }
+    .container__Input {
+        max-width: 100%;
+    }
+    .input {
+        max-width: 100%;
+    }
+    .info {
+        flex-direction: column;
+        width: 100%;
+    }
+    .button__Submit {
+        font-size: 16px;
+    }
+    .container__Accepted_Policy {
+        max-width: 300px;
+    }
+}

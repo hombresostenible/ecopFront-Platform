@@ -1,0 +1,462 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.link__Head_Navigate {
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    background: #718bd8;
+}
+.link__Head_Navigate:hover {
+    cursor: pointer;
+}
+.icon__Plus {
+    color: #fff;
+    margin: -2px 5px 0 0;
+}
+.link {
+    color: #fff;
+    margin: 0;
+}
+.select__Branch {
+    border-radius: 5px;
+    width: 250px;
+}
+.select__Branch:focus{
+    outline-color: #718bd8;
+}
+
+/* CONTENEDOR DE LA FACTURA */
+.container__Invoice {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.container__Header {
+    width: 100%;
+}
+.container__Logo {
+    height: 250px;
+    height: 200px;
+    width: 250px;
+}
+.logo {
+    max-height: 150px;
+    max-width: 300px;
+}
+.container__General_Information_Invoincing {
+    height: 100%;
+    width: 650px;
+}
+.container_Dates_Invoicing{
+    height: 100%;
+    height: 200px;
+    width: 50%;
+}
+
+/* CALENDARIO */
+.container__Calendars {
+    z-index: 3;
+    top: -10px;
+    right: 0;
+    background: white;
+}
+.calendar {
+    border-radius: 5px;
+    width: 200px;
+}
+.custom__Calendar {
+    background-color: #f8f9fa;
+}
+.weekend__Day {
+    color: #718bd8;
+}
+.weekday {
+    color: #212529;
+}
+.input {
+    border-radius: 5px;
+    width: 250px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.container__Qr_Invoicing{
+    height: 200px;
+    width: 200px;
+}
+.qr__Code {
+    max-height: 90%;
+    max-width: 90%;
+}
+
+/* CONTENEDOR DE DATOS DEL EMISOR Y DEL ADQUIRIENTE */
+.container__Dates {
+    border: 5px solid rgba(0, 0, 0, 0.2);;
+    width: 100%;
+}
+.container__Issuer_Data {
+    width: 50%;
+}
+.title__Section {
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+    height: 50px;
+}
+.subtitle__Section {
+    font-size: 20px;
+    font-weight: 600;
+    height: 50px;
+    width: 250px;
+}
+.data__Section {
+    font-size: 20px;
+    height: 50px;
+    min-width: calc(100% - 300px);
+}
+.container__User_Customer_Data {
+    height: 300px;
+    width: 50%;
+}
+
+/* TABLA */
+.container__Table{
+    width: 100%;
+}
+.container__Head{
+    font-weight: 600;
+    background: #e9ecef;
+    height: 60px;
+    width: 100%;
+}
+
+/* TITULOS DE LAS COLUMNAS */
+.container__Tr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+.number {
+    height: 60px;
+    width: 8%;
+    min-width: 80px;
+}
+.code {
+    height: 60px;
+    width: 14%;
+    min-width: 140px;
+}
+.product__Service {
+    height: 60px;
+    width: 18%;
+    min-width: 180px;
+}
+.unit__Value {
+    height: 60px;
+    width: 10%;
+    min-width: 100px;
+}
+.quantity {
+    height: 60px;
+    width: 9%;
+    min-width: 90px;
+}
+.quantity__Quantity{
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+}
+.quantity__Quantity:focus {
+    outline-color: rgba(0, 0, 0, 0.2);
+}
+
+.discount {
+    height: 60px;
+    width: 9%;
+    min-width: 90px;
+}
+.discount__Value {
+    height: 60px;
+    width: 14%;
+    min-width: 140px;
+}
+.total__Value {
+    height: 60px;
+    width: 14%;
+    min-width: 140px;
+}
+.action {
+    height: 60px;
+    width: 4%;
+    min-width: 40px;
+}
+
+/* CONTENIDO DE LA TABLA */
+.container__Body{
+    width: 100%;
+}
+.container__Info{
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+.text__Ellipsis {
+    opacity: 0.75;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.container__Icons {
+    height: 100%;
+    width: 125px;
+}
+.button__Delete {
+    color: #6c757d;
+    height: 35px;
+    width: 25px;
+    font-size: 14px;
+}
+.button__Delete:hover {
+    transition: 300ms all ease;
+    color: #718bd8;
+    cursor: pointer;
+}
+.message__Unrelated_Items {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+    width: 100%;
+}
+.container__Add {
+    width: 100%;
+}
+.container__Append {
+    background: #718bd8;
+    color: white;
+    padding: 10px 20px;
+    width: 250px;
+}
+.container__Append:hover {
+    cursor: pointer;
+}
+.icon__Plus {
+    color: #fff;
+}
+
+.container__recurring {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .container__recurring input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #d1d5db;
+    border-radius: 0.25rem;
+    background-color: #f3f4f6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .container__recurring input[type="checkbox"]:checked {
+    background-color: #2f3542;
+    border-color: #2f3542;
+  }
+  
+  .container__recurring input[type="checkbox"]:checked::after {
+    content: '\2714';
+    color: white;
+    font-weight: 600;
+  }
+  
+
+  
+  .label__recurring {
+    margin-left: 0.5rem;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+  }
+
+
+/* TOTALES */
+.container__Taxes_And_Values {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.container__Taxes {
+    width: 450px;
+}
+.title__Mean_Payment {
+    font-weight: 600;
+}
+.input {
+    border-radius: 5px;
+    width: 300px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+
+
+
+
+
+
+
+
+/* CONTENEDOR DE RETENCIONES */
+.container__Retention {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 710px;
+}
+.continer__Retention_Titles {
+    width: 100%;
+}
+
+
+
+
+.title__Column_Retention {
+    font-weight: 600;
+    width: 400px;
+}
+.title__Column_Percentage {
+    font-weight: 600;
+    width: 170px;
+}
+.title__Column_Amount {
+    font-weight: 600;
+    width: 140px;
+}
+.retention {
+    font-weight: 600;
+    height: 40px;
+    width: 400px;
+}
+.percentage__Value {
+    height: 40px;
+    width: 170px;
+}
+.retention__Value {
+    width: 140px;
+}
+
+
+
+
+
+
+.container__Retention_Values {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.retention__Values {
+    height: 40px;
+}
+
+/* CONTENEDOR DE TOTALES */
+.container__Totales {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 550px;
+    margin-left: auto;
+}
+
+
+.title__Container_Totales {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    font-size: 20px;
+    width: 100%;
+}
+.ffffffffff {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.container__Column_Totals {
+    width: 300px;
+}
+.container__Values_Totals {
+    width: 250px;
+}
+.title__Column_Totals {
+    height: 40px;
+    width: 100%;
+    font-weight: 600;
+}
+.column__Totals {
+    height: 40px;
+    width: 100%;
+}
+.totals {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 45px;
+    width: 100%;
+}
+.letter__Amount {
+    height: 90px;
+    width: 100%;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+
+
+/* NOTAS */
+.container__Notes{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.title__Container_Notes{
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 20px;
+  
+}
+
+
+.area__Container_Notes{
+    display: block;
+    width: 70%;
+    border-radius: 10px;
+    resize: none;
+    height: 200px;
+    padding-top: 10px;
+}

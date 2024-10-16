@@ -1,0 +1,97 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.link__Consult_Inventory {
+    padding: 10px 20px;
+    color: white;
+    background: #718bd8;
+}
+.link__Head_Navigate {
+    color: #fff;
+    padding: 10px 20px;
+    background: #718bd8;
+}
+.link__Head_Navigate:hover {
+    cursor: pointer;
+}
+.icon__Plus {
+    color: #fff;
+    margin: -2px 5px 0 0;
+}
+.button__Bulk_Create {
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.form {
+    padding: 60px 0 0 0;
+    width: 600px;
+    margin: auto;
+}
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.alert__Danger {
+    color: #ff595e;
+    font-weight: 800;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.container__Info {
+    width: 600px;
+}
+.label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.required__Information {
+    color: #d90429;
+    font-weight: 600;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 3px;
+}
+.input {
+    border-radius: 5px;
+    margin: 0 0 30px 0;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    top: 65px;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}

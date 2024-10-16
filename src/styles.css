@@ -1,0 +1,28 @@
+@import url('./assets/fonts/stylesheet.css');
+* {
+    font-family: 'Century Gothic', sans-serif;
+}
+/*Customización del Scroll vertical*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #718bd8;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: white;
+    }
+}
+
+
+
+/* NOTIFICACIONES */
+.notification__Container {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    z-index: 1000;
+}

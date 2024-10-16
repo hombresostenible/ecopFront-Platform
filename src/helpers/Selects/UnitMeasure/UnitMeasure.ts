@@ -1,0 +1,31 @@
+const unitMeasureSelects: { value: string; label: string }[] = [
+    { value: 'Unidades', label: 'Unidades' },
+    { value: 'Ristra', label: 'Ristra' },
+    { value: 'Decena', label: 'Decena' },
+    { value: 'Docena', label: 'Docena' },
+    { value: 'Miligramo', label: 'Miligramo' },
+    { value: 'Gramo', label: 'Gramo' },
+    { value: 'Media libra', label: 'Media libra' },
+    { value: 'Libra', label: 'Libra' },
+    { value: 'Kilogramo', label: 'Kilogramo' },
+    { value: 'Caja', label: 'Caja' },
+    { value: 'Paca', label: 'Paca' },
+    { value: 'Arroba', label: 'Arroba' },
+    { value: 'Bulto', label: 'Bulto' },
+    { value: 'Saco', label: 'Saco' },
+    { value: 'Tonelada', label: 'Tonelada' },
+    { value: 'Mililitro', label: 'Mililitro' },
+    { value: 'Onza', label: 'Onza' },
+    { value: 'Litro', label: 'Litro' },
+    { value: 'Galon', label: 'Galon' },
+    { value: 'Pimpina', label: 'Pimpina' },
+    { value: 'Metro cubico', label: 'Metro cubico' },
+    { value: 'Milimetro', label: 'Milimetro' },
+    { value: 'Centrimetro', label: 'Centrimetro' },
+    { value: 'Pulgada', label: 'Pulgada' },
+    { value: 'Metro', label: 'Metro' },
+    { value: 'Centimetro cuadrado', label: 'Centimetro cuadrado' },
+    { value: 'Metro cuadrado', label: 'Metro cuadrado' }
+];
+
+export default unitMeasureSelects;

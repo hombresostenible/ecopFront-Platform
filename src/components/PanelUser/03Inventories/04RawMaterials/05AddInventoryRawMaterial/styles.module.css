@@ -1,0 +1,53 @@
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.alert__Danger {
+    color: #ff595e;
+    font-weight: 800;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.container__Info {
+    width: 500px;
+}
+.name__Item {
+    font-weight: 600;
+}
+.inventory {
+    width: 410px;
+}
+.text {
+    width: 130px;
+}
+.input {
+    border-radius: 5px;
+    width: 280px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    top: 65px;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}

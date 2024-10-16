@@ -1,0 +1,211 @@
+.container {
+    margin: 10px 0;
+}
+.infoRegister {
+    margin: 30px 0;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info {
+    width: 350px;
+}
+.barCodettext {
+    width: 140px;
+    padding: 5px 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/*---------TABLA DE RENDERIZACIÓN DE ARTÍCULOS----------*/
+.containerItems {
+    margin: 30px 0;
+    padding: 20px;
+    min-height: 300px;
+}
+.thead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.theadQuantity {
+    padding: 5px 10px; 
+    height: 60px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 1px solid rgba(113, 139, 216, 0.1);
+}
+.theadDescriptionItem {
+    padding: 5px 10px;
+    height: 60px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 1px solid rgba(113, 139, 216, 0.1);
+}
+.theadPriceUnit {
+    padding: 5px 10px;
+    height: 60px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 1px solid rgba(113, 139, 216, 0.1);
+}
+.theadIva {
+    padding: 5px 10px;
+    height: 60px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 1px solid rgba(113, 139, 216, 0.1);
+}
+.theadValue {
+    padding: 5px 10px;
+    height: 60px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 1px solid rgba(113, 139, 216, 0.1);
+}
+
+
+
+
+
+.containerSell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quantity {
+    padding: 5px 10px;
+    width: 90px;
+    background: rgba(113, 139, 216, 0.1);
+}
+.descriptionItem {
+    padding: 5px 10px;
+    width: 300px;
+    background: rgba(113, 139, 216, 0.1);
+}
+.priceUnit {
+    padding: 5px 10px;
+    width: 150px;
+    background: rgba(113, 139, 216, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.iva {
+    padding: 5px 10px;
+    width: 150px;
+    background: rgba(113, 139, 216, 0.1);
+}
+.value {
+    padding: 5px 10px;
+    width: 150px;
+    background: rgba(113, 139, 216, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*---------TABLA DE LA COMPRA----------*/
+.totalPurchase {
+    margin: 10px auto;
+    padding: 5px 10px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.infoPurchaseText {
+    font-weight: 700;
+    font-size: 20px;
+    width: 240px;    
+}
+.infoPurchaseValue {
+    font-size: 20px;
+    width: 240px;
+}
+
+/*---------TABLA IMPUESTO DE LA BOLSA----------*/
+.plasticBagTax {
+    margin: 10px auto;
+    padding: 5px 10px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.infoPlasticBagText {
+    font-weight: 700;
+    width: 180px;    
+}
+.infoPlasticBagQuantity {
+    width: 100px;   
+}
+.infoPlasticBagTax {
+    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*---------TABLA A PAGAR----------*/
+.totalPayable {
+    margin: 10px auto;
+    width: 650px;
+    padding: 5px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.infoPayable {
+    width: 310px;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: start;
+}
+.infoPayableValue {
+    font-weight: 700;
+    font-size: 50px;
+    text-align: end;
+    width: 325px;    
+}
+
+
+
+
+.detailSell{
+    margin: auto;
+    width: 500px;
+    width: 300px;
+}
+
+
+.buttonSubmit {
+    padding: 5px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.buttonSubmit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}

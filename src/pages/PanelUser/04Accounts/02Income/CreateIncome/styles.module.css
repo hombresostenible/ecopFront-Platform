@@ -1,0 +1,60 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.input__Branch {
+    border-radius: 5px;
+    width: 250px;
+}
+.input__Branch:focus{
+    outline-color: #718bd8;
+}
+.container__Date {
+    width: 400px;
+}
+.check__Date {
+    width: 100%;
+}
+.checkbox {
+    height: 20px;
+    width: 20px;
+}
+.container__Calendars {
+    width: 100%;
+}
+.calendar {
+    border-radius: 5px;
+}
+.label {
+    font-weight: 600;
+}
+.input {
+    border-radius: 5px;
+    width: 350px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.type__Income {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 192px;
+    padding: 6px 0;
+}
+.type__Income:hover {
+    cursor: pointer;
+}
+.active {
+    background: #718bd8;
+    color: #f8f9fa;
+    border: none;
+}

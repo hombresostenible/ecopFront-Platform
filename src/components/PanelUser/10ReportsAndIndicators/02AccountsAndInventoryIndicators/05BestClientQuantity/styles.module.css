@@ -1,0 +1,107 @@
+/*---------------Estilos generales de Indicadores de Financieros---------------*/
+.container {
+    width: 500px;
+    height: 870px;
+}
+.containerS {
+    width: 470px;
+    height: 790px;
+}
+.containerButtonExportT {
+    gap: 10px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.buttonPDF {
+    color: white;
+    width: 80px;
+    padding: 5px;
+    background: #dc3545;
+    border: none;
+    border-radius: 5px;
+}
+.buttonExcel {
+    color: white;
+    width: 80px;
+    padding: 5px;
+    background: #d4edda;
+    border: none;
+    border-radius: 5px;
+}
+.icon {
+    margin-top: -5px;
+}
+.buttonFilter {
+    padding: 5px 10px;
+    border: none;
+    margin: 0 5px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    background: #f28705;
+    color: #f8f9fa;
+    text-decoration: none;
+}
+.buttonFilter:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.buttonDetail {
+    padding: 5px 10px;
+    border: none;
+    margin: auto;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+    text-decoration: none;
+}
+.buttonDetail:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.containerInformatives {
+    width: 465px;
+    margin: 15px 0;
+}
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.dataTitle {
+    width: 200px;
+    padding: 10px;
+}
+.containerDataIcon {
+    padding: 0 10px 0 0px;
+}
+.dataIcon {
+    font-size: 25px;
+}
+.dataValue {
+    width: 180px;
+    text-align: end;
+    color: #f28705;
+}
+.containerInfoBestClient {
+    margin: 20px 0 0px 0;
+    padding: 0 0 10px 0;
+    overflow: auto;
+    max-height: 425px;
+}
+.infoBestClientImg {
+    width: 110px;
+}
+.infoBestClient {
+    width: 270px;
+}
+.dataP {
+    height: 500px;
+    width: 500px;
+}

@@ -1,0 +1,190 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+    max-width: 1203px;
+}
+.container__Filters {
+    max-width: 1203px;
+}
+.select__Branch {
+    outline-color: #718bd8;
+}
+.container__Column_Selector {
+    height: 50px;
+}
+.span__Menu {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.span__Menu:hover {
+    border: 1px solid #718bd8;
+    cursor: pointer;
+}
+.menu {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+    top: 5px;
+    z-index: 1;
+    right: 310px;
+    background: white;
+    height: 295px;
+    width: 300px;
+    border-radius: 10px;
+}
+.menu:hover {
+    cursor: pointer;
+}
+.container__Link_Head_Navigate {
+    max-width: 1203px;
+}
+.Link__Consult {
+    color: #718bd8;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    transition: 300ms ease all;
+}
+.Link__Consult:hover {
+    color: #f8f9fa;
+    border: none;
+    background: #0a31bf;
+}
+.active {
+    background: #718bd8;
+    border: none;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.input__Date {
+    outline-color: #718bd8;
+}
+.handle__Filter {
+    padding: 5px 10px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.handle__Filter:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.clear__Filter {
+    padding: 5px 10px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    background: #dc3545;
+    color: #f8f9fa;
+}
+.clear__Filter:hover {
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.container__Paginated {
+    max-width: 1203px;
+}
+.select {
+    margin: 0 15px 0 10px;
+    outline-color: #718bd8;
+}
+
+
+/* TABLA */
+.container__Table {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 960px;
+    overflow-x: auto;
+}
+.container__Head {
+    height: 60px;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* TITULOS DE LAS COLUMNAS */
+.container__Tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+    height: 60px;
+}
+.container__Info {
+    flex-wrap: nowrap;
+}
+.transaction__Date {
+    height: 60px;
+    width: 150px;
+}
+.branch {
+    height: 60px;
+    width: 200px;
+}
+.initial__Number_Payments {
+    height: 60px;
+    width: 150px;
+}
+.payment__Value {
+    height: 60px;
+    width: 150px;
+}
+.transaction__Counterpart {
+    height: 60px;
+    width: 150px;
+}
+.total__Value {
+    height: 60px;
+    width: 150px;
+}
+
+/* CONTENIDO DE LA TABLA */
+.container__Body {
+    height: 60px;
+    width: 100%;
+}
+.container__Info{
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+.text__Ellipsis {
+    opacity: 0.75;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.button__Action {
+    color: #6c757d;
+    height: 35px;
+    width: 50px;
+    padding: 0 12px;
+}
+.button__Action:hover {
+    color: #718bd8;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Delete {
+    color: #6c757d;
+    height: 35px;
+    width: 25px;
+    font-size: 14px;
+}
+.button__Delete:hover {
+    transition: 300ms all ease;
+    color: #718bd8;
+    cursor: pointer;
+}
+.message__Unrelated_Items {
+    height: 60px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

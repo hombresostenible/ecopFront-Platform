@@ -1,0 +1,49 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.container__Cards_Indicators {
+    max-width: 1000px;
+}
+.indicator {
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    min-height: 250px;
+    width: 310px;
+}
+.indicator:hover {
+    cursor: pointer;
+}
+.title__Indicator {
+    font-weight: 600;
+    color: #718bd8;
+}
+.button__Select {
+    width: 150px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Select:hover {
+    cursor: pointer;
+    background: #0a31bf;
+    transition: 300ms all ease;
+}
+.button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button:hover {
+    cursor: pointer;
+    background: #0a31bf;
+    transition: 300ms all ease;
+}

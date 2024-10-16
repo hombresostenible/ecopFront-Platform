@@ -1,0 +1,28 @@
+.container__Telegram {
+    border: none;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 2;
+    transition: 300ms all ease;
+}
+.telegram {
+    height: 50px;
+    width: 50px;
+}
+.container__Telegram:hover {
+    cursor: pointer;
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* ---------- RESPONSIVE (600 PX) ---------- */
+@media screen and (max-width: 500px) {
+    .container__Telegram {
+        bottom: 50px;
+    }
+    .telegram {
+        height: 40px;
+        width: 40px;
+    }
+}

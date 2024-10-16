@@ -1,0 +1,67 @@
+.container {
+    width: 100%;
+}
+.container__Component {
+    height: 400px;
+    width: 600px;
+}
+.logo {
+    height: 80px;
+}
+.errors {
+    color: #e4002b;
+    top: -35px;
+    left: 0;
+}
+.input {
+    min-width: 450px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    top: 44px;
+}
+.password {
+    border-radius: 5px;
+}
+.icon {
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #718bd8;
+}
+.icon:hover {
+    cursor: pointer;
+}
+.button__Submit {
+    height: 40px;
+    width: 150px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.link {
+    font-weight: 600;
+}
+
+
+/* ---------- RESPONSIVE (500 PX) ---------- */
+@media screen and (max-width: 500px) {
+    .logo {
+        height: 50px;
+    }
+    .input {
+        min-width: 100%;
+    }
+    .button__Submit {
+        font-size: 16px;
+    }
+}

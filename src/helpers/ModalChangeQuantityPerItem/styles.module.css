@@ -1,0 +1,31 @@
+.input {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+.input:focus {
+    outline-color: #718bd8;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Cancel {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e9ecef;
+}
+.button__Cancel:hover {
+    background: #6c757d;
+    transition: 300ms all ease;
+    color: #f8f9fa;
+    cursor: pointer;
+}

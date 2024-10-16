@@ -1,0 +1,27 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Navigation {
+    width: 100%;
+}
+.component {
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.active {
+    background: #718bd8;
+    border: none;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

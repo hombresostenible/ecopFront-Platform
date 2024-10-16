@@ -1,0 +1,22 @@
+.container__Info {
+    width: 100%;
+}
+.required__Information {
+    color: #d90429;
+    font-weight: 600;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 3px;
+}
+.input {
+    border-radius: 3px;
+    width: 100%;
+}
+
+/* ---------- RESPONSIVE (500 PX) ---------- */
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column;
+    }
+}

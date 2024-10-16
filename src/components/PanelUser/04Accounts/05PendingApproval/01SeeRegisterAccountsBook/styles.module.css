@@ -1,0 +1,62 @@
+.containerUserCard {
+    width: 550px;
+}
+.title {
+    color: #f28705;
+    letter-spacing: 1px;
+}
+.label {
+    margin-bottom: 5px;
+}
+.containerInput {
+    width: 100%;
+    border-radius: 3px;
+}
+.inputEdit {
+    margin: 0 0 16px 0;
+    border-radius: 3px;
+}
+.inputEdit:focus {
+    outline-color: #718bd8;
+}
+.input {
+    width: 100%;
+    border-radius: 3px;
+}
+.buttonSave {
+    padding: 5px 10px;
+    width: 100px;
+    margin: 0 10px;
+    border-radius: 4px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.buttonSave:hover {
+    transition: 300ms all ease;
+    background: #0a31bf;
+    cursor: pointer;
+}
+.buttonCancel {
+    padding: 5px 10px;
+    margin: 0 10px;
+    width: 100px;
+    border-radius: 4px;
+    background: #f28705;
+    color: #f8f9fa;
+}
+.buttonCancel:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.divButtonEdit {
+    border: 1px solid #718bd8;
+    color: #0a31bf;
+    border-radius: 5px;
+    height: 35px;
+    background: rgba(113, 139, 216, 0.7);
+}
+.divButtonEdit:hover {
+    border: 1px solid #0a31bf;
+    cursor: pointer;
+}

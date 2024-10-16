@@ -1,0 +1,57 @@
+.container {
+    min-width: 100%;
+    height: 100vh;
+}
+.container__Register {
+    width: 60%;
+    height: 100vh;
+}
+.logo {
+    height: 80px;
+}
+.button__Submit {
+    border-radius: 20px;
+    font-size: 18px;
+    color: #f8f9fa;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    background: #718bd8;
+    transition: 300ms all ease;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    cursor: pointer;
+}
+.program__Funder {
+    width: 400px;
+}
+.button__Program_Funder {
+    border-radius: 20px;
+    font-size: 18px;
+    color: #f8f9fa;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    background: #0a31bf;
+    transition: all 300ms ease;
+}
+
+
+/* ---------- RESPONSIVE (500 PX) ---------- */
+@media screen and (max-width: 500px) {
+    .logo {
+        height: 50px;
+    }
+    .button__Submit {
+        font-size: 16px;
+    }
+    .program__Funder {
+        max-width: 100%;
+    }
+    .text__Program_Funder {
+        max-width: 100%;
+        font-size: 15px;
+    }
+    .button__Program_Funder {
+        font-size: 16px;
+    }
+}

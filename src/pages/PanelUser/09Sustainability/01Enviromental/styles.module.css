@@ -1,0 +1,21 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Question {
+    margin: auto;
+    width: 600px;
+}
+.question__And_Icon {
+    width: 600px;
+}
+.icon__Answer {
+    font-size: 20px;
+}
+.icon__Answer:hover {
+    cursor: pointer;
+}

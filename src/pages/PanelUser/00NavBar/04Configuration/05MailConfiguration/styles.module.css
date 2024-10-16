@@ -1,0 +1,56 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Navigation {
+    width: 100%;
+}
+.component {
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.active {
+    background: #718bd8;
+    border: none;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.form {
+    width: 600px;
+}
+.label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.input {
+    border-radius: 5px;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    top: 65px;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}

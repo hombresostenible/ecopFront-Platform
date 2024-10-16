@@ -1,0 +1,65 @@
+.container {
+    width: 100%;
+}
+.container__Component {
+    height: 400px;
+    width: 600px;
+}
+.logo {
+    height: 80px;
+}
+.title {
+    color: #718bd8;
+}
+.input {
+    min-width: 450px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.icon {
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #718bd8;
+}
+.text__Danger {
+    top: 44px;
+}
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+    top: 44px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.errors {
+    top: -35px;
+    left: 0;
+}
+.alert__Danger {
+    color: #ff595e;
+    font-weight: 800;
+    top: 44px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.button__Submit {
+    letter-spacing: 1px;
+    color: #f8f9fa;
+    font-size: 18px;
+    background: #718bd8;
+    height: 40px;
+    width: 150px;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.link {
+    font-weight: 600;
+}

@@ -1,0 +1,292 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.link__Head_Navigate {
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    background: #718bd8;
+}
+.link__Head_Navigate:hover {
+    cursor: pointer;
+}
+.icon__Head_Navigate {
+    color: #fff;
+    margin: -2px 5px 0 0;
+}
+.link {
+    color: white;
+    background: #718bd8;
+    padding: 10px 20px;
+}
+.input__Branch {
+    border-radius: 5px;
+    width: 250px;
+}
+.input__Branch:focus{
+    outline-color: #718bd8;
+}
+
+/* CONTENEDOR DE NOTA DEBITO */
+.container__Debit_Note {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* ENCABEZADO */
+.container__Header_Debit_Note {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.container__Logo {
+    height: 100px;
+    width: 150px;
+}
+.logo__User {
+    max-height: 100px;
+    max-width: 100px;
+}
+.container__Info_User {
+    opacity: 0.75;
+    width: 500px;
+}
+.name__User {
+    font-weight: 700;
+}
+.numerator {
+    margin: 0 5px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    opacity: 0.85;
+}
+.invoice__Number {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 100px;
+}
+.container__Icon_setting {
+    margin: 0 0 0 5px;
+    height: 40px;
+}
+.icon__Setting {
+    font-size: 25px;
+    opacity: 0.75;
+}
+.icon__Setting:hover {
+    cursor: pointer;
+    color: #718bd8;
+}
+
+/* DATOS DEL CLIENTE Y DE LA FACTURA */
+.container__Dates_Client {
+    width: 100%;
+}
+.dates__Client {
+    width: 50%;
+}
+.container__Info_Section {
+    height: 50px;
+    width: 100%;
+}
+.label {
+    font-size: 14px;
+    height: 50px;
+    min-width: 100px;
+}
+.data {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: calc(100% - 100px);
+    margin: 0 5px 0 0;
+}
+.container__Info_Reason {
+    height: 100px;
+}
+.label__Reason {
+    font-size: 14px;
+    height: 100px;
+    min-width: 100px;
+}
+.textarea {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 0 5px 0 0;
+    height: 100px;
+    max-height: 100px;
+    width: calc(100% - 100px);
+}
+.textarea:focus, .calendar:focus {
+    outline-color: #718bd8;
+}
+.dates__Debit_Note {
+    width: 50%;
+}
+.calendar {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 50px;
+    width: 490px;
+}
+.select {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 0 5px 0 0;
+    height: 50px;
+    width: 100%;
+}
+
+/* TABLA */
+.container__Table{
+    width: 100%;
+}
+.container__Head{
+    background: #e9ecef;
+    height: 60px;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* TITULOS DE LAS COLUMNAS */
+.container__Tr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+.branch{
+    height: 60px;
+    width: 15%;
+    min-width: 150px;
+}
+.name__Item{
+    height: 60px;
+    width: 25%;
+    min-width: 300px;
+}
+.selling__Price {
+    height: 60px;
+    width: 12%;
+    min-width: 120px;
+}
+.discount__Percentage{
+    height: 60px;
+    width: 10%;
+    min-width: 100px;
+}
+.tax{
+    height: 60px;
+    width: 15%;
+    min-width: 150px;
+}
+.quantity{
+    height: 60px;
+    width: 10%;
+    min-width: 100px;
+}
+.input{
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+}
+.input:focus, .quantity:focus {
+    outline-color: rgba(0, 0, 0, 0.2);
+}
+.total{
+    height: 60px;
+    width: 11%;
+    min-width: 110px;
+}
+.action{
+    height: 60px;
+    width: 10%;
+    min-width: 100px;
+}
+
+/* CONTENIDO DE LA TABLA */
+.container__Body{
+    /* height: 60px; */
+    width: 100%;
+}
+.container__Info{
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+.container__Info_Items:first-child{
+    border-bottom: none;
+}
+.input {
+    width: 100%;
+}
+.text__Ellipsis {
+    opacity: 0.75;
+    white-space: nowrap;        /* Evita que el texto se divida en varias líneas */
+    text-overflow: ellipsis;    /* Agrega los tres puntos suspensivos */
+}
+.container__Icons {
+    height: 100%;
+    width: 125px;
+    padding: 0 4px;
+}
+.button__Delete {
+    color: #6c757d;
+    height: 35px;
+    width: 25px;
+    font-size: 14px;
+}
+.button__Delete:hover {
+    transition: 300ms all ease;
+    color: #718bd8;
+    cursor: pointer;
+}
+.message__Unrelated_Items {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+    width: 100%;
+}
+.container__Append {
+    background: #718bd8;
+    color: white;
+    padding: 10px 20px;
+    width: 250px;
+}
+.container__Append:hover {
+    cursor: pointer;
+}
+
+/* CONTAINER TOTAL */
+.container__Totals {
+    width: 100%;
+}
+.debit__Note_Total {
+    width: 500px;
+}
+.container__Section_Total {
+    height: 60px;
+    width: 100%;
+}
+.container__Section_Total:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    width: 100%;
+}
+.title__Total {
+    height: 60px;
+    width: 200px;
+}
+.total__Debit__Note {
+    height: 60px;
+    width: 300px;
+}

@@ -1,0 +1,147 @@
+.container {
+    min-width: 350px;
+    height: calc(100vh - 70px);
+    background: #718bd8;
+    color: hsl(210, 17%, 98%);
+    overflow-y: auto;
+}
+.container__Small {
+    width: 75px;
+    height: calc(100vh - 70px);
+    background: #718bd8;
+    color: hsl(210, 17%, 98%);
+
+    .icon__Hamburger {
+        font-size: 35px;
+        margin: auto;
+    }
+    .container__Icon {
+        color: #495057;
+    }
+    .icon__Section, .icon__Section_Logout {
+        font-size: 35px;
+    }
+}
+.container__Component {
+    max-width: 340px;
+}
+.container__Icon_Hamburger {
+    width: 100%;
+}
+.icon__Hamburger {
+    font-size: 25px;
+    margin: 0 2px 0 0;
+}
+.icon__Hamburger:hover {
+    cursor: pointer;
+}
+.container__Section {
+    height: 45px;
+    width: 100%;
+}
+.container__Section:hover {
+    border: 1px solid hsl(210, 17%, 98%);
+    border-radius: 5px;
+}
+.active {
+    color: #4361ee;
+    width: 270px;
+    width: 100%;
+    margin: 0 0 0 -10px;
+    padding: 0 0 0 10px;
+}
+.section {
+    width: 100%;
+    height: 45px;
+    color: hsl(210, 17%, 98%);
+}
+.section:hover {
+    cursor: pointer;
+}
+
+.container__Icon, .icon__Compact {
+    height: 35px;
+    width: 35px;
+}
+.icon__Section {
+    color: hsl(210, 17%, 98%);
+    font-size: 25px;
+}
+.active__Icon_Section {
+    color: #343a40;
+}
+.link__Side_Bar {
+    color: hsl(210, 17%, 98%);
+    width: 100%;
+}
+.link__Side_Bar:hover {
+    cursor: pointer;
+}
+.sub__Menu {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.link__Sub_Menu {
+    color: inherit;
+    font-size: 14px;
+    padding: 5px 5px 5px 40px;
+    display: block;
+}
+.link__Sub_Menu:hover {
+    color: #343a40;
+}
+.active__Sub_Menu {
+    color: #212529;
+    font-weight: 600;
+}
+.container__Sub_Menu_Compact {
+    z-index: 1;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+    background: #495057;
+    border-radius: 10px;
+    width: 300px;
+    top: 0;
+    left: 85px;
+}
+.indicator {
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+    background: #495057;
+    height: 15px;
+    width: 15px;
+    top: 10px;
+    left: -14px;
+}
+.title__Sub_Menu_Compact {
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #ced4da;
+    opacity: 0.75;
+}
+.link__Sub_Menu_Compact {
+    color: #ced4da;
+    opacity: 0.75;
+    font-size: 14px;
+    min-width: 100%;
+}
+.link__Sub_Menu_Compact:hover {
+    color: #718bd8;
+}
+.container__Section_Logout {
+    height: 35px;
+    width: 100%;
+}
+.container__Section_Logout:hover {
+    .icon__Section_Logout, .link__Logout {
+        color: #fff;
+        opacity: 0.75;
+    }
+}
+.icon__Section_Logout {
+    color: hsl(210, 17%, 98%);
+    font-size: 20px;
+}
+.link__Logout {
+    color: hsl(210, 17%, 98%);
+    width: 100%;
+}

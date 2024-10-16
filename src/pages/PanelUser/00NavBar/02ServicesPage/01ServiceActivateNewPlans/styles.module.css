@@ -1,0 +1,59 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.container__Plants_Table {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container__Titles_Columns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.name__Plain {
+    height: 60px;
+    width: 170px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.primera {
+    width: 170px;
+    height: 60px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container__Data_Columns {
+    display: flex;
+}
+.title__Plaint {
+    height: 60px;
+    width: 170px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.segunda {
+    width: 170px;
+    height: 60px;
+}

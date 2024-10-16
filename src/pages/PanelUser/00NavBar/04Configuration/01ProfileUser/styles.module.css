@@ -1,0 +1,176 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+    padding: 0 25px 0 25px;
+}
+.container__Navigation {
+    width: 100%;
+}
+.component {
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.active {
+    background: #718bd8;
+    border: none;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.container__Card {
+    width: 550px;
+}
+.container__Image_Icon {
+    border: 1px solid rgba(0, 0, 0, .2);
+    height: 150px;
+    width: 100%;
+}
+.logo {
+    max-height: 150px;
+    max-width: 150px;
+}
+.container__Text_Logo {
+    width: 250px;
+    font-size: 25px;
+}
+.container__Image {
+    max-height: 150px;
+    max-width: 150px;
+}
+.container__Icon {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    background: white;
+    color: #6c757d;
+    height: 60px;
+    width: 60px;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+}
+.container__Icon:hover {
+    cursor: pointer;
+    color: #718bd8;
+}
+.iconLogo {
+    font-size: 30px;
+}
+.menu {
+    z-index: 1;
+    background: #f8f9fa;
+    border: 1px solid #ced4da;
+    height: 60px;
+    width: 160px;
+    bottom: 0;
+    right: -170px;
+}
+.text__Menu {
+    width: 100%;
+}
+.text__Menu:hover {
+    margin: 0;
+    background: #dee2e6;
+    cursor: pointer;
+    color: #3a86ff;
+    font-weight: 500;
+}
+
+
+/*Información del Usuario*/
+.containerInfo {
+    width: 100%;
+}
+.label {
+    font-weight: 600;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 3px;
+}
+.input {
+    border-radius: 5px;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+
+
+/*Botones de editar*/
+.button__Save {
+    color: #f8f9fa;
+    width: 100px;
+    border-radius: 5px;
+    background: #718bd8;
+}
+.button__Save:hover {
+    cursor: pointer;
+    background: #0a31bf;
+    transition: 300ms all ease;
+}
+.button__Cancel {
+    color: #f8f9fa;
+    width: 100px;
+    border-radius: 5px;
+    background: #f28705;
+}
+.button__Cancel:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Edit {
+    border: 1px solid #718bd8;
+    color: #0a31bf;
+    border-radius: 5px;
+    height: 35px;
+    background: rgba(113, 139, 216, 0.7);
+}
+.button__Edit:hover {
+    border: 1px solid #0a31bf;
+    cursor: pointer;
+}
+/* ---------- RESPONSIVE (700 PX) ---------- */
+@media screen and (max-width: 700px) {
+    .container__Component {
+        padding: 0 15px 0 15px;
+    }
+    .title {
+        text-align: center;
+        font-size: 20px;
+    }
+    .container__Card {
+        width: 100%;
+    }
+
+    /*
+    .container__Navigate_Inventories {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .link__Consult_Inventory {
+        text-align: center;
+        font-size: 14px;
+    }
+    .button__Bulk_Create {
+        text-align: center;
+        font-size: 14px;
+    }
+    .form {
+        width: 100%;
+    }
+    .label {
+        font-size: 15px;
+    }
+    */
+
+}

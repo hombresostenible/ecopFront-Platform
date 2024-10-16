@@ -1,0 +1,48 @@
+.container {
+    height: 30px;
+}
+.container__Button__Next_Prev {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #718bd8;
+    font-size: 20px;
+    width: 40px;
+    height: 30px;
+}
+.container__Button__Next_Prev:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    
+    .button__Next_Prev {
+        cursor: pointer;
+        color: white;
+    }
+}
+.button__Next_Prev {
+    color: #718bd8;
+    font-size: 30px;
+}
+.disabled {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: default;
+    color: #495057;
+}
+.container__Pages {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 30px;
+}
+.active {
+    background: white;
+    color: #718bd8;
+}
+.inactive {
+    background: white;
+    color: #495057;
+}
+.pages {
+    font-weight: 600;
+    height: 30px;
+    width: 50px;
+}
+.pages:hover {
+    cursor: pointer;
+}

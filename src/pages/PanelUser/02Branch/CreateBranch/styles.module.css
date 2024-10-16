@@ -1,0 +1,125 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+    padding: 0 25px 0 25px;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.link__Head_Navigate {
+    color: #fff;
+    padding: 10px 20px;
+    background: #718bd8;
+}
+.container__Bulk_Create {
+    color: #fff;
+    padding: 10px 20px;
+    background: #718bd8;
+}
+.container__Bulk_Create:hover {
+    cursor: pointer;
+}
+.icon__Plus {
+    color: #fff;
+    margin: -2px 5px 0 0;
+}
+.button__Bulk_Create {
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.form {
+    width: 550px;
+}
+.label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.required__Information {
+    color: #d90429;
+    font-weight: 600;
+}
+.input {
+    border-radius: 5px;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    top: 65px;
+}
+.container__Loading {
+    width: 100%;
+}
+.button__Submit {
+    height: 40px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}
+.alert__Success {
+    position: absolute;
+    color: #4cb963;
+    font-weight: 700;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.alert__Danger {
+    color: #ff595e;
+    font-weight: 800;
+    top: 100px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+
+/* ---------- RESPONSIVE (700 PX) ---------- */
+@media screen and (max-width: 700px) {
+    .container__Component {
+        padding: 0 15px 0 15px;
+    }
+    .title {
+        text-align: center;
+        font-size: 20px;
+    }
+    .container__Navigate_Inventories {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .link__Consult_Inventory {
+        text-align: center;
+        font-size: 14px;
+    }
+    .button__Bulk_Create {
+        text-align: center;
+        font-size: 14px;
+    }
+    .form {
+        width: 100%;
+    }
+    .label {
+        font-size: 15px;
+    }
+    .text__Danger {
+        font-size: 14px;
+    }
+}

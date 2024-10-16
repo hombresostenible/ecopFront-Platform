@@ -1,0 +1,248 @@
+.label {
+    font-weight: 600;
+}
+.input__Bar_Code {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    width: 350px;
+}
+.input__Bar_Code:focus {
+    outline-color: #718bd8;
+}
+
+/* TABLA */
+.container__Table {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 1165px;
+    overflow-x: auto;
+}
+.container__Head {
+    height: 60px;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* TITULOS DE LAS COLUMNAS */
+.container__Tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+    height: 60px;
+}
+.container__Info {
+    flex-wrap: nowrap;
+}
+.quantity {
+    height: 60px;
+    width: 100px;
+}
+.description__Item {
+    height: 60px;
+    width: 300px;
+}
+.iva {
+    height: 60px;
+    width: 120px;
+}
+.unit__Price {
+    height: 60px;
+    width: 150px;
+}
+.text__Ellipsis_Purchase_Price {
+    opacity: 0.75;
+    left: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.price__Input {
+    border: 1px solid #718bd8;
+    height: 100%;
+    width: 100%;
+}
+.price__Input:focus{
+    outline-color: #718bd8;
+}
+.subtotal {
+    height: 60px;
+    width: 150px;
+}
+.delete {
+    height: 60px;
+    width: 70px;
+}
+
+/* CONTENIDO DE LA TABLA */
+.container__Body {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    min-height: 60px;
+    width: 100%;
+}
+.container__Info {
+    min-height: 60px;
+}
+.container__Quantity {
+    height: 50px;
+    width: 50px;
+}
+.text__Ellipsis {
+    opacity: 0.75;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.container__FaPlus {
+    height: 50px;
+    width: 50px;
+}
+.icon__FaPlus {
+    color: #6c757d;
+    font-size: 12px;
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+}
+.icon__FaPlus:hover {
+    transition: 300ms all ease;
+    color: #718bd8;
+    cursor: pointer;
+}
+.button__Action {
+    color: #6c757d;
+    font-size: 14px;
+    height: 35px;
+    width: 25px;
+    margin: 5px;
+}
+.button__Action:hover {
+    transition: 300ms all ease;
+    color: #718bd8;
+    cursor: pointer;
+}
+.message__Unrelated_Items {
+    min-height: 60px;
+}
+.container__Selected_Client {
+    width: 400px;
+}
+.error__Selected_Client {
+    z-index: 1;
+    border-radius: 5px;
+    top: 10px;
+    right: -230px;
+    color: white;
+    background: #718bd8;
+}
+.triangle {
+    z-index: 2;
+    color: white;
+    background: #718bd8;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    height: 15px;
+    width: 15px;
+    top: 14px;
+    left: -15px;
+}
+.container__Info_Purchase {
+    width: 470px;
+}
+.text__Purchase {
+    width: 170px;
+}
+.input__Info_Purchase {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 300px;
+}
+.input__Info_Purchase:focus, .input__Change__Amount:focus {
+    outline-color: #718bd8;
+}
+
+/* RELACION DE PAGO */
+.button__Calculate {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 200px;
+    padding: 10px 0;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Calculate:hover {
+    background: #0a31bf;
+}
+.input__Change__Amount {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 43px;
+}
+.input__Change {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.input__Change:focus {
+    outline-color: #718bd8;
+}
+/* ENVIAR */
+.error__Message_Selected_Branch {
+    top: -45px;
+    color: #e63946;
+    border-radius: 5px;
+    padding: 5px 10px;
+    z-index: 1
+}
+.error__Message_Selected_Client {
+    top: -30px;
+    color: #e63946;
+    padding: 5px 10px;
+    z-index: 1
+}
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+    top: -30px;
+    z-index: 1
+}
+.input {
+    border-radius: 5px;
+    width: 350px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.input__Other_Incomes {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 400px;
+}
+.input__Other_Incomes:focus {
+    outline-color: #718bd8;
+}
+.text__Danger {
+    bottom: -40px;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Cancel {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e9ecef;
+}
+.button__Cancel:hover {
+    background: #6c757d;
+    transition: 300ms all ease;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}

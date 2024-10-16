@@ -1,0 +1,49 @@
+.container__Download_File {
+    width: 600px;
+    margin: auto;
+}
+.download__File {
+    width: 150px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #f28705;
+    color: #f8f9fa;
+    transition: 300ms all ease;
+}
+.download__File:hover {
+    background: #0a31bf;
+    cursor: pointer;
+}
+.label {
+    width: 400px;
+}
+.input {
+    border-radius: 5px;
+    width: 250px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.success {
+    z-index: 1;
+    bottom: -40px;
+    width: 400px;
+    width: 100%;
+}
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+}
+.button__Submit {
+    height: 40px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}

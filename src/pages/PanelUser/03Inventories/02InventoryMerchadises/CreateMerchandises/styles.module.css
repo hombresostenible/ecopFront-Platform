@@ -1,0 +1,157 @@
+.container {
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+.container__Component {
+    height: calc(100vh - 70px);
+    width: 100%;
+    padding: 0 25px 0 25px;
+}
+.title {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.link__Consult_Inventory {
+    padding: 10px 20px;
+    color: white;
+    background: #718bd8;
+}
+.link__Head_Navigate {
+    color: #fff;
+    padding: 10px 20px;
+    background: #718bd8;
+}
+.link__Head_Navigate:hover {
+    cursor: pointer;
+}
+.icon__Plus {
+    color: #fff;
+    margin: -2px 5px 0 0;
+}
+.button__Bulk_Create {
+    letter-spacing: 1px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.form {
+    width: 550px;
+}
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.alert__Danger {
+    color: #ff595e;
+    font-weight: 800;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.required__Information {
+    color: #d90429;
+    font-weight: 600;
+}
+.input {
+    border-radius: 5px;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    bottom: -40px;
+    right: 5px;
+}
+.condition__Container {
+    width: 100%;
+}
+.condition__Option {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex-grow: 1;
+    transition: background-color 0.2s;
+}
+.condition__Option:hover {
+    cursor: pointer;
+    background: rgba(113, 139, 216, 0.3);
+    color: #718bd8;
+    border-radius: 5px;
+}
+.selected {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #718bd8;
+    color: #fff;
+}
+.selected:hover {
+    color: #fff;
+}
+.container__Info {
+    width: 100%;
+}
+
+/* RETENCIONES */
+.input__Retention {
+    border-radius: 5px;
+    width: 100%;
+}
+.input__Retention:focus{
+    outline-color: #718bd8;
+}
+
+/* ENVIAR */
+.button__Submit {
+    height: 40px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}
+
+/* ---------- RESPONSIVE (700 PX) ---------- */
+@media screen and (max-width: 700px) {
+    .container__Component {
+        padding: 0 15px 0 15px;
+    }
+    .title {
+        text-align: center;
+        font-size: 20px;
+    }
+    .container__Navigate_Inventories {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .link__Consult_Inventory {
+        text-align: center;
+        font-size: 14px;
+    }
+    .button__Bulk_Create {
+        text-align: center;
+        font-size: 14px;
+    }
+    .form {
+        width: 100%;
+    }
+    .label {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,48 @@
+.subtitle {
+    color: #f28705;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.form {
+    width: 100%;
+}
+.alert__Success {
+    color: #4cb963;
+    font-weight: 700;
+    top: 5px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.label {
+    font-weight: 600;
+    width: 100px;
+}
+.input__Client {
+    border: 1px solid #718bd8;
+    width: 100%;
+}
+.input, .textarea {
+    width: 100%;
+}
+.input:focus, .textarea:focus {
+    outline-color: #718bd8;
+}
+.textarea {
+    max-height: 300px;
+}
+.input__File {
+    cursor: pointer;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}

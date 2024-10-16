@@ -1,0 +1,52 @@
+.notification {
+    z-index: 1000;
+    bottom: 20px;
+    right: 0;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: none;
+    height: 70px;
+    width: 350px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.success {
+    border-left: 7px solid #4caf50;
+    width: 330px;
+    height: 100px;
+}
+.delete {
+    border-left: 7px solid #f44336;
+    width: 330px;
+    height: 100px;
+}
+.error {
+    border-left: 7px solid #f28705;
+    width: 330px;
+    height: 100px;
+}
+.container__Close_Button {
+    height: 100%;
+}
+.close__Button {
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #495057;
+}
+.close__Button:hover {
+    color: #212529;
+}

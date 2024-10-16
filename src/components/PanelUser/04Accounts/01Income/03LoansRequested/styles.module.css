@@ -1,0 +1,80 @@
+.form {
+    width: 900px;
+}
+.container__Info {
+    width: 100%;
+}
+.label {
+    font-weight: 600;
+}
+.input {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 100%;
+}
+.input:focus {
+    outline-color: #718bd8;
+}
+.text__Danger {
+    bottom: -40px;
+}
+.error__Selected_Client {
+    z-index: 1;
+    border-radius: 5px;
+    top: 10px;
+    right: -230px;
+    color: white;
+    background: #718bd8;
+}
+.triangle {
+    z-index: 2;
+    color: white;
+    background: #718bd8;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    height: 15px;
+    width: 15px;
+    top: 14px;
+    left: -15px;
+}
+.error__Message_Selected_Branch {
+    top: -45px;
+    color: #e63946;
+    border-radius: 5px;
+    padding: 5px 10px;
+    z-index: 1
+}
+.error__Message_Selected_Client {
+    top: -30px;
+    color: #e63946;
+    padding: 5px 10px;
+    z-index: 1
+}
+.container__Loading {
+    width: 100%;
+}
+.button__Submit {
+    height: 40px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Cancel {
+    height: 40px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e9ecef;
+}
+.button__Cancel:hover {
+    background: #6c757d;
+    transition: 300ms all ease;
+    color: #f8f9fa;
+    cursor: pointer;
+}
