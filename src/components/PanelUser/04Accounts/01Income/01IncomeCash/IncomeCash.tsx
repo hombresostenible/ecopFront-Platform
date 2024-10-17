@@ -13,8 +13,8 @@ import { IAccountsBook, IAccountsBookItems } from "../../../../../types/User/acc
 import { IUserPlatform } from '../../../../../types/User/userPlatform.types';
 import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname';
 import ModalChangeQuantityPerItem from '../../../../../helpers/ModalChangeQuantityPerItem/ModalChangeQuantityPerItem';
-import { formatCurrency } from '../../../../../helpers/FormatCurrency/FormatCurrency';
 import SearchClientCrm from '../../../../../helpers/SearchClientCrm/SearchClientCrm';
+import { formatCurrency } from '../../../../../helpers/FormatCurrency/FormatCurrency';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import { FaPlus } from "react-icons/fa6";
 import { RiDeleteBin6Line } from 'react-icons/ri';
@@ -123,7 +123,7 @@ function IncomeCash({ token, decodeUserIdRegister, usersPlatform, selectedBranch
     };
 
     // CALCULA EL VALOR TOTAL DE TODOS LOS ARTICULOS AÑADIDOS A LA COMPRA
-    const totalPurchaseAmount = scannedItems.reduce((total, scannedItem) => {
+    const totalSalesAmount = scannedItems.reduce((total, scannedItem) => {
         const ivaAmount = scannedItem.IVA !== 'No aplica' 
             ? (scannedItem.sellingPrice / 100 * Number(scannedItem.IVA)) 
             : 0;
@@ -142,15 +142,11 @@ function IncomeCash({ token, decodeUserIdRegister, usersPlatform, selectedBranch
     const handleCalculateChange = () => {
         const numericValue = parseFloat(paymentAmount.replace(/[^\d]/g, ''));
         if (!isNaN(numericValue)) {
-            setChangeAmount(numericValue - totalPurchaseAmount);
+            setChangeAmount(numericValue - totalSalesAmount);
         } else {
             setChangeAmount(null);
         }
     };
-
-    // OTROS INGRESOS
-    //Setea el poveedor cuando se busca o se crea
-    const [selectedSupplier, setSelectedSupplier] = useState<number | null>(null);
 
     // SETEA EL USUARIO VENDEDOR
     const [userPlatform, setUserPlatform] = useState<IUserPlatform>();
@@ -170,13 +166,13 @@ function IncomeCash({ token, decodeUserIdRegister, usersPlatform, selectedBranch
                 branchId: selectedBranch,
                 transactionType: "Ingreso",
                 creditCash: "Contado",
-                transactionCounterpartId: selectedClient ? selectedClient : selectedSupplier,
+                transactionCounterpartId: selectedClient,
                 meanPayment: meanPayment ? meanPayment : null,
                 itemsSold: scannedItems,
                 typeIncome: typeIncome,
                 pay: 'No',
                 userRegister: decodeUserIdRegister,
-                totalValue: totalPurchaseAmount,
+                totalValue: totalSalesAmount,
             } as IAccountsBook;
             if (defaultDates) {
                 formData.registrationDate = new Date().toLocaleDateString();
@@ -189,7 +185,7 @@ function IncomeCash({ token, decodeUserIdRegister, usersPlatform, selectedBranch
                 setTimeout(() => setMessageSelectedBranch(null), 5000);
                 return;
             }
-            if (!selectedClient && !selectedSupplier) {
+            if (!selectedClient) {
                 setMessageSelectedClient('Debes de seleccionar un cliente o un proveedor');
                 setTimeout(() => setMessageSelectedClient(null), 5000);
                 return;
@@ -197,7 +193,6 @@ function IncomeCash({ token, decodeUserIdRegister, usersPlatform, selectedBranch
             if(userPlatform?.id) formData.seller = userPlatform.id;
             await dispatch(postAccountsBook(formData, token));
             setSelectedClient(null);
-            setSelectedSupplier(null);
             setTimeout(() => {
                 setShouldNavigate(true);
             }, 1500);
@@ -407,7 +402,7 @@ function IncomeCash({ token, decodeUserIdRegister, usersPlatform, selectedBranch
 
                             <div className="mb-3 mx-auto d-flex align-items-center justify-content-between">
                                 <p className={`${styles.text__Purchase} m-0`}>Total de la compra</p>
-                                <h4 className={`${styles.input__Info_Purchase} m-0 p-2 text-end`}>$ {formatNumber(totalPurchaseAmount)}</h4>
+                                <h4 className={`${styles.input__Info_Purchase} m-0 p-2 text-end`}>$ {formatNumber(totalSalesAmount)}</h4>
                             </div>
 
                             {meanPayment === 'Efectivo' && (
