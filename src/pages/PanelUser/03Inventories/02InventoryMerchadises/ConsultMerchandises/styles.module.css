@@ -10,10 +10,9 @@
     color: #f28705;
     font-weight: 600;
     letter-spacing: 1px;
-    max-width: 1403px;
 }
 .container__Link_Head_Navigate {
-    max-width: 1403px;
+    width: 100%;
 }
 .link__Head_Navigate {
     padding: 10px 20px;
@@ -31,7 +30,7 @@
     color: #fff;
 }
 .container__Filters {
-    max-width: 1403px;
+    width: 100%;
 }
 .select__Branch {
     outline-color: #718bd8;
@@ -62,7 +61,7 @@
     cursor: pointer;
 }
 .container__Paginated {
-    max-width: 1403px;
+    width: 100%;
 }
 .select {
     margin: 0 15px 0 10px;
@@ -72,7 +71,6 @@
 /* TABLA */
 .container__Table {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    max-width: 1403px;
     overflow-x: auto;
 }
 .container__Head {
@@ -87,44 +85,53 @@
     flex-wrap: nowrap;
     height: 60px;
 }
-.container__Info {
+.container__Tr, .container__Info {
     flex-wrap: nowrap;
 }
 .branch {
     height: 60px;
-    width: 200px;
+    min-width: 200px;
+    width: 14%;
 }
 .bar__Code {
     height: 60px;
-    width: 200px;
+    min-width: 200px;
+    width: 14%;
 }
 .name__Item {
     height: 60px;
-    width: 200px;
+    min-width: 200px;
+    width: 14%;
 }
 .brand {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 11%;
 }
 .inventory {
     height: 60px;
-    width: 100px;
+    min-width: 100px;
+    width: 7%;
 }
 .unit__Measure {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 11%;
 }
 .IVA {
     height: 60px;
-    width: 100px;
+    min-width: 100px;
+    width: 7%;
 }
 .selling__Price {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 11%;
 }
 .action {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 11%;
 }
 
 /* CONTENIDO DE LA TABLA */

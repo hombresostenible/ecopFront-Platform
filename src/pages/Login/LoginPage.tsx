@@ -44,7 +44,7 @@ function LoginPage({ addNotification }: ConsultBranchPageProps) {
         setLoading(true);
         try {
             const recaptchaResponse = await dispatch(setRecaptchaVerified(captchaValue));
-            if (recaptchaResponse?.success) {  
+            if (recaptchaResponse?.success) {
                 await dispatch(loginUser(loginData));
             } else {
                 addNotification('error', 'Validación de reCAPTCHA fallida.');

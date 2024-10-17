@@ -147,91 +147,88 @@ const finantialIndicatorsSlice = createSlice({
             state.currentPage = action.payload.currentPage;
             state.errorFinantialIndicator = null;
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // MEJOR CLIENTE POR VALOR
         getBestClientValueStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.bestClientValue = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // MEJOR CLIENTE POR VALOR POR SEDE
         getBestClientValueByBranchStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.bestClientValue = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // MEJOR CLIENTE POR CANTIDAD
         getBestClientQuantityStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.bestClientQuantity = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // MEJOR CLIENTE POR VALOR POR CANTIDAD
         getBestClientQuantityByBranchStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.bestClientQuantity = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // TICKET PROMEDIO POR PERIODO
         getAverageTicketPerPeriodStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.averageTicketPerPeriod = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // TICKET PROMEDIO POR PERIODO POR SEDE
         getAverageTicketPerPeriodByBranchStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.averageTicketPerPeriod = action.payload;
             state.errorFinantialIndicator = null;
         },
-        getProductsInventoryStart: (state, action: PayloadAction<any  | null>) => {
-            state.loading = true;
-            state.productsInventory = action.payload;
-            state.errorFinantialIndicator = null;
-        },
-        getProductsInventoryByBranchStart: (state, action: PayloadAction<any  | null>) => {
-            state.loading = true;
-            state.productsInventory = action.payload;
-            state.errorFinantialIndicator = null;
-        },
-        getRawmaterialsInventoryStart: (state, action: PayloadAction<any  | null>) => {
-            state.loading = true;
-            state.rawmaterialsInventory = action.payload;
-            state.errorFinantialIndicator = null;
-        },
-        getRawmaterialsInventoryByBranchStart: (state, action: PayloadAction<any  | null>) => {
-            state.loading = true;
-            state.rawmaterialsInventory = action.payload;
-            state.errorFinantialIndicator = null;
-        },
+        // INVENTARIO DE EQUIPOS
         getAssetsInventoryStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.assetsInventory = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // INVENTARIO DE EQUIPOS POR SEDE
         getAssetsInventoryByBranchStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.assetsInventory = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // INVENTARIO DE MERCANCIAS
         getMerchandisesInventoryStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.merchandisesInventory = action.payload;
             state.errorFinantialIndicator = null;
         },
+        // INVENTARIO DE MERCANCIAS POR SEDE
         getMerchandisesInventoryByBranchStart: (state, action: PayloadAction<any  | null>) => {
             state.loading = true;
             state.merchandisesInventory = action.payload;
+            state.errorFinantialIndicator = null;
+        },
+        // INVENTARIO DE PRODUCTOS
+        getProductsInventoryStart: (state, action: PayloadAction<any  | null>) => {
+            state.loading = true;
+            state.productsInventory = action.payload;
+            state.errorFinantialIndicator = null;
+        },
+        // INVENTARIO DE PRODUCTOS POR SEDE
+        getProductsInventoryByBranchStart: (state, action: PayloadAction<any  | null>) => {
+            state.loading = true;
+            state.productsInventory = action.payload;
+            state.errorFinantialIndicator = null;
+        },
+        // INVENTARIO DE MATERIA PRIMA
+        getRawmaterialsInventoryStart: (state, action: PayloadAction<any  | null>) => {
+            state.loading = true;
+            state.rawmaterialsInventory = action.payload;
+            state.errorFinantialIndicator = null;
+        },
+        // INVENTARIO DE MATERIA PRIMA POR SEDE
+        getRawmaterialsInventoryByBranchStart: (state, action: PayloadAction<any  | null>) => {
+            state.loading = true;
+            state.rawmaterialsInventory = action.payload;
             state.errorFinantialIndicator = null;
         },
     },
@@ -249,26 +246,23 @@ export const {
     getAccountsPayablePaginatedStart,
     getAccountsPayableByBranchStart,
     getAccountsPayableByBranchPaginatedStart,
-    
     getAccountsReceivableStart,
     getAccountsReceivablePaginatedStart,
     getAccountsReceivableByBranchStart,
     getAccountsReceivableByBranchPaginatedStart,
-
-
     getBestClientValueStart,
     getBestClientValueByBranchStart,
     getBestClientQuantityStart,
     getBestClientQuantityByBranchStart,
     getAverageTicketPerPeriodStart,
     getAverageTicketPerPeriodByBranchStart,
-    getProductsInventoryStart,
-    getProductsInventoryByBranchStart,
-    getRawmaterialsInventoryStart,
-    getRawmaterialsInventoryByBranchStart,
     getAssetsInventoryStart,
     getAssetsInventoryByBranchStart,
     getMerchandisesInventoryStart,
     getMerchandisesInventoryByBranchStart,
+    getProductsInventoryStart,
+    getProductsInventoryByBranchStart,
+    getRawmaterialsInventoryStart,
+    getRawmaterialsInventoryByBranchStart,
 } = finantialIndicatorsSlice.actions;
 export default finantialIndicatorsSlice.reducer;

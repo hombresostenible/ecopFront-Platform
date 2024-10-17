@@ -9,24 +9,14 @@ import {
     getExpensesPerPeriodByBranchStart,
     getAllTransactionsPerPeriodStart,
     getAllTransactionsPerPeriodByBranchStart,
-    
     getAccountsPayableStart,
     getAccountsPayablePaginatedStart,
     getAccountsPayableByBranchStart,
     getAccountsPayableByBranchPaginatedStart,
-    
     getAccountsReceivableStart,
     getAccountsReceivableByBranchStart,
     getAccountsReceivablePaginatedStart,
     getAccountsReceivableByBranchPaginatedStart,
-
-
-
-
-
-
-
-
     getBestClientValueStart,
     getBestClientValueByBranchStart,
     getBestClientQuantityStart,
@@ -43,7 +33,7 @@ import {
     getRawmaterialsInventoryByBranchStart,
 } from './finantialIndicatorsSlice';
 
-// OBTENER TODAS LAS VENTAS DEL PERIODO DEL USER
+// VENTAS DEL PERIODO
 export const getSalesPerPeriod = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/sales-per-period', {
@@ -62,7 +52,7 @@ export const getSalesPerPeriod = (token: string) => async (dispatch: AppDispatch
     }
 };
 
-// OBTENER TODAS LAS VENTAS DEL PERIODO POR SEDE DEL USER
+// VENTAS DEL PERIODO POR SEDE
 export const getSalesPerPeriodByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/sales-per-period/${idBranch}`, {
@@ -81,7 +71,7 @@ export const getSalesPerPeriodByBranch = (idBranch: string, token: string) => as
     }
 };
 
-// OBTENER TODOS LOS GASTOS DEL PERIODO DEL USER
+// GASTOS DEL PERIODO
 export const getExpensesPerPeriod = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/expenses-per-period', {
@@ -100,7 +90,7 @@ export const getExpensesPerPeriod = (token: string) => async (dispatch: AppDispa
     }
 };
 
-// OBTENER TODOs LOS GASTOS DEL PERIODO DEL USER
+// GASTOS DEL PERIODO POR SEDE
 export const getExpensesPerPeriodByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/expenses-per-period/${idBranch}`, {
@@ -119,7 +109,7 @@ export const getExpensesPerPeriodByBranch = (idBranch: string, token: string) =>
     }
 };
 
-// OBTENER TODAS LAS TRANSACCIONES DEL PERIODO PARA CALCULAR LA UTILIDAD DEL USER
+// UTILIDAD DEL PERIODO - TODAS LAS TRANSACCIONES (GASTOS E INGRESOS)
 export const getAllTransactionsPerPeriod = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/all-transactions-per-period', {
@@ -138,7 +128,7 @@ export const getAllTransactionsPerPeriod = (token: string) => async (dispatch: A
     }
 };
 
-// OBTENER TODAS LAS TRANSACCIONES DEL PERIODO POR SEDE PARA CALCULAR LA UTILIDAD DEL USER
+// UTILIDAD DEL PERIODO - TODAS LAS TRANSACCIONES (GASTOS E INGRESOS) POR SEDE
 export const getAllTransactionsPerPeriodByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/all-transactions-per-period/${idBranch}`, {
@@ -157,7 +147,7 @@ export const getAllTransactionsPerPeriodByBranch = (idBranch: string, token: str
     }
 };
 
-// OBTENER TODAS LAS CUENTAS POR PAGAR DEL USER
+// CUENTAS POR PAGAR
 export const getAccountsPayable = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/indicator-accounts-payable', {
@@ -176,7 +166,7 @@ export const getAccountsPayable = (token: string) => async (dispatch: AppDispatc
     }
 };
 
-//OBTENER TODOS LOS REGISTROS DE CUENTAS POR PAGAR PAGINADOS DEL USER
+// CUENTAS POR PAGAR CON PAGINADO
 export const getAccountsPayablePaginated = (token: string, page: number, limit: number) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/accounts-payable-paginated?page=${page}&limit=${limit}`, {
@@ -200,7 +190,7 @@ export const getAccountsPayablePaginated = (token: string, page: number, limit: 
     }
 };
 
-// OBTENER TODAS LAS CUENTAS POR PAGAR POR SEDE DEL USER
+// CUENTAS POR PAGAR POR SEDE
 export const getAccountsPayableByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/indicator-accounts-payable/${idBranch}`, {
@@ -219,7 +209,7 @@ export const getAccountsPayableByBranch = (idBranch: string, token: string) => a
     }
 };
 
-//OBTENER TODOS LOS REGISTROS DE CUENTAS POR PAGAR PAGINADOS DE UNA SEDE DEL USER
+// CUENTAS POR PAGAR POR SEDE CON PAGINADO
 export const getAccountsPayableByBranchPaginated = (idBranch: string, token: string, page: number, limit: number) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/accounts-payable-paginated/${idBranch}?page=${page}&limit=${limit}`, {
@@ -243,7 +233,7 @@ export const getAccountsPayableByBranchPaginated = (idBranch: string, token: str
     }
 };
 
-// OBTENER TODAS LAS CUENTAS POR COBRAR DEL USER
+// CUENTAS POR COBRAR
 export const getAccountsReceivable = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/indicator-accounts-receivable', {
@@ -262,7 +252,7 @@ export const getAccountsReceivable = (token: string) => async (dispatch: AppDisp
     }
 };
 
-//OBTENER TODOS LOS REGISTROS DE CUENTAS POR COBRAR PAGINADOS DEL USER
+// CUENTAS POR COBRAR CON PAGINADO
 export const getAccountsReceivablePaginated = (token: string, page: number, limit: number) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/accounts-receivable-paginated?page=${page}&limit=${limit}`, {
@@ -286,7 +276,7 @@ export const getAccountsReceivablePaginated = (token: string, page: number, limi
     }
 };
 
-// OBTENER TODAS LAS CUENTAS POR COBRAR POR SEDE DEL USER
+// CUENTAS POR COBRAR POR SEDE
 export const getAccountsReceivableByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/indicator-accounts-receivable/${idBranch}`, {
@@ -305,7 +295,7 @@ export const getAccountsReceivableByBranch = (idBranch: string, token: string) =
     }
 };
 
-//OBTENER TODOS LOS REGISTROS DE CUENTAS POR COBRAR PAGINADOS DE UNA SEDE DEL USER
+// CUENTAS POR COBRAR POR SEDE CON PAGINADO
 export const getAccountsReceivableByBranchPaginated = (idBranch: string, token: string, page: number, limit: number) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/accounts-receivable-paginated/${idBranch}?page=${page}&limit=${limit}`, {
@@ -329,29 +319,7 @@ export const getAccountsReceivableByBranchPaginated = (idBranch: string, token: 
     }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
+// MEJOR CLIENTE POR VALOR
 export const getBestClientValue = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/best-client-value', {
@@ -370,7 +338,7 @@ export const getBestClientValue = (token: string) => async (dispatch: AppDispatc
     }
 };
 
-//
+// MEJOR CLIENTE POR VALOR POR SEDE
 export const getBestClientValueByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/best-client-value/${idBranch}`, {
@@ -388,8 +356,8 @@ export const getBestClientValueByBranch = (idBranch: string, token: string) => a
         }
     }
 };
-    
-//
+
+// MEJOR CLIENTE POR CANTIDAD
 export const getBestClientQuantity = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/best-client-quantity', {
@@ -408,7 +376,7 @@ export const getBestClientQuantity = (token: string) => async (dispatch: AppDisp
     }
 };
 
-//
+// MEJOR CLIENTE POR VALOR POR CANTIDAD
 export const getBestClientQuantityByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/best-client-quantity/${idBranch}`, {
@@ -427,7 +395,7 @@ export const getBestClientQuantityByBranch = (idBranch: string, token: string) =
     }
 };
 
-//
+// TICKET PROMEDIO POR PERIODO
 export const getAverageTicketPerPeriod = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/average-ticket-per-period', {
@@ -446,7 +414,7 @@ export const getAverageTicketPerPeriod = (token: string) => async (dispatch: App
     }
 };
 
-//
+// TICKET PROMEDIO POR PERIODO POR SEDE
 export const getAverageTicketPerPeriodByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/average-ticket-per-period/${idBranch}`, {
@@ -465,7 +433,7 @@ export const getAverageTicketPerPeriodByBranch = (idBranch: string, token: strin
     }
 };
 
-//
+// INVENTARIO DE EQUIPOS
 export const getAssetsInventory = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/assets-inventory', {
@@ -484,7 +452,7 @@ export const getAssetsInventory = (token: string) => async (dispatch: AppDispatc
     }
 };
 
-//
+// INVENTARIO DE EQUIPOS POR SEDE
 export const getAssetsInventoryByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/assets-inventory/${idBranch}`, {
@@ -502,8 +470,8 @@ export const getAssetsInventoryByBranch = (idBranch: string, token: string) => a
         }
     }
 };
-
-//
+    
+// INVENTARIO DE MERCANCIAS
 export const getMerchandisesInventory = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/merchandises-inventory', {
@@ -522,7 +490,7 @@ export const getMerchandisesInventory = (token: string) => async (dispatch: AppD
     }
 };
 
-//
+// INVENTARIO DE MERCANCIAS POR SEDE
 export const getMerchandisesInventoryByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/merchandises-inventory/${idBranch}`, {
@@ -541,7 +509,7 @@ export const getMerchandisesInventoryByBranch = (idBranch: string, token: string
     }
 };
 
-//
+// INVENTARIO DE PRODUCTOS
 export const getProductsInventory = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/products-inventory', {
@@ -560,7 +528,7 @@ export const getProductsInventory = (token: string) => async (dispatch: AppDispa
     }
 };
 
-//
+// INVENTARIO DE PRODUCTOS POR SEDE
 export const getProductsInventoryByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/products-inventory/${idBranch}`, {
@@ -579,7 +547,7 @@ export const getProductsInventoryByBranch = (idBranch: string, token: string) =>
     }
 };
 
-//
+// INVENTARIO DE MATERIA PRIMA
 export const getRawmaterialsInventory = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get('/financial-indicator/rawmaterials-inventory', {
@@ -598,7 +566,7 @@ export const getRawmaterialsInventory = (token: string) => async (dispatch: AppD
     }
 };
 
-//
+// INVENTARIO DE MATERIA PRIMA POR SEDE
 export const getRawmaterialsInventoryByBranch = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/financial-indicator/rawmaterials-inventory/${idBranch}`, {

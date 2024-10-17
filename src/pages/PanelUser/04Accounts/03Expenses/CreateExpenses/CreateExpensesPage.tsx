@@ -12,8 +12,10 @@ import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions.ts';
 import { getUsersPlatform } from '../../../../../redux/User/userPlatformSlice/actions.ts';
 // ELEMENTOS DEL COMPONENTE
-import CashExpense from '../../../../../components/PanelUser/04Accounts/02Expenses/ExpenseCash/ExpenseCash.tsx';
-import CreditExpense from '../../../../../components/PanelUser/04Accounts/02Expenses/ExpenseCredit/ExpenseCredit.tsx';
+import ExpenseCash from '../../../../../components/PanelUser/04Accounts/02Expenses/01ExpenseCash/ExpenseCash.tsx';
+import ExpenseCredit from '../../../../../components/PanelUser/04Accounts/02Expenses/02ExpenseCredit/ExpenseCredit.tsx';
+
+import AccountsPayable from '../../../../../components/PanelUser/04Accounts/02Expenses/04AccountsPayable/AccountsPayable.tsx';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../../components/PanelUser/Footer/Footer';
@@ -31,6 +33,7 @@ function CreateExpensesPage() {
     const dispatch: AppDispatch = useDispatch();
     const branches = useSelector((state: RootState) => state.branch.branch);
     const user = useSelector((state: RootState) => state.user.user);
+    const usersPlatform = useSelector((state: RootState) => state.usersPlatform.usersPlatform);
 
     useEffect(() => {
         if (token) {
@@ -76,15 +79,9 @@ function CreateExpensesPage() {
     };
 
     // Estado para seleccionar contado o crédito
-    const [creditCashOption, setCreditCashOption] = useState('Contado');
+    const [creditCashOption, setCreditCashOption] = useState('GastoContado');
     const handleCreditCashChange = (creditCash: string) => {
         setCreditCashOption(creditCash);
-    };
-
-    // Manejar cambio en el tipo de gasto (venta de artículos u otros gastos)
-    const [typeExpense, setTypeIncome] = useState<string>('Compra de articulos');
-    const handleTypeExpenseChange = (incomeType: string) => {
-        setTypeIncome(incomeType);
     };
 
     // Efecto para establecer las fechas por defecto o manualmente
@@ -187,61 +184,60 @@ function CreateExpensesPage() {
                                 <p className={`${styles.label} m-0`}>El gasto ¿Es de contado o a crédito?</p>
                                 <div className="d-flex align-items-center justify-content-center gap-3">
                                     <div
-                                        className={`${styles.type__Income} ${creditCashOption === 'Contado' ? styles.active : ''} d-flex align-items-center justify-content-center`}
-                                        onClick={() => handleCreditCashChange('Contado')}
+                                        className={`${styles.type__Income} ${creditCashOption === 'GastoContado' ? styles.active : ''} d-flex align-items-center justify-content-center`}
+                                        onClick={() => handleCreditCashChange('GastoContado')}
                                     >
-                                        Contado
+                                        Gasto de contado
                                     </div>
                                     <div
-                                        className={`${styles.type__Income} ${creditCashOption === 'Credito' ? styles.active : ''} d-flex align-items-center justify-content-center`}
-                                        onClick={() => handleCreditCashChange('Credito')}
+                                        className={`${styles.type__Income} ${creditCashOption === 'GastoCredito' ? styles.active : ''} d-flex align-items-center justify-content-center`}
+                                        onClick={() => handleCreditCashChange('GastoCredito')}
                                     >
-                                        Crédito
+                                        Gasto a crédito
                                     </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <p className={`${styles.label} m-0`}>Tipo de gasto</p>
-                                <div className="d-flex align-items-center justify-content-center gap-3">
                                     <div
-                                        className={`${styles.type__Income} ${typeExpense === 'Compra de articulos' ? styles.active : ''} d-flex align-items-center justify-content-center`}
-                                        onClick={() => handleTypeExpenseChange('Compra de articulos')}
+                                        className={`${styles.type__Income} ${creditCashOption === 'CuentasPagar' ? styles.active : ''} d-flex align-items-center justify-content-center`}
+                                        onClick={() => handleCreditCashChange('CuentasPagar')}
                                     >
-                                        Compra de artículos
-                                    </div>
-
-                                    <div
-                                        className={`${styles.type__Income} ${typeExpense === 'Otros gastos' ? styles.active : ''} d-flex align-items-center justify-content-center`}
-                                        onClick={() => handleTypeExpenseChange('Otros gastos')}
-                                    >
-                                        Otros gastos
+                                        Cuentas por pagar
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {creditCashOption === 'Contado' && (
-                            <CashExpense
+                        {creditCashOption === 'GastoContado' && (
+                            <ExpenseCash
                                 token={token}
                                 decodeUserIdRegister={decodeUserIdRegister}
+                                // usersPlatform={usersPlatform}
                                 selectedBranch={selectedBranch}
                                 defaultDates={defaultDates}
                                 registrationDate={formattedRegistrationDate}
                                 transactionDate={formattedTransactionDate}
-                                typeExpense={typeExpense}
+                                typeExpense='Gasto'
                             />
                         )}
 
-                        {creditCashOption === 'Credito' && (
-                            <CreditExpense
+                        {creditCashOption === 'GastoCredito' && (
+                            <ExpenseCredit
                                 token={token}
                                 decodeUserIdRegister={decodeUserIdRegister}
                                 selectedBranch={selectedBranch}
                                 defaultDates={defaultDates}
                                 registrationDate={formattedRegistrationDate}
                                 transactionDate={formattedTransactionDate}
-                                typeExpense={typeExpense}
+                            />
+                        )}
+
+                        {creditCashOption === 'CuentasPagar' && (
+                            <AccountsPayable
+                                token={token}
+                                decodeUserIdRegister={decodeUserIdRegister}
+                                usersPlatform={usersPlatform}
+                                selectedBranch={selectedBranch}
+                                defaultDates={defaultDates}
+                                registrationDate={formattedRegistrationDate}
+                                transactionDate={formattedTransactionDate}
                             />
                         )}
                     </div>
