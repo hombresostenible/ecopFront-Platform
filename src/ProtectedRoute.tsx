@@ -20,16 +20,16 @@ function ProtectedRoute() {
                 try {
                     const response = await verifyTokenRequest(token);
                     if (response && response.status === 200) {
-                        dispatch(isAuthenticatedStatus(true)); // Actualizar el estado de autenticación a true
+                        dispatch(isAuthenticatedStatus(true));
                     } else {
-                        dispatch(isAuthenticatedStatus(false)); // Actualizar el estado de autenticación a false
+                        dispatch(isAuthenticatedStatus(false));
                     }
                 } catch (error) {
                     console.error('Error al verificar el token:', error);
-                    dispatch(isAuthenticatedStatus(false)); // Actualizar el estado de autenticación a false
+                    dispatch(isAuthenticatedStatus(false));
                 }
             } else {
-                dispatch(isAuthenticatedStatus(false)); // Actualizar el estado de autenticación a false
+                dispatch(isAuthenticatedStatus(false));
             }
             setLoading(false);
         };    
@@ -37,11 +37,8 @@ function ProtectedRoute() {
     }, []);
 
     if (!loading && !isAuthenticated) {
-        // Si el usuario no está autenticado, redirige a la página de inicio de sesión
         return <Navigate to="/login" replace />;
     }
-
-    // Si el usuario está autenticado, permite el acceso a la ruta protegida
     return <Outlet />;
 }
 

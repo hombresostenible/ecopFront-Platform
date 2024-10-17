@@ -46,7 +46,6 @@ function SearchCXP({ token, selectedBranch, onCXPSelect }: SearchCXPProps) {
     return (
         <div>
             <Select
-                // className={`${styles.info} p-1 border rounded border-secundary`}
                 options={options}
                 placeholder='Digita la cédula o el nombre de la deuda'
                 onChange={handleSelectChange}

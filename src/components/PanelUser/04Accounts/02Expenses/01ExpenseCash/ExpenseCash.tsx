@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, react-hooks/exhaustive-deps */
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent, SetStateAction } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Modal } from 'react-bootstrap';
@@ -10,39 +10,40 @@ import { postAccountsBook } from '../../../../../redux/User/04AccountsSlice/acti
 import { getItemByBarCode } from '../../../../../redux/User/itemBybarCodeOrName/actions';
 // ELEMENTOS DEL COMPONENTE
 import { IAccountsBook, IAccountsBookItems } from "../../../../../types/User/accountsBook.types";
-import { IUserPlatform } from '../../../../../types/User/userPlatform.types';
+// import { IUserPlatform } from '../../../../../types/User/userPlatform.types';
 import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname';
 import ModalChangeQuantityPerItem from '../../../../../helpers/ModalChangeQuantityPerItem/ModalChangeQuantityPerItem';
-import SearchClientCrm from '../../../../../helpers/SearchClientCrm/SearchClientCrm';
+import SearchSupplierCrm from '../../../../../helpers/SearchSupplierCrm/SearchSupplierCrm';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { FaPlus } from "react-icons/fa6";
 import styles from './styles.module.css';
 
-interface IncomeCreditProps {
+interface ExpenseCasProps {
     token: string;
     decodeUserIdRegister: string;
-    usersPlatform: IUserPlatform | IUserPlatform[] | null;
+    // usersPlatform: IUserPlatform | IUserPlatform[] | null;
     selectedBranch: string;
     defaultDates: boolean;
     registrationDate: string | undefined;
     transactionDate: string | undefined;
+    typeExpense: string;
 }
 
-function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBranch, defaultDates, registrationDate, transactionDate }: IncomeCreditProps) {
+function ExpenseCash({ token, decodeUserIdRegister, selectedBranch, defaultDates, registrationDate, transactionDate, typeExpense }: ExpenseCasProps) {
     const navigate = useNavigate();
-    
+
     // REDUX
     const dispatch: AppDispatch = useDispatch();
     const errorAccountsBook = useSelector((state: RootState) => state.accountsBook.errorAccountsBook);
     const itemByBarCode = useSelector((state: RootState) => state.itemByBarCodeOrName.itemByBarCode);
 
-    const { register, handleSubmit, setValue, formState: { errors } } = useForm<IAccountsBook>();
+    const { handleSubmit } = useForm<IAccountsBook>();
     const [shouldNavigate, setShouldNavigate] = useState(false);
     const [messageSelectedBranch, setMessageSelectedBranch] = useState<string | null>('');
-    const [messageSelectedClient, setMessageSelectedClient] = useState<string | null>(null);
+    const [messageSelectedSupplier, setMessageSelectedSupplier] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
-    
+
     // BUSCAR Y SETEAR EL ARTICULO POR CODIGO DE BARRAS
     const [barCode, setBarCode] = useState<string>('');
     const handleBarCodeChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +52,7 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
         if (value) dispatch(getItemByBarCode(value, token));
     };
 
-    //Setea todos los artículos que se registrarán
+    // Setea todos los artículos que se registrarán
     const [scannedItems, setScannedItems] = useState<IAccountsBookItems[]>([]);
 
     // SETEA EL ARTICULO BUSCADO POR CODIGO DE BARRAS
@@ -80,17 +81,49 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
             type: item.type as 'Asset' | 'Merchandise' | 'Product' | 'RawMaterial' | 'Service',
             IVA: item.IVA,
             sellingPrice: item.sellingPrice,
+            purchasePrice: item.purchasePrice,
             quantity: 1,
             subTotalValue: item.sellingPrice * 1,
         };
         setScannedItems([...scannedItems, selectedItems]);
     };
 
-    //Aumenta la cantidad de artículos seleccionados para la venta
+    // ESTADO PARA CONTROLAR EL INDICE DEL ARTICULO EN scannedItems QUE SE ESTA AÑADIENDO
     const [changeQuantityIndex, setChangeQuantityIndex] = useState<number | null>(null);
     const handleChangeQuantityPerItem = (index: number) => setChangeQuantityIndex(index);
-    
-    // ELIMINA EL ARTICULO AGREGADO A LA TABLA PARA VENTA
+
+    // ESTADO PARA CONTROLAR EL INDICE DEL ARTICULO EN scannedItems QUE SE ESTA AÑADIENDO
+    const handlePriceChange = (index: number, value: string) => {
+        const newPrice = parseFloat(value);
+        if (isNaN(newPrice) || newPrice < 0) return;
+            setScannedItems((prevItems) => {
+                const updatedItems = [...prevItems];
+                updatedItems[index] = {
+                    ...updatedItems[index],
+                    purchasePrice: newPrice,
+                    subTotalValue: updatedItems[index].quantity * newPrice
+                };
+                return updatedItems;
+            }
+        );
+    };
+
+    const handlePriceBlur = (index: number) => {
+        setScannedItems((prevItems) => {
+            const updatedItems = [...prevItems];
+            const price = updatedItems[index].purchasePrice ?? 0;
+            if (price >= 0) {
+                updatedItems[index] = {
+                    ...updatedItems[index],
+                    purchasePrice: price,
+                    subTotalValue: updatedItems[index].quantity * price
+                };
+            }
+            return updatedItems;
+        });
+    };
+
+    // ELIMINA EL ARTICULO AGREGADO A LA TABLA PARA COMPRA
     const handleDeleteItem = (index: number) => {
         setScannedItems(prevItems => {
             const updatedItems = [...prevItems];
@@ -99,7 +132,7 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
         });
     };
 
-    // CIERRA EL MODAL QUE CAMBIA LA CANTIDAD DEL ARTICULO SELECCIONADO PARA LA VENTA
+    // CIERRA EL MODAL QUE CAMBIA LA CANTIDAD DEL ARTICULO SELECCIONADO PARA LA COMPRA
     const handleCloseModal = () => setChangeQuantityIndex(null);
 
     // ABRE EL MODAL DE CANTIDAD PRESIONANDO "Ctrl + Q"
@@ -111,81 +144,51 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
         return () => {  window.removeEventListener('keydown', handleKeyDown); };
     }, []);
 
-    // SETEA EL CLIENTE CUANDO SE BUSCA O SE CREA
-    const [selectedClient, setSelectedClient] = useState<number | null>(null);
+    // ABRE EL MODAL DE CANTIDAD PRESIONANDO "Ctrl + Q"
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.ctrlKey && event.key === 'q') {
+                setChangeQuantityIndex(0);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
+    // SETEA EL PROVEEDOR CUANDO SE BUSCA O SE CREA
+    const [selectedSupplier, setSelectedSupplier] = useState<number | null>(null);
+
+    // SELECCIONA EL MEDIO DE PAGO
+    const [meanPayment, setMeansPayment] = useState('');
+    const handleMeanPaymentChange = (event: { target: { value: SetStateAction<string> }}) => {
+        setMeansPayment(event.target.value);
+    };
 
     // CALCULA EL VALOR TOTAL DE TODOS LOS ARTICULOS AÑADIDOS A LA COMPRA
-    const totalSalesAmount = scannedItems.reduce((total, scannedItem) => {
+    const totalPurchaseAmount = scannedItems.reduce((total, scannedItem) => {
         const ivaAmount = scannedItem.IVA !== 'No aplica' 
-            ? (scannedItem.sellingPrice / 100 * Number(scannedItem.IVA)) 
+            ? ((scannedItem.purchasePrice ?? 0) / 100 * Number(scannedItem.IVA)) 
             : 0;
-        return total + (scannedItem.quantity * (scannedItem.sellingPrice + ivaAmount));
+        return total + (scannedItem.quantity * ((scannedItem.purchasePrice ?? 0) + ivaAmount));
     }, 0);
-
-    // SETEA LA CANTIDAD DE CUOTAS
-    const [numberOfPayments, setNumberOfPayments] = useState<number>(0);
-    const handleNumberOfPaymentsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newUnitValue = parseFloat(event.target.value);
-        setNumberOfPayments(newUnitValue);
-    };
     
-    // SETEA SI ES CON O SIN INTRERES
-    const [creditWithInterest, setCreditWithInterest] = useState<'No' | 'Si'>('No');
-    const [interestRateChange, setInterestRateChange] = useState<number>(0);
-    const handleCreditWithInterest = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const newCreditWithInterest = event.target.value as 'No' | 'Si';
-        setCreditWithInterest(newCreditWithInterest);
-        setValue('creditWithInterest', newCreditWithInterest);
-        setInterestRateChange(0);
-    };
-
-    // SETEA LA TASA DE INTERES
-    const handleInterestRateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const interestRate = parseFloat(event.target.value);
-        setInterestRateChange(interestRate);
-    };
-
-    // SETEA EL VALOR DE LA CUOTA
-    const [paymentValue, setPaymentValue] = useState<number | undefined>(0);
-    useEffect(() => {
-        if (totalSalesAmount !== undefined && numberOfPayments !== 0) {
-            const totalValue = Number(totalSalesAmount);
-            if (interestRateChange !== 0) {
-                const monthlyInterestRate = interestRateChange / 100 / 12; 
-                const cuotaConInteres = totalValue * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
-                setPaymentValue(cuotaConInteres);
-            } else {
-                const cuotaSinInteres = totalValue / numberOfPayments;
-                setPaymentValue(cuotaSinInteres);
-            }
-        }
-    }, [totalSalesAmount, numberOfPayments, interestRateChange]);    
-
-    // SETEA EL USUARIO VENDEDOR
-    const [userPlatform, setUserPlatform] = useState<IUserPlatform>();
-    const handleUserPlatformChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedId = event.target.value;
-        const selectedUser = Array.isArray(usersPlatform)
-            ? usersPlatform.find((user) => user.id === selectedId)
-            : null;
-        setUserPlatform(selectedUser || undefined);
-    };
-
     const onSubmit = async (values: IAccountsBook) => {
         setLoading(true);
         try {
             const formData = {
                 ...values,
                 branchId: selectedBranch,
-                transactionType: "Ingreso",
-                creditCash: "Credito",
-                transactionCounterpartId: selectedClient,
-                itemsSold: scannedItems,
-                pay: "No",
-                paymentValue,
-                accountsReceivable: totalSalesAmount,
-                totalValue: totalSalesAmount,
+                transactionType: "Gasto",
+                creditCash: "Contado",
+                transactionCounterpartId: selectedSupplier,
+                meanPayment: meanPayment ? meanPayment : null,
+                itemsBuy: scannedItems,
+                typeExpense: typeExpense,
+                pay: 'No',
                 userRegister: decodeUserIdRegister,
+                totalValue: totalPurchaseAmount,
             } as IAccountsBook;
             if (defaultDates) {
                 formData.registrationDate = new Date().toLocaleDateString();
@@ -197,20 +200,22 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
                 setMessageSelectedBranch('Debes de seleccionar una sede');
                 setTimeout(() => setMessageSelectedBranch(null), 5000);
                 return;
-            }
-            if (!selectedClient) {
-                setMessageSelectedClient('Debes de seleccionar un cliente');
-                setTimeout(() => setMessageSelectedClient(null), 5000);
+            }            
+
+            if (!selectedSupplier) {
+                setMessageSelectedSupplier('Debes de seleccionar un cliente o un proveedor');
+                setTimeout(() => setMessageSelectedSupplier(null), 5000);
                 return;
             }
-            if(userPlatform?.id) formData.seller = userPlatform.id;
             await dispatch(postAccountsBook(formData, token));
-            setSelectedClient(null);
+            setSelectedSupplier(null);
             setTimeout(() => {
                 setShouldNavigate(true);
             }, 1500);
         } catch (error) {
             throw new Error(`Error en el envío del formulario: ${error}`);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -219,15 +224,16 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
             navigate('/accounts/see-records');
         }
     }, [ shouldNavigate, navigate ]);
-
+           
     return (
         <div>
-            <h3 className='text-center text-primary-emphasis'>Elegiste la forma de venta a "crédito", por tanto estas creando una cuenta por cobrar</h3>
             {Array.isArray(errorAccountsBook) && errorAccountsBook.map((error, i) => (
                 <div key={i} className='bg-red-500 p-2 text-white text-center my-2'>{error}</div>
             ))}
 
             <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} `}>
+
+
                 <div className='mt-4 mb-4'>
                     <div className="d-flex align-items-start justify-content-between">
                         <div>
@@ -241,7 +247,6 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
                                 placeholder='Código de barras'
                             />
                         </div>
-
                         <div>
                             <p className={`${styles.label} m-0`}>Busca el item por nombre</p>
                             <SearchItemsByname
@@ -251,7 +256,7 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
                             />
                         </div>
                     </div>
-            
+
                     <h3 className="text-primary-emphasis text-center">Relación de artículos</h3>
                     <div className={`${styles.container__Table} mt-2 mb-2 mx-auto`}>
                         <table className="table">
@@ -287,7 +292,15 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
                                                 <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}>{item.nameItem}</span>
                                             </td>
                                             <td className={`${styles.unit__Price} d-flex align-items-center justify-content-center`}>
-                                                <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}><span>$</span> {formatNumber(item.sellingPrice)}</span>
+                                                <span className={`${styles.text__Ellipsis_Purchase_Price} overflow-hidden position-absolute`}>$</span>
+                                                <input
+                                                    type="text"
+                                                    className={`${styles.price__Input} text-end rounded`}
+                                                    value={item.purchasePrice || ''}
+                                                    onChange={(e) => handlePriceChange(index, e.target.value)}
+                                                    onBlur={() => handlePriceBlur(index)}
+                                                    placeholder="0"
+                                                />
                                             </td>
                                             <td className={`${styles.iva} d-flex align-items-center justify-content-center`}>
                                                 <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}>{item.IVA === 'No aplica' ? item.IVA : `${item.IVA} %`}</span>
@@ -295,24 +308,26 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
                                             <td className={`${styles.iva} d-flex align-items-center justify-content-center`}>
                                                 <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}>
                                                     {item.IVA !== 'No aplica'
-                                                        ? `$ ${(item.sellingPrice / 100 * Number(item.IVA))}`
+                                                        ? `$ ${formatNumber((item.purchasePrice ?? 0) / 100 * Number(item.IVA))}`
                                                         : 'No aplica'
                                                     }
                                                 </span>
                                             </td>
                                             <td className={`${styles.unit__Price} d-flex align-items-center justify-content-center`}>
                                                 <span className={`${styles.text__Ellipsis} overflow-hidden`}>
-                                                    {item.IVA !== 'No aplica' 
-                                                        ? <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}><span>$</span> {formatNumber((item.sellingPrice) + (item.sellingPrice / 100 * Number(item.IVA)))}</span>
-                                                        : <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}><span>$</span> {formatNumber(item.sellingPrice)}</span>
+                                                    <span>$ </span>
+                                                    {item.IVA !== 'No aplica'
+                                                        ? formatNumber((item.purchasePrice ?? 0) + ((item.purchasePrice ?? 0) / 100 * Number(item.IVA)))
+                                                        : formatNumber(item.purchasePrice ?? 0)
                                                     }
                                                 </span>
                                             </td>
-                                            <td className={`${styles.unit__Price} d-flex align-items-center justify-content-center`}>
+                                            <td className={`${styles.subtotal} d-flex align-items-center justify-content-center`}>
                                                 <span className={`${styles.text__Ellipsis} overflow-hidden`}>
-                                                    {item.IVA !== 'No aplica' 
-                                                        ? <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}><span>$ </span>{formatNumber((item.quantity) * ((item.sellingPrice) + (item.sellingPrice / 100 * Number(item.IVA))))}</span>
-                                                        : <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}><span>$ </span>{formatNumber((item.quantity) * (item.sellingPrice))}</span>
+                                                    <span>$ </span>
+                                                    {item.IVA !== 'No aplica'
+                                                        ? formatNumber(item.quantity * ((item.purchasePrice ?? 0) + ((item.purchasePrice ?? 0) / 100 * Number(item.IVA))))
+                                                        : formatNumber(item.quantity * (item.purchasePrice ?? 0))
                                                     }
                                                 </span>
                                             </td>
@@ -358,129 +373,78 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
                         </Modal.Body>
                     </Modal>
 
-                    <div className={`${styles.container__Pay} d-flex align-items-center justify-content-between`}>
+                    <div className={`${styles.container__Pay} d-flex align-items-start justify-content-between`}>
                         <div className={`${styles.container__Selected_Client} d-flex flex-column position-relative`}>
-                            <p className={`${styles.label} m-0`}>Selecciona o crea a tu cliente</p>
-                            <SearchClientCrm
+                            <p className={`${styles.label} m-0`}>Selecciona o crea a tu proveedor</p>
+                            <SearchSupplierCrm
                                 token={token}
-                                onClientSelect={(client) => setSelectedClient(client)}
+                                onSupplierSelect={(supplier) => setSelectedSupplier(supplier)}
                             />
-                            {messageSelectedClient && (
+                            {messageSelectedSupplier && (
                                 <div className={`${styles.error__Selected_Client} p-2 position-absolute`}>
                                     <div className={`${styles.triangle} position-absolute`}></div>
-                                    <p className='m-0'>Selecciona el cliente acá</p>
+                                    <p className={`${styles.label} m-0`}>Selecciona el proveedor acá</p>
                                 </div>
                             )}
                         </div>
-
-                        <div className="d-flex flex-column align-items-start justify-content-between">
-                            <p className={`${styles.text__Purchase} m-0`}>Total de la compra</p>
-                            <h4 className={`${styles.input__Info_Purchase} m-0 p-2 text-end`}>$ {formatNumber(totalSalesAmount)}</h4>
+                        <div className={`${styles.container__Info_Purchase} d-flex flex-column align-items-start justify-content-between`}>
+                            <div className="mb-3 m-auto d-flex align-items-center justify-content-between">
+                                <p className={`${styles.text__Purchase} m-0 text-start`}>Medio de pago</p>
+                                <select
+                                    className={`${styles.input__Info_Purchase} p-2`}
+                                    value={meanPayment}
+                                    onChange={handleMeanPaymentChange}
+                                    required
+                                >
+                                    <option value="">Seleccione el medio de pago</option>
+                                    <optgroup label="Tradicionales">
+                                        <option value='Efectivo'>Efectivo</option>
+                                        <option value='Tarjeta de Credito/Debito'>Tarjeta de Credito/Debito</option>
+                                        <option value='Transferencia bancaria (PSE)'>Transferencia bancaria (PSE)</option>
+                                    </optgroup>
+                                    <optgroup label="Billeteras digitales">
+                                        <option value='Daviplata'>Daviplata</option>
+                                        <option value='Nequi'>Nequi</option>
+                                        <option value='Movii'>Movii</option>
+                                        <option value='Tuya Pay'>Tuya Pay</option>
+                                        <option value='Dale'>Dale</option>
+                                        <option value='Nubank'>Nubank</option>
+                                        <option value='Uala'>Uala</option>
+                                        <option value='Lulo Bank'>Lulo Bank</option>
+                                        <option value='Tpaga'>Tpaga</option>
+                                        <option value='Powwi'>Powwi</option>
+                                        <option value='BBVA Wallet'>BBVA Wallet</option>
+                                        <option value='Ahorro a la mano'>Ahorro a la mano</option>
+                                        <option value='Apple Pay'>Apple Pay</option>
+                                        <option value='Rappipay'>Rappipay</option>
+                                        <option value='Claro Pay'>Claro Pay</option>
+                                        <option value='Powwi'>Powwi</option>
+                                    </optgroup>
+                                    <optgroup label="Otros">
+                                        <option value='Baloto'>Baloto</option>
+                                        <option value='Giro'>Giro</option>
+                                        <option value='Cheque'>Cheque</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div className="mb-3 mx-auto d-flex align-items-center justify-content-between">
+                                <p className={`${styles.text__Purchase} m-0`}>Total de la compra</p>
+                                <p className={`${styles.input__Info_Purchase} m-0 p-2 text-end`}>$ {formatNumber(totalPurchaseAmount)}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className={`${styles.container__Other_Incomes} d-flex flex-column align-items-center justify-content-center`}>
-                    <div className="mb-4 position-relative">
-                        <p className={`${styles.label} m-0`}>Describe tu crédito</p>
-                        <input
-                            type="text"
-                            {...register('creditDescription', { required: true })}
-                            className={`${styles.input__Other_Incomes} p-2`}
-                            placeholder='Describe tu crédito: Venta de arroz a don Lucho'
-                        />
-                        {errors.seller && (
-                            <p className={`${styles.text__Danger} text-danger position-absolute`}>La descripión es requerida</p>
-                        )}
-                    </div>
-
-                    <div className="mb-4 position-relative">
-                        <p className={`${styles.label} m-0`}>¿A cuántas cuotas te van a pagar?</p>
-                        <input
-                            type="number"
-                            {...register('numberOfPayments', { setValueAs: (value) => parseFloat(value) })}
-                            className={`${styles.input__Other_Incomes} p-2`}
-                            placeholder='Número de cuotas'
-                            inputMode="numeric"
-                            onChange={handleNumberOfPaymentsChange}
-                            min={0}
-                        />
-                        {errors.numberOfPayments && (
-                            <p className={`${styles.text__Danger} text-danger position-absolute`}>El número de cuotas es requerido</p>
-                        )}
-                    </div>
-
-                    <div className="mb-4 position-relative">
-                        <p className={`${styles.label} m-0`}>¿Es con interés?</p>
-                        <select
-                            {...register('creditWithInterest', { required: true })}
-                            className={`${styles.input__Other_Incomes} p-2`}
-                            value={creditWithInterest}
-                            onChange={handleCreditWithInterest}
-                        >
-                            <option value='Si'>Si</option>
-                            <option value='No'>No</option>
-                        </select>
-                        {errors.creditWithInterest && (
-                            <p className={`${styles.text__Danger} text-danger position-absolute`}>El dato es requerido</p>
-                        )}
-                    </div>
-
-                    {creditWithInterest === 'Si' && (
-                        <div className="mb-4 position-relative">
-                            <p className={`${styles.label} m-0`}>Tasa de interés</p>
-                            <input
-                                type="number"
-                                {...register('creditInterestRate', { setValueAs: (value) => parseFloat(value) })}
-                                className={`${styles.input__Other_Incomes} p-2`}
-                                placeholder='5'
-                                inputMode="numeric"
-                                onChange={handleInterestRateChange}
-                                min={0}
-                            />
-                            {errors.creditInterestRate && (
-                                <p className={`${styles.text__Danger} text-danger position-absolute`}>La tasa de interés es requerida</p>
-                            )}
-                        </div>
-                    )}
-
-                    <div className="mb-4 position-relative">
-                        <p className={`${styles.label} m-0`}>Valor aproximado de cada una de las cuotas</p>
-                        <input
-                            type="number"
-                            {...register('paymentValue', { setValueAs: (value) => parseFloat(value) })}
-                            className={`${styles.input__Other_Incomes} p-2`}
-                            placeholder='Valor de cada cuota'
-                            inputMode="numeric"
-                            readOnly
-                            value={paymentValue || 0}
-                            min={0}
-                        />
-                    </div>
-
-                    <div className="mb-4 position-relative">
-                        <select
-                            className={`${styles.input__Other_Incomes} p-2`}
-                            value={userPlatform?.id || ''}
-                            onChange={handleUserPlatformChange}
-                        >
-                            <option value=''>Selecciona el vendedor</option>
-                            {Array.isArray(usersPlatform) && usersPlatform.map((userPlatform, index) => (
-                                <option key={index} value={userPlatform.id}>
-                                    {userPlatform.name} {userPlatform.lastName}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                </div>
+                
 
                 <div className="mb-4 d-flex align-items-center justify-content-center position-relative">
                     {messageSelectedBranch && (
                         <div className={`${styles.error__Message_Selected_Branch} position-absolute`}>{messageSelectedBranch}</div>
                     )}
-                    {messageSelectedClient && (
-                        <div className={`${styles.error__Message_Selected_Client} position-absolute`}>{messageSelectedClient}</div>
+                    {messageSelectedSupplier && (
+                        <div className={`${styles.error__Message_Selected_Client} position-absolute`}>{messageSelectedSupplier}</div>
                     )}
+
                     <div className="mb-5 d-flex">
                         {loading ? 
                             <div className={`${styles.container__Loading} position-relative w-100`}>
@@ -498,4 +462,4 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
     );
 }
 
-export default IncomeCredit;
+export default ExpenseCash;

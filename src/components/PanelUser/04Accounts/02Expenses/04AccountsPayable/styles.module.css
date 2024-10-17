@@ -1,0 +1,165 @@
+.label {
+    font-weight: 600;
+}
+.container__Header {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+.container__Credit_Description {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container__Credit_Data {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* TABLA */
+.container__Table {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+}
+.container__Head {
+    height: 60px;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* TITULOS DE LAS COLUMNAS */
+.container__Tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+    height: 60px;
+}
+.state {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 110px;
+    width: 11%;
+}
+.interest {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 120px;
+    width: 12%;
+}
+.rate__Interest {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 120px;
+    width: 12%;
+}
+.initial__Value {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 150px;
+    width: 15%;
+}
+.initial_Number_Payments {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 100px;
+    width: 10%;
+}
+.current__Balance {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 150px;
+    width: 15%;
+}
+.payment__Value {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 150px;
+    width: 15%;
+}
+.pending__Number_Payments {
+    height: 60px;
+    min-width: 100px;
+    width: 10%;
+}
+
+/* CONTENIDO DE LA TABLA */
+.container__Body {
+    min-height: 60px;
+    width: 100%;
+}
+.text__Ellipsis {
+    opacity: 0.75;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.message__Unrelated_Items {
+    min-height: 60px;
+}
+
+/* TABLA DE PAGOS */
+.branch {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 200px;
+    width: 25%;
+}
+.payment__Date {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 200px;
+    width: 25%;
+}
+.Payment__Value {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 200px;
+    width: 25%;
+}
+.user__Platform {
+    height: 60px;
+    min-width: 200px;
+    width: 25%;
+}
+.error__Message_Selected_Branch {
+    top: -45px;
+    color: #e63946;
+    border-radius: 5px;
+    padding: 5px 10px;
+    z-index: 1
+}
+.input {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 300px;
+}
+.input:focus{
+    outline-color: #718bd8;
+}
+.text__Danger {
+    bottom: -40px;
+}
+.button__Submit {
+    height: 40px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #718bd8;
+    color: #f8f9fa;
+}
+.button__Submit:hover {
+    background: #0a31bf;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+.button__Cancel {
+    height: 40px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e9ecef;
+}
+.button__Cancel:hover {
+    background: #6c757d;
+    transition: 300ms all ease;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.container__Loading {
+    width: 100%;
+}

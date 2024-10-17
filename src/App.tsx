@@ -152,14 +152,13 @@ function App() {
                 </div>
                 <Routes>
                     <Route path="/" element={<Navigate to="/login" replace />} />
+                    {/* Login */}
                     <Route path='/login' element={<LoginPage addNotification={addNotification} />} />
+                    <Route path='/reset-password/complete/:idParams/:passwordResetCode' element={<ResetPasswordPage />} />
+                    <Route path='/unblocking-account/complete/:idParams' element={<UnblockingAccountPage />} />
                     {/* Registros */}
                     <Route path='/register' element={<RegisterPage />} />
                     <Route path='/register-user' element={<RegisterUserPage />} />
-                    {/* Login */}
-                    {/* Recuperación de contraseñas y desbloqueos de cuenta de User */}
-                    <Route path='/reset-password/complete/:idParams/:passwordResetCode' element={<ResetPasswordPage />} />
-                    <Route path='/unblocking-account/complete/:idParams' element={<UnblockingAccountPage />} />
                     {/* Rutas Protegidas */}
                     <Route element={<ProtectedRoute />}>
                         <Route path='/home' element={<HomePage />} />
