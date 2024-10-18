@@ -25,8 +25,10 @@ export const postRegisterClient = (formData: IUser) => async (dispatch: AppDispa
 //LOGIN DE USUARIOS
 export const loginUser = (loginData: { email: string; password: string }) => async (dispatch: AppDispatch) => {
     try {
+        console.log('HOLA')
         const response = await axiosInstance.post('/auth/login', loginData);
         jsCookie.set('token', response.data.token); 
+        console.log('response: ', response.data)
         dispatch(loginStart(response.data));
     } catch (error: any) {
         if (error.response && error.response.status === 401) {

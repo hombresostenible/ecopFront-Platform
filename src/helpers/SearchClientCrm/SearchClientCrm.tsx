@@ -107,19 +107,17 @@ function SearchClientCrm({ token, onClientSelect, onDataClientSelect }: SearchCl
     };
 
     return (
-        <div ref={selectRef} className="d-flex align-items-center justify-content-center">
-            <div>
-                <Select
-                    value={selectedOption}
-                    inputValue={filterText}
-                    onInputChange={handleInputChange}
-                    onChange={handleSelectChange}
-                    options={filteredOptions}
-                    placeholder="Busca por nombre o número de cédula"
-                    isSearchable
-                    styles={StylesReactSelect}
-                />
-            </div>
+        <div ref={selectRef} >
+            <Select
+                value={selectedOption}
+                inputValue={filterText}
+                onInputChange={handleInputChange}
+                onChange={handleSelectChange}
+                options={filteredOptions}
+                placeholder="Busca por nombre o número de cédula"
+                isSearchable
+                styles={StylesReactSelect}
+            />
 
             <Modal show={showCancelModalCreateClient} onHide={onCloseCreateClientModal}>
                 <Modal.Header closeButton>

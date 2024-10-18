@@ -16,6 +16,7 @@ function ProtectedRoute() {
     useEffect(() => {
         const checkUserAuthentication = async () => {
             const token = Cookies.get('token');
+            console
             if (token) {
                 try {
                     const response = await verifyTokenRequest(token);

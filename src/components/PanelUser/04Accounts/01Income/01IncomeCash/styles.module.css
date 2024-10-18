@@ -23,12 +23,11 @@
 }
 
 /* TITULOS DE LAS COLUMNAS */
-.container__Tr{
+.container__Tr {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    flex-wrap: nowrap;
     height: 60px;
 }
-.container__Info {
+.container__Tr, .container__Info {
     flex-wrap: nowrap;
 }
 .quantity {
