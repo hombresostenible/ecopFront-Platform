@@ -14,7 +14,6 @@
 /* TABLA */
 .container__Table {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    /* max-width: 1165px; */
     overflow-x: auto;
 }
 .container__Head {
