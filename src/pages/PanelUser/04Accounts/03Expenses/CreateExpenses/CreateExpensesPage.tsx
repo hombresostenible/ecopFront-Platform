@@ -187,13 +187,19 @@ function CreateExpensesPage() {
                                         className={`${styles.type__Income} ${creditCashOption === 'GastoContado' ? styles.active : ''} d-flex align-items-center justify-content-center`}
                                         onClick={() => handleCreditCashChange('GastoContado')}
                                     >
-                                        Gasto de contado
+                                        Compras de contado
                                     </div>
                                     <div
                                         className={`${styles.type__Income} ${creditCashOption === 'GastoCredito' ? styles.active : ''} d-flex align-items-center justify-content-center`}
                                         onClick={() => handleCreditCashChange('GastoCredito')}
                                     >
-                                        Gasto a crédito
+                                        Compras a crédito
+                                    </div>
+                                    <div
+                                        className={`${styles.type__Income} ${creditCashOption === 'OtrosGastos' ? styles.active : ''} d-flex align-items-center justify-content-center`}
+                                        onClick={() => handleCreditCashChange('OtrosGastos')}
+                                    >
+                                        Otros gastos
                                     </div>
                                     <div
                                         className={`${styles.type__Income} ${creditCashOption === 'CuentasPagar' ? styles.active : ''} d-flex align-items-center justify-content-center`}

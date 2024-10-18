@@ -194,7 +194,9 @@ function AccountsPayable({ token, decodeUserIdRegister, selectedBranch, defaultD
                                         <tr className={`${styles.container__Tr} d-flex align-items-center justify-content-between`}>
                                             <th className={`${styles.branch} d-flex align-items-center justify-content-center text-center`}>Sede donde se realizó el pago</th>
                                             <th className={`${styles.payment__Date} d-flex align-items-center justify-content-center text-center`}>Fecha de pago</th>
+                                            <th className={`${styles.payment__Date} d-flex align-items-center justify-content-center text-center`}>Tipo de pago</th>
                                             <th className={`${styles.Payment__Value} d-flex align-items-center justify-content-center text-center`}>Valor pagado</th>
+                                            <th className={`${styles.Payment__Value} d-flex align-items-center justify-content-center text-center`}>Remanente (Cuota menos Vr. pagado)</th>
                                             <th className={`${styles.user__Platform} d-flex align-items-center justify-content-center text-center`}>Funcionario que recibió el pago</th>
                                         </tr>
                                     </thead>
@@ -208,8 +210,14 @@ function AccountsPayable({ token, decodeUserIdRegister, selectedBranch, defaultD
                                                     <td className={`${styles.payment__Date} d-flex align-items-center justify-content-center`}>
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>{new Date(payment.date).toLocaleString()}</span>
                                                     </td>
+                                                    <td className={`${styles.payment__Date} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>Pago inferior a la cuota / Pago total de cuota</span>
+                                                    </td>
                                                     <td className={`${styles.Payment__Value} d-flex align-items-center justify-content-center`}>
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>$ {formatNumber(payment.value)}</span>
+                                                    </td>
+                                                    <td className={`${styles.payment__Date} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>4000</span>
                                                     </td>
                                                     <td className={`${styles.user__Platform} d-flex align-items-center justify-content-center`}>
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>{payment.userRegister}</span>

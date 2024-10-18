@@ -103,7 +103,7 @@ function SearchItemsByname({ token, selectedBranch, onItemSelect, onDataItemSele
     };
 
     return (
-        <div ref={selectRef} className="d-flex align-items-center justify-content-center">
+        <div ref={selectRef} >
             <Select
                 value={selectedOption || null}
                 inputValue={filterText || ''}

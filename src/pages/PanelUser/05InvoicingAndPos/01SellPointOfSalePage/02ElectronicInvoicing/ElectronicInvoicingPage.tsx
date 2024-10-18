@@ -84,23 +84,6 @@ function ElectronicInvoicingPage() {
         return 0;
     };
 
-    const onSubmit = async (values: any) => {
-        try {
-            const formData = {
-                ...values,
-            } as any;
-            console.log('formData: ', formData)
-            setTimeout(() => {
-                setShouldNavigate(true);
-            }, 1500);
-        } catch (error) {
-            throw new Error(`Error en el envío del formulario: ${error}`);
-        }
-    };
-
-
-
-
 
     // TABLA DE RETENCIONES
     const calculateTaxableBaseForRow = (row: any) => {
@@ -221,6 +204,20 @@ function ElectronicInvoicingPage() {
     const totalIVA = calculateTotalIVA();
     const totalInvoice = calculateTotalInvoice(taxableBase, totalIVA);
 
+    const onSubmit = async (values: any) => {
+        try {
+            const formData = {
+                ...values,
+            } as any;
+            console.log('formData: ', formData)
+            setTimeout(() => {
+                setShouldNavigate(true);
+            }, 1500);
+        } catch (error) {
+            throw new Error(`Error en el envío del formulario: ${error}`);
+        }
+    };
+
     useEffect(() => {
         if (shouldNavigate) {
             navigate('/invoicing-and-pos/see-electronic-invoicing-pos');
@@ -242,9 +239,9 @@ function ElectronicInvoicingPage() {
                             </div>
                         </div>
 
-                        <div className="p-2 border">
+                        <div className='d-flex gap-3'>
                             <select
-                                className={`${styles.select__Branch} p-1 text-center border-0`}
+                                className={`${styles.input__Branch} p-2 border `}
                                 value={selectedBranch}
                                 onChange={handleBranchChange}
                             >
@@ -255,6 +252,10 @@ function ElectronicInvoicingPage() {
                                     </option>
                                 ))}
                             </select>
+                            <div className="p-2 d-flex flex-column border rounded">
+                                <p className={`${styles.text} mb-0`}>Usuario(a) que registra</p>
+                                <p className={`${styles.text} mb-0`}>{user?.name} {user?.lastName}</p>
+                            </div>
                         </div>
 
                         <form onSubmit={onSubmit} className={`${styles.form} position-relative`}>
@@ -268,21 +269,19 @@ function ElectronicInvoicingPage() {
                                         <h4 className='text-center m-0'>9593122DFDF-1</h4>
                                         <h4 className='text-center m-0'>FECHA: {currentDate  && currentDate.toLocaleDateString()}</h4>
                                         <h4 className='text-center m-0'>FECHA DE VENCIMIENTO:</h4>
-                                        <div className={`${styles.container__Calendars} d-flex align-items-center justify-content-between gap-4`}>
-                                            <div className="d-flex flex-column align-items-start justify-content-center">
-                                                <DatePicker
-                                                    selected={currentDate || undefined}
-                                                    onChange={(date) => setCurrentDate(date || undefined)}
-                                                    className={`${styles.input} p-2 border text-center`}
-                                                    calendarClassName={styles.custom__Calendar}
-                                                    dayClassName={(date) =>
-                                                        date.getDay() === 6 || date.getDay() === 0 ? styles.weekend__Day : styles.weekday
-                                                    }
-                                                    showMonthDropdown
-                                                    showYearDropdown
-                                                    dropdownMode="select"
-                                                />
-                                            </div>
+                                        <div className={`${styles.container__Calendars} d-flex align-items-center justify-content-between`}>
+                                            <DatePicker
+                                                selected={currentDate || undefined}
+                                                onChange={(date) => setCurrentDate(date || undefined)}
+                                                className={`${styles.input} p-2 border text-center`}
+                                                calendarClassName={styles.custom__Calendar}
+                                                dayClassName={(date) =>
+                                                    date.getDay() === 6 || date.getDay() === 0 ? styles.weekend__Day : styles.weekday
+                                                }
+                                                showMonthDropdown
+                                                showYearDropdown
+                                                dropdownMode="select"
+                                            />
                                         </div>
                                     </div>
                                     <div className={`${styles.container__Qr_Invoicing} d-flex align-items-center justify-content-center`}>
@@ -290,7 +289,7 @@ function ElectronicInvoicingPage() {
                                     </div>
                                 </div>
 
-                                <div className={`${styles.container__Dates} mb-4 P-2 d-flex`}>
+                                <div className={`${styles.container__Dates} mb-4 d-flex`}>
                                     <div className={`${styles.container__Issuer_Data} `}>
                                         <div className={`${styles.title__Section} px-2 d-flex align-items-center justify-content-start`}>Datos del Emisor</div>
                                         <div className="px-2">
@@ -315,10 +314,10 @@ function ElectronicInvoicingPage() {
 
                                     <div className={styles.container__Issuer_Data}>
                                         <div className={`${styles.title__Section} px-2 d-flex align-items-center justify-content-start`}>Datos del Adquiriente</div>
-                                        <div className="px-2">
+                                        <div>
                                             <div className="d-flex align-items-center justify-content-start">
                                                 <h4 className={`${styles.subtitle__Section} m-0 d-flex align-items-center justify-content-start`}>NIT/CC</h4>
-                                                <div>
+                                                <div className={`${styles.data__Section} `}>
                                                     <SearchClientCrm
                                                         token={token}
                                                         onDataClientSelect={(client) => setSelectedClient(client)}
@@ -343,131 +342,136 @@ function ElectronicInvoicingPage() {
                                     </div>
                                 </div>
                                 
-                                <div className={`${styles.container__Table} mt-2 mb-4 mx-auto d-flex flex-column align-items-center justify-content-start`}>
-                                    <div className={`${styles.container__Head} `}>
-                                        <div className={`${styles.container__Tr} d-flex align-items-center justify-content-between`}>
-                                            <div className={`${styles.number} d-flex align-items-center justify-content-center text-center`}>#</div>
-                                            <div className={`${styles.code} d-flex align-items-center justify-content-center text-center`}>Código</div>
-                                            <div className={`${styles.product__Service} d-flex align-items-center justify-content-center text-center`}>Producto/Servicio</div>
-                                            <div className={`${styles.unit__Value} d-flex align-items-center justify-content-center text-center`}>Valor Unitario</div>
-                                            <div className={`${styles.quantity} d-flex align-items-center justify-content-center text-center`}>Cant.</div>
-                                            <div className={`${styles.unit__Value} d-flex align-items-center justify-content-center text-center`}>% IVA</div>
-                                            <div className={`${styles.discount} d-flex align-items-center justify-content-center text-center`}>% Descuento</div>
-                                            <div className={`${styles.discount__Value} d-flex align-items-center justify-content-center text-center`}>Valor Descuento</div>
-                                            <div className={`${styles.total__Value} d-flex align-items-center justify-content-center text-center`}>Subotal</div>
-                                            <div className={`${styles.action} d-flex align-items-center justify-content-center text-center`}></div>
-                                        </div>
-                                    </div>
-                                    <div className={`${styles.container__Body}`}>
-                                        {Array.isArray(rows) && rows.length > 0 ? (
-                                            rows.map((row, index) => (
-                                                <div key={index} className={`${styles.container__Info} d-flex align-items-center justify-content-between`}>
-                                                    <div className={`${styles.number} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}>{index + 1}</span>
-                                                    </div>
-                                                    <div className={`${styles.code} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center`}>
-                                                        <SearchItemsByname
-                                                            selectedBranch={selectedBranch}
-                                                            token={token}
-                                                            onItemSelect={() => {
-                                                                const updatedRows = [...rows];
-                                                                updatedRows[index] = { ...updatedRows[index] };
-                                                                setRows(updatedRows);
-                                                            }}
-                                                            onDataItemSelect={(item) => {
-                                                                const updatedRows = [...rows];
-                                                                updatedRows[index] = { ...updatedRows[index], item };
-                                                                setRows(updatedRows);
-                                                            }}
-                                                        />
-                                                    </div>
-                                                    <div className={`${styles.product__Service} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{row.item?.nameItem}</span>
-                                                    </div>
-                                                    <div className={`${styles.unit__Value} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <input
-                                                            type="number"
-                                                            className={`${styles.quantity__Quantity} p-2 border`}
-                                                            value={row.item?.sellingPrice ?? ''}
-                                                            min={0}
-                                                            readOnly
-                                                        />
-                                                    </div>
-                                                    <div className={`${styles.quantity} d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <input
-                                                            type="number"
-                                                            className={`${styles.quantity__Quantity} p-2 border`}
-                                                            placeholder='Cantidad'
-                                                            min={0}
-                                                            value={row.quantity ?? ''}
-                                                            onChange={(e) => {
-                                                                const value = parseFloat(e.target.value);
-                                                                const updatedRows = [...rows];
-                                                                updatedRows[index] = { ...updatedRows[index], quantity: !isNaN(value) ? value : null };
-                                                                setRows(updatedRows);
-                                                            }}
-                                                            onKeyDown={(e) => {
-                                                                if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                    e.preventDefault();
+                                <div className={`${styles.container__Table} mt-2 mb-2 mx-auto`}>
+                                    <table className="table">
+                                        <thead className={`${styles.container__Head} `}>
+                                            <tr className={`${styles.container__Tr} d-flex align-items-center justify-content-between`}>
+                                                <th className={`${styles.number} d-flex align-items-center justify-content-center text-center`}>#</th>
+                                                <th className={`${styles.code} d-flex align-items-center justify-content-center text-center`}>Código</th>
+                                                <th className={`${styles.product__Service} d-flex align-items-center justify-content-center text-center`}>Producto/Servicio</th>
+                                                <th className={`${styles.unit__Value} d-flex align-items-center justify-content-center text-center`}>Valor Unitario</th>
+                                                <th className={`${styles.quantity} d-flex align-items-center justify-content-center text-center`}>Cant.</th>
+                                                <th className={`${styles.IVA} d-flex align-items-center justify-content-center text-center`}>% IVA</th>
+                                                <th className={`${styles.discount} d-flex align-items-center justify-content-center text-center`}>% Descuento</th>
+                                                <th className={`${styles.discount__Value} d-flex align-items-center justify-content-center text-center`}>Valor Descuento</th>
+                                                <th className={`${styles.subtotal} d-flex align-items-center justify-content-center text-center`}>Subotal</th>
+                                                <th className={`${styles.action} d-flex align-items-center justify-content-center text-center`}></th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody className={`${styles.container__Body} `}>
+                                            {Array.isArray(rows) && rows.length > 0 ? (
+                                                rows.map((row, index) => (
+                                                    <tr key={index} className={`${styles.container__Info} d-flex align-items-center justify-content-between`}>
+                                                        <td className={`${styles.number} d-flex align-items-center justify-content-center`}>
+                                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{index + 1}</span>
+                                                        </td>
+                                                        <td className={`${styles.code} `}>
+                                                            <SearchItemsByname
+                                                                selectedBranch={selectedBranch}
+                                                                token={token}
+                                                                onItemSelect={() => {
+                                                                    const updatedRows = [...rows];
+                                                                    updatedRows[index] = { ...updatedRows[index] };
+                                                                    setRows(updatedRows);
+                                                                }}
+                                                                onDataItemSelect={(item) => {
+                                                                    const updatedRows = [...rows];
+                                                                    updatedRows[index] = { ...updatedRows[index], item };
+                                                                    setRows(updatedRows);
+                                                                }}
+                                                            />
+                                                        </td>
+                                                        <td className={`${styles.product__Service} d-flex align-items-center justify-content-center`}>
+                                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{row.item?.nameItem}</span>
+                                                        </td>
+                                                        <td className={`${styles.unit__Value} d-flex align-items-center justify-content-center`}>
+                                                            <input
+                                                                type="number"
+                                                                className={`${styles.input__Quantity} p-2`}
+                                                                value={row.item?.sellingPrice ?? ''}
+                                                                min={0}
+                                                                readOnly
+                                                            />
+                                                        </td>
+                                                        <td className={`${styles.quantity} d-flex align-items-center justify-content-center overflow-hidden`}>
+                                                            <input
+                                                                type="number"
+                                                                className={`${styles.input__Quantity} p-2`}
+                                                                placeholder='Cantidad'
+                                                                min={0}
+                                                                value={row.quantity ?? ''}
+                                                                onChange={(e) => {
+                                                                    const value = parseFloat(e.target.value);
+                                                                    const updatedRows = [...rows];
+                                                                    updatedRows[index] = { ...updatedRows[index], quantity: !isNaN(value) ? value : null };
+                                                                    setRows(updatedRows);
+                                                                }}
+                                                                onKeyDown={(e) => {
+                                                                    if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
+                                                                        e.preventDefault();
+                                                                    }
+                                                                }}
+                                                            />
+                                                        </td>
+                                                        <td className={`${styles.IVA} d-flex align-items-center justify-content-center`}>
+                                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{row.item?.IVA === 'No aplica' ? 'No aplica' : `${row.item?.IVA} %`}</span>
+                                                        </td>
+                                                        <td className={`${styles.discount} d-flex align-items-center justify-content-center`}>
+                                                            <input
+                                                                type="number"
+                                                                className={`${styles.input__Discount} p-2`}
+                                                                placeholder='Descuento'
+                                                                min={0}
+                                                                value={row.discountPercentage ?? ''}
+                                                                onChange={(e) => {
+                                                                    const value = parseFloat(e.target.value);
+                                                                    const updatedRows = [...rows];
+                                                                    updatedRows[index] = { ...updatedRows[index], discountPercentage: !isNaN(value) ? value : null };
+                                                                    setRows(updatedRows);
+                                                                }}
+                                                                onKeyDown={(e) => {
+                                                                    if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
+                                                                        e.preventDefault();
+                                                                    }
+                                                                }}
+                                                            />
+                                                        </td>
+                                                        <td className={`${styles.discount__Value} d-flex align-items-center justify-content-center`}>
+                                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>
+                                                                {row.discountPercentage !== null && row.item?.sellingPrice !== undefined
+                                                                    ? `$ ${formatNumber(calculateDiscount(row.quantity, row.item.sellingPrice, row.discountPercentage))}`
+                                                                    : ''
                                                                 }
-                                                            }}
-                                                        />
-                                                    </div>
-                                                    <div className={`${styles.discount__Value} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{row.item?.IVA === 'No aplica' ? 'No aplica' : `${row.item?.IVA} %`}</span>
-                                                    </div>
-                                                    <div className={`${styles.discount} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <input
-                                                            type="number"
-                                                            className={`${styles.quantity__Quantity} p-2 border`}
-                                                            placeholder='Descuento'
-                                                            min={0}
-                                                            value={row.discountPercentage ?? ''}
-                                                            onChange={(e) => {
-                                                                const value = parseFloat(e.target.value);
-                                                                const updatedRows = [...rows];
-                                                                updatedRows[index] = { ...updatedRows[index], discountPercentage: !isNaN(value) ? value : null };
-                                                                setRows(updatedRows);
-                                                            }}
-                                                            onKeyDown={(e) => {
-                                                                if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
-                                                                    e.preventDefault();
-                                                                }
-                                                            }}
-                                                        />
-                                                    </div>
-                                                    <div className={`${styles.discount__Value} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>
-                                                            {row.discountPercentage !== null && row.item?.sellingPrice !== undefined
-                                                                ? `$ ${formatNumber(calculateDiscount(row.quantity, row.item.sellingPrice, row.discountPercentage))}`
-                                                                : ''
-                                                            }
-                                                        </span>
-                                                    </div>
-                                                    <div className={`${styles.total__Value} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <span className={`${styles.text__Ellipsis} text-align-center overflow-hidden`}>
-                                                            $ {formatNumber(
-                                                                (row.quantity || 1) * (row.item?.sellingPrice || 0) * (1 - (row.discountPercentage || 0) / 100)
-                                                            )}
-                                                        </span>
-                                                    </div>
-                                                    <div className={`${styles.action} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <RiDeleteBin6Line
-                                                            className={`${styles.button__Delete}`}
-                                                            onClick={() => {
-                                                                const updatedRows = rows.filter((_, i) => i !== index);
-                                                                setRows(updatedRows);
-                                                            }}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            ))
-                                        ) : (
-                                            <div className={`${styles.message__Unrelated_Items} d-flex align-items-center justify-content-center`}>
-                                                No tienes artículos registrados
-                                            </div>
-                                        )}
-                                    </div>
+                                                            </span>
+                                                        </td>
+                                                        <td className={`${styles.subtotal} d-flex align-items-center justify-content-center`}>
+                                                            <span className={`${styles.text__Ellipsis} text-align-center overflow-hidden`}>
+                                                                $ {formatNumber(
+                                                                    (row.quantity || 1) * (row.item?.sellingPrice || 0) * (1 - (row.discountPercentage || 0) / 100)
+                                                                )}
+                                                            </span>
+                                                        </td>
+                                                        <td className={`${styles.action} d-flex align-items-center justify-content-center`}>
+                                                            <RiDeleteBin6Line
+                                                                className={`${styles.button__Delete}`}
+                                                                onClick={() => {
+                                                                    const updatedRows = rows.filter((_, i) => i !== index);
+                                                                    setRows(updatedRows);
+                                                                }}
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                <tr>
+                                                    <td colSpan={10} className={`${styles.message__Unrelated_Items} d-flex align-items-center justify-content-center`}>
+                                                        No tienes artículos registrados
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
                                 </div>
 
                                 <div className={`${styles.container__Add} mb-4 d-flex flex-column align-items-start justify-content-between gap-2`}>

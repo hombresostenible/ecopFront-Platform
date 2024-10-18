@@ -30,36 +30,39 @@
     color: #fff;
     margin: 0;
 }
-.select__Branch {
+.input__Branch {
     border-radius: 5px;
     width: 250px;
 }
-.select__Branch:focus{
+.input__Branch:focus{
     outline-color: #718bd8;
 }
 
 /* CONTENEDOR DE LA FACTURA */
+.form {
+    width: 100%;
+}
 .container__Invoice {
     border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid red;
     width: 100%;
 }
 .container__Header {
     width: 100%;
 }
 .container__Logo {
-    height: 250px;
     height: 200px;
     width: 250px;
 }
 .logo {
     max-height: 150px;
-    max-width: 300px;
+    max-width: 220px;
 }
 .container__General_Information_Invoincing {
     height: 100%;
     width: 650px;
 }
-.container_Dates_Invoicing{
+.container_Dates_Invoicing {
     height: 100%;
     height: 200px;
     width: 50%;
@@ -89,10 +92,10 @@
     border-radius: 5px;
     width: 250px;
 }
-.input:focus{
+.input:focus {
     outline-color: #718bd8;
 }
-.container__Qr_Invoicing{
+.container__Qr_Invoicing {
     height: 200px;
     width: 200px;
 }
@@ -115,7 +118,7 @@
     border-bottom: 5px solid rgba(0, 0, 0, 0.2);
     height: 50px;
 }
-.subtitle__Section {
+.subtitle__Section {   
     font-size: 20px;
     font-weight: 600;
     height: 50px;
@@ -124,7 +127,7 @@
 .data__Section {
     font-size: 20px;
     height: 50px;
-    min-width: calc(100% - 300px);
+    min-width: calc(100% - 250px);
 }
 .container__User_Customer_Data {
     height: 300px;
@@ -132,84 +135,101 @@
 }
 
 /* TABLA */
-.container__Table{
+.container__Table {
+    border: 1px solid rgba(0, 0, 0, 0.2);
     width: 100%;
+    overflow-x: auto;
 }
-.container__Head{
-    font-weight: 600;
-    background: #e9ecef;
+.container__Head {
     height: 60px;
     width: 100%;
+    font-weight: 600;
 }
 
 /* TITULOS DE LAS COLUMNAS */
-.container__Tr{
-    border: 1px solid rgba(0, 0, 0, 0.1);
+.container__Tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
+}
+.container__Tr, .container__Info {
+    flex-wrap: nowrap;
 }
 .number {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    width: 8%;
     min-width: 80px;
+    width: 8%;
 }
 .code {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 140px;
+    width: 14%;
+}
+.product__Service {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 180px;
+    width: 18%;
+}
+.unit__Value {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 100px;
+    width: 10%;
+}
+.quantity {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 90px;
+    width: 9%;
+}
+.IVA {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 100px;
+    width: 7%;
+}
+.discount {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 90px;
+    width: 9%;
+}
+.discount__Value {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
     width: 14%;
     min-width: 140px;
 }
-.product__Service {
+.subtotal {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    width: 18%;
-    min-width: 180px;
+    min-width: 140px;
+    width: 14%;
 }
-.unit__Value {
+.action {
     height: 60px;
-    width: 10%;
-    min-width: 100px;
+    min-width: 40px;
+    width: 4%;
 }
-.quantity {
-    height: 60px;
-    width: 9%;
-    min-width: 90px;
-}
-.quantity__Quantity{
+.input__Quantity, .input__Discount {
+    border: 1px solid #718bd8;
     border-radius: 5px;
     height: 50px;
     width: 100%;
 }
-.quantity__Quantity:focus {
-    outline-color: rgba(0, 0, 0, 0.2);
-}
-
-.discount {
-    height: 60px;
-    width: 9%;
-    min-width: 90px;
-}
-.discount__Value {
-    height: 60px;
-    width: 14%;
-    min-width: 140px;
-}
-.total__Value {
-    height: 60px;
-    width: 14%;
-    min-width: 140px;
-}
-.action {
-    height: 60px;
-    width: 4%;
-    min-width: 40px;
+.input__Quantity:focus, .input__Discount:focus {
+    outline-color: #718bd8;
 }
 
 /* CONTENIDO DE LA TABLA */
-.container__Body{
+.container__Body {
+    height: 60px;
     width: 100%;
 }
-.container__Info{
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.container__Info {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
 }
 .text__Ellipsis {
@@ -273,11 +293,6 @@
     outline-color: #718bd8;
 }
 
-
-
-
-
-
 /* CONTENEDOR DE RETENCIONES */
 .container__Retention {
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -286,10 +301,6 @@
 .continer__Retention_Titles {
     width: 100%;
 }
-
-
-
-
 .title__Column_Retention {
     font-weight: 600;
     width: 400px;
