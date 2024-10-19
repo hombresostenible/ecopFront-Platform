@@ -16,7 +16,7 @@ import Footer from '../../../../components/PanelUser/Footer/Footer';
 import SeeBranch from '../../../../components/PanelUser/02Branch/01SeeBranch/SeeBranch.tsx';
 import ConfirmDeleteBranch from '../../../../components/PanelUser/02Branch/ConfirmDeleteBranch/ConfirmDeleteBranch';
 import ModalEditBranch from '../../../../components/PanelUser/02Branch/ModalEditBranch/ModalEditBranch.tsx';
-import ComponentPaginated from '../../../../components/PanelUser/ComponentPaginated/ComponentPaginated.tsx';
+import ComponentPaginated from '../../../../components/GeneralComponents/Paginated/ComponentPaginated.tsx';
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiDeleteBin6Line } from 'react-icons/ri';

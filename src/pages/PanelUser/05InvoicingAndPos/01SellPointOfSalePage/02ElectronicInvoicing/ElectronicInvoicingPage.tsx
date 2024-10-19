@@ -16,7 +16,7 @@ import { IMerchandise } from "../../../../../types/User/merchandise.types";
 import { IProduct } from "../../../../../types/User/products.types";
 import { IRawMaterial } from "../../../../../types/User/rawMaterial.types";
 import { IService } from "../../../../../types/User/services.types";
-import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname';
+import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname copy.tsx';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../../components/PanelUser/Footer/Footer';
@@ -92,7 +92,6 @@ function ElectronicInvoicingPage() {
         return subtotal - discount;
     };
 
-
     const calculateTotalConsumptionTax = () => {
         return parseFloat(rows.reduce((acc, row) => {
             const consumptionTax = row.item?.consumptionTax;
@@ -112,9 +111,9 @@ function ElectronicInvoicingPage() {
             const withholdingTax = row.item?.withholdingTax;
             if (typeof withholdingTax === "string" && withholdingTax === "No aplica") {
                 return acc;
-            } else if (typeof withholdingTax === "number" || typeof withholdingTax === "string") { // Verificación adicional
+            } else if (typeof withholdingTax === "number" || typeof withholdingTax === "string") {
                 const taxableBase = calculateTaxableBaseForRow(row);
-                const withholdingTaxValue = typeof withholdingTax === "number" ? withholdingTax : parseFloat(withholdingTax); // Removido el .toString()
+                const withholdingTaxValue = typeof withholdingTax === "number" ? withholdingTax : parseFloat(withholdingTax);
                 const taxAmount = taxableBase * (withholdingTaxValue / 100);
                 return acc + taxAmount;
             }
@@ -127,9 +126,9 @@ function ElectronicInvoicingPage() {
             const withholdingIVA = row.item?.withholdingIVA;
             if (typeof withholdingIVA === "string" && withholdingIVA === "No aplica") {
                 return acc;
-            } else if (typeof withholdingIVA === "number" || typeof withholdingIVA === "string") { // Verificación adicional
+            } else if (typeof withholdingIVA === "number" || typeof withholdingIVA === "string") {
                 const taxableBase = calculateTaxableBaseForRow(row);
-                const withholdingIVAValue = typeof withholdingIVA === "number" ? withholdingIVA : parseFloat(withholdingIVA); // Removido el .toString()
+                const withholdingIVAValue = typeof withholdingIVA === "number" ? withholdingIVA : parseFloat(withholdingIVA);
                 const taxAmount = taxableBase * (withholdingIVAValue / 100);
                 return acc + taxAmount;
             }
@@ -142,20 +141,15 @@ function ElectronicInvoicingPage() {
             const withholdingICA = row.item?.withholdingICA;
             if (typeof withholdingICA === "string" && withholdingICA === "No aplica") {
                 return acc;
-            } else if (typeof withholdingICA === "number" || typeof withholdingICA === "string") { // Verificación adicional
+            } else if (typeof withholdingICA === "number" || typeof withholdingICA === "string") {
                 const taxableBase = calculateTaxableBaseForRow(row);
-                const withholdingICAValue = typeof withholdingICA === "number" ? withholdingICA : parseFloat(withholdingICA); // Removido el .toString()
+                const withholdingICAValue = typeof withholdingICA === "number" ? withholdingICA : parseFloat(withholdingICA);
                 const taxAmount = taxableBase * (withholdingICAValue / 100);
                 return acc + taxAmount;
             }
             return acc;
         }, 0).toFixed(2));
     };
-
-
-
-
-
 
     const calculateSubtotal = () => {
         return rows.reduce((acc, row) => {
@@ -362,7 +356,7 @@ function ElectronicInvoicingPage() {
                                         <tbody className={`${styles.container__Body} `}>
                                             {Array.isArray(rows) && rows.length > 0 ? (
                                                 rows.map((row, index) => (
-                                                    <tr key={index} className={`${styles.container__Info} d-flex align-items-center justify-content-between`}>
+                                                    <tr key={index} className={`${styles.container__Info} d-flex`}>
                                                         <td className={`${styles.number} d-flex align-items-center justify-content-center`}>
                                                             <span className={`${styles.text__Ellipsis} overflow-hidden`}>{index + 1}</span>
                                                         </td>
@@ -415,7 +409,7 @@ function ElectronicInvoicingPage() {
                                                             />
                                                         </td>
                                                         <td className={`${styles.IVA} d-flex align-items-center justify-content-center`}>
-                                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{row.item?.IVA === 'No aplica' ? 'No aplica' : `${row.item?.IVA} %`}</span>
+                                                            <span className={`${styles.text__Ellipsis} overflow-hidden`}>{row.item?.IVA ? `${row.item?.IVA} %` : 'No aplica'}</span>
                                                         </td>
                                                         <td className={`${styles.discount} d-flex align-items-center justify-content-center`}>
                                                             <input
@@ -437,7 +431,7 @@ function ElectronicInvoicingPage() {
                                                                 }}
                                                             />
                                                         </td>
-                                                        <td className={`${styles.discount__Value} d-flex align-items-center justify-content-center`}>
+                                                        <td className={`${styles.discount__Value} d-flex align-items-center justify-content-end`}>
                                                             <span className={`${styles.text__Ellipsis} overflow-hidden`}>
                                                                 {row.discountPercentage !== null && row.item?.sellingPrice !== undefined
                                                                     ? `$ ${formatNumber(calculateDiscount(row.quantity, row.item.sellingPrice, row.discountPercentage))}`
@@ -445,7 +439,7 @@ function ElectronicInvoicingPage() {
                                                                 }
                                                             </span>
                                                         </td>
-                                                        <td className={`${styles.subtotal} d-flex align-items-center justify-content-center`}>
+                                                        <td className={`${styles.subtotal} d-flex align-items-center justify-content-end`}>
                                                             <span className={`${styles.text__Ellipsis} text-align-center overflow-hidden`}>
                                                                 $ {formatNumber(
                                                                     (row.quantity || 1) * (row.item?.sellingPrice || 0) * (1 - (row.discountPercentage || 0) / 100)

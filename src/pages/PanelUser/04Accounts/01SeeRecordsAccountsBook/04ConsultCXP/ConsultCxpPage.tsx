@@ -6,16 +6,16 @@ import { format } from 'date-fns';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
-import { getAccountsPayablePaginated, getAccountsPayableByBranchPaginated } from '../../../../../redux/User/indicator/finantialIndicators/actions.ts';
+import { getAccountsPayablePaginated, getAccountsPayableByBranchPaginated } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
-// ELEMENTOS DEL COMPONENTE
+// ELEMENTOS DEL COMPONENTE 
 import { IAccountsPayable } from '../../../../../types/User/accountsPayable.types.ts';
 import ColumnSelector from '../../../../../helpers/ColumnSelector/ColumnSelector';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../../components/PanelUser/Footer/Footer';
-import ComponentPaginated from '../../../../../components/PanelUser/ComponentPaginated/ComponentPaginated.tsx';
+import ComponentPaginated from '../../../../../components/GeneralComponents/Paginated/ComponentPaginated.tsx';
 import styles from './styles.module.css';
 
 function ConsultCxpPage() {

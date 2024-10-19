@@ -17,7 +17,7 @@ import SeeCrmClient from '../../../../components/PanelUser/07CrmClients/01SeeCrm
 import ModalEditCrmClient from '../../../../components/PanelUser/07CrmClients/ModalEditCrmClient/ModalEditCrmClient.tsx';
 import ConfirmDeleteCRMClient from '../../../../components/PanelUser/07CrmClients/ConfirmDeleteCRMClient/ConfirmDeleteCRMClient.tsx';
 import SendEmailClients from '../../../../components/PanelUser/07CrmClients/SendEmailClients/SendEmailClients.tsx';
-import ComponentPaginated from '../../../../components/PanelUser/ComponentPaginated/ComponentPaginated.tsx';
+import ComponentPaginated from '../../../../components/GeneralComponents/Paginated/ComponentPaginated.tsx';
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiDeleteBin6Line } from 'react-icons/ri';

@@ -7,7 +7,7 @@ import * as XLSX from 'xlsx';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
-import { getRawmaterialsInventory, getRawmaterialsInventoryByBranch } from '../../../../../redux/User/indicator/finantialIndicators/actions';
+import { getRawmaterialsInventory, getRawmaterialsInventoryByBranch } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
 import { IRawMaterial } from '../../../../../types/User/rawMaterial.types';

@@ -14,7 +14,7 @@ import { formatNumber } from '../../../../helpers/FormatNumber/FormatNumber';
 import NavBar from '../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../components/PanelUser/Footer/Footer';
-import ComponentPaginated from '../../../../components/PanelUser/ComponentPaginated/ComponentPaginated.tsx';
+import ComponentPaginated from '../../../../components/GeneralComponents/Paginated/ComponentPaginated.tsx';
 import { BsCloudDownload } from "react-icons/bs";
 import { FaPrint } from "react-icons/fa";
 import styles from './styles.module.css';
