@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../../store';
 import axiosInstance from '../../../../api/axios';
-import { IPosInvoicing } from '../../../../types/User/posInvoicing.types';
+import { IPosInvoicing } from '../../../../types/UserPanel/05ElectronicInvoicing/01POS/posInvoicing.types';
 import { posInvoicingSliceData, errorPosInvoicingSlice, postPosInvoicingSliceStart, getPosInvoicingSliceStart, getPosInvoicingSlicePaginatedStart, getPosInvoicingSliceByIdStart, putPosInvoicingSliceStart, deletePosInvoicingSliceStart } from './posInvoicingSliceSlice';
 
 // CREA UNA FACTURA POS

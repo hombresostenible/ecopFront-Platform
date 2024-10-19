@@ -13,7 +13,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAccountsReceivable, getAccountsReceivableByBranch } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsReceivable } from '../../../../../types/User/accountsReceivable.types';
+import { IAccountsReceivable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsReceivable.types';
 import DownloadAccountsReceivable from './DownloadAccountsReceivable';
 import ModalAccountsReceivable from './ModalAccountsReceivable';
 import { PiExportBold } from "react-icons/pi";

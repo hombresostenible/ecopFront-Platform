@@ -1,5 +1,5 @@
 import { Document, Page, Text } from '@react-pdf/renderer';
-import { IAccountsReceivable } from '../../../../../types/User/accountsReceivable.types';
+import { IAccountsReceivable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsReceivable.types';
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 
 interface DownloadAccountsReceivableProps {

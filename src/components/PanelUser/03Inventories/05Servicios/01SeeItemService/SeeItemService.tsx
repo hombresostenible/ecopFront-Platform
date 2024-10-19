@@ -1,6 +1,6 @@
 // ELEMENTOS DEL COMPONENTE
-import { IService } from '../../../../../types/User/services.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IService } from '../../../../../types/UserPanel/03Inventories/services.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';
 

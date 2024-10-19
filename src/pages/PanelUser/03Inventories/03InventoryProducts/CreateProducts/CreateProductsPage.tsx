@@ -12,8 +12,8 @@ import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 import { getAssetsByBranch } from '../../../../../redux/User/03Inventories/01InventoryAssetsSlice/actions.ts';
 import { getRawMaterialsByBranch } from '../../../../../redux/User/03Inventories/04InventoryRawMateralsSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { IProduct } from '../../../../../types/User/products.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IProduct } from '../../../../../types/UserPanel/03Inventories/products.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types.ts';
 import CreateManyProduct from '../../../../../components/PanelUser/03Inventories/03Products/CreateManyProducts/CreateManyProduct';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
@@ -305,7 +305,7 @@ function CreateProductsPage({ selectedBranchId, onCreateComplete, onProductCreat
                     periodicityAutomaticIncrease: periodicityAutomaticIncrease,
                     retentionType: showRetentionType,
                     withholdingTax: showWithHoldingTax ? showWithHoldingTax : null,
-    
+                    
                     productAccesory: selectedProductAccesory,
                     productAccesories: accessoriesProduct.map((accessory) => ({
                         accesory: accessory.accesory,
@@ -325,7 +325,7 @@ function CreateProductsPage({ selectedBranchId, onCreateComplete, onProductCreat
                             nameItem: rawMaterial.nameItem,
                             rawMaterialId: rawMaterial.id,
                             unitMeasure: rawMaterial.unitMeasure,
-                            quantity: String(rawMaterialQuantities[rawMaterial.id] || 0),  // Convertir cantidad a cadena
+                            quantity: String(rawMaterialQuantities[rawMaterial.id] || 0),
                         })),
                 } as IProduct;
                 await dispatch(postProduct(formData, token));

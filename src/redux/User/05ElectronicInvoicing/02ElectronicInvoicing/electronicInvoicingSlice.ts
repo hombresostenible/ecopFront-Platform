@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IElectronicInvoicing } from '../../../../types/User/electronicInvoicing.types';
+import { IElectronicInvoicing } from '../../../../types/UserPanel/05ElectronicInvoicing/02ElectronicInvoicing/electronicInvoicing.types';
 
 interface ElectronicInvoicingState {
     electronicInvoicing: IElectronicInvoicing | IElectronicInvoicing[] | null;

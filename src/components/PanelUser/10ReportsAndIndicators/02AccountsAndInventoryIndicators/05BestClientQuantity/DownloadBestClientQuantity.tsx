@@ -1,5 +1,5 @@
 import { Document, Page, Text } from '@react-pdf/renderer';
-import { IBestClientQuantity } from "../../../../../types/User/financialIndicators.types";
+import { IBestClientQuantity } from "../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/financialIndicators.types";
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 
 interface DownloadBestClientQuantityProps {

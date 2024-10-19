@@ -10,7 +10,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAccountsBooksExpenses, getAccountsBooksExpensesByBranch } from '../../../../../redux/User/04AccountsSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook } from '../../../../../types/User/accountsBook.types';
+import { IAccountsBook } from '../../../../../types/UserPanel/04Accounts/accountsBook.types.ts';
 import ColumnSelector from '../../../../../helpers/ColumnSelector/ColumnSelector';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';

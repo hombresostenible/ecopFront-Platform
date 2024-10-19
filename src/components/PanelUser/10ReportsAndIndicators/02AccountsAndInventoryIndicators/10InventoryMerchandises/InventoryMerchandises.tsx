@@ -10,7 +10,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getMerchandisesInventory, getMerchandisesInventoryByBranch } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IMerchandise } from '../../../../../types/User/merchandise.types';
+import { IMerchandise } from '../../../../../types/UserPanel/03Inventories/merchandise.types';
 import DownloadInventoryMerchandises from './DownloadInventoryMerchandises';
 import ModalInventoryMerchandises from './ModalInventoryMerchandises';
 import ModalGraphicInventoryMerchandises from './ModalGraphicInventoryMerchandises';

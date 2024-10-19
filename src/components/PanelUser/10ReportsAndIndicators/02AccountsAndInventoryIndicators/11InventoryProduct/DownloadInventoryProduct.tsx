@@ -1,5 +1,5 @@
 import { Document, Page, Text } from '@react-pdf/renderer';
-import { IProduct } from '../../../../../types/User/products.types';
+import { IProduct } from '../../../../../types/UserPanel/03Inventories/products.types';
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 
 interface DownloadInventoryProductProps {

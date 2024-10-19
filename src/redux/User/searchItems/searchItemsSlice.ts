@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IAssets } from "../../../types/User/assets.types";
-import { IMerchandise } from "../../../types/User/merchandise.types";
-import { IProduct } from "../../../types/User/products.types";
-import { IRawMaterial } from "../../../types/User/rawMaterial.types";
-import { IService } from "../../../types/User/services.types";
+import { IAssets } from "../../../types/UserPanel/03Inventories/assets.types";
+import { IMerchandise } from "../../../types/UserPanel/03Inventories/merchandise.types";
+import { IProduct } from "../../../types/UserPanel/03Inventories/products.types";
+import { IRawMaterial } from "../../../types/UserPanel/03Inventories/rawMaterial.types";
+import { IService } from "../../../types/UserPanel/03Inventories/services.types";
 
 interface searchItemsState {
     items: IAssets | IAssets[] | IMerchandise | IMerchandise[] | IProduct |IProduct[] | IRawMaterial | IRawMaterial[] | IService | IService[] | null;

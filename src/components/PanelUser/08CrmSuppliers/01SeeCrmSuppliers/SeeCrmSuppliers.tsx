@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, react-hooks/exhaustive-deps, @typescript-eslint/no-unused-vars */
 // ELEMENTOS DEL COMPONENTE
-import { ICrmSupplier } from '../../../../types/User/crmSupplier.types';
+import { ICrmSupplier } from '../../../../types/UserPanel/08CrmSupplierSlice/crmSupplier.types';
 import styles from './styles.module.css';
 
 interface SeeCrmSuppliersProps {

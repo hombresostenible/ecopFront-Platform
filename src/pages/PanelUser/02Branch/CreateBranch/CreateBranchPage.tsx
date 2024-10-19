@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../redux/store';
 import { postBranch, getBranches } from '../../../../redux/User/02BranchSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { IBranch } from '../../../../types/User/branch.types';
+import { IBranch } from '../../../../types/UserPanel/02Branch/branch.types.ts';
 import NavBar from '../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../components/PanelUser/Footer/Footer';

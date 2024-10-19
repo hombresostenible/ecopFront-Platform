@@ -8,12 +8,12 @@ import Scroll from "./components/GeneralComponents/Scroll/Scroll";
 import Notification from './components/GeneralComponents/Notifications/Notification';
 import ScrollToTop from './components/GeneralComponents/ScrollToTop/ScrollToTop';
 // REGISTER
-import RegisterPage from './pages/Register/RegisterPage';
-import RegisterUserPage from './pages/Register/User/00RegisterUserPage';
+import RegisterPage from './pages/Auth/Register/RegisterPage';
+import RegisterUserPage from './pages/Auth/Register/User/00RegisterUserPage';
 // LOGIN
-import LoginPage from './pages/Login/LoginPage';
-import ResetPasswordPage from './pages/Login/ResetPassword/ResetPasswordPage';
-import UnblockingAccountPage from './pages/Login/UnblockingAccount/UnblockingAccountPage';
+import LoginPage from './pages/Auth/Login/LoginPage';
+import ResetPasswordPage from './pages/Auth/Login/ResetPassword/ResetPasswordPage';
+import UnblockingAccountPage from './pages/Auth/Login/UnblockingAccount/UnblockingAccountPage';
 // ERROR 404
 import Error404 from './pages/Error404/Error404';
 // PROTECCION DE RUTAS

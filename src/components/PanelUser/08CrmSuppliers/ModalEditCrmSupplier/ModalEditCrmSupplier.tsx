@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../../redux/store';
 import { putCrmSupplier, getCrmSuppliers } from '../../../../redux/User/08CrmSupplierSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmSupplier } from '../../../../types/User/crmSupplier.types';
+import { ICrmSupplier } from '../../../../types/UserPanel/08CrmSupplierSlice/crmSupplier.types';
 import DepartmenAndCity from '../../../../helpers/DepartmenAndCity/DepartmenAndCity';
 import styles from './styles.module.css';
 

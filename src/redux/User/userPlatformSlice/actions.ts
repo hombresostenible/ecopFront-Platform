@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
-import { IUserPlatform } from '../../../types/User/userPlatform.types';
+import { IUserPlatform } from '../../../types/UserPanel/06ElectronicPayroll/userPlatform.types';
 import { userPlatformData, errorUserPlatform, postUserPlatformStart, postManyUsersPlatformStart, getUsersPlatformStart, getUserPlatformByIdStart, getUserPlatformsByBranchStart, putUserPlatformStart, putManyUsersPlatformStart, deleteUserPlatformStart } from './userPlatformSlice';
 
 //CREAR DE UN USUARIO DE PLATAFORMA

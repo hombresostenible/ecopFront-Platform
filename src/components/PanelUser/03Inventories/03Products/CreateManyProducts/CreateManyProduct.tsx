@@ -8,8 +8,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 import { postManyProducts, getProducts } from '../../../../../redux/User/03Inventories/03InventoryProductsSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IBranch } from '../../../../../types/User/branch.types';
-import { IProduct } from "../../../../../types/User/products.types";
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
+import { IProduct } from "../../../../../types/UserPanel/03Inventories/products.types";
 import styles from './styles.module.css';
 
 interface CreateManyProductsProps {

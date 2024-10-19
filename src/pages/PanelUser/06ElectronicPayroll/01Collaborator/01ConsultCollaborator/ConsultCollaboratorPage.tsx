@@ -9,7 +9,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store.ts';
 import { getUsersPlatform } from '../../../../../redux/User/userPlatformSlice/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions.ts';
 // ELEMENTOS DEL COMPONENTE
-import { IUserPlatform } from '../../../../../types/User/userPlatform.types.ts';
+import { IUserPlatform } from '../../../../../types/UserPanel/06ElectronicPayroll/userPlatform.types.ts';
 import ColumnSelector from '../../../../../helpers/ColumnSelector/ColumnSelector.tsx';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';

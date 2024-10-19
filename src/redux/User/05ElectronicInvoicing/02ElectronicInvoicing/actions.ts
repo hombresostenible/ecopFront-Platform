@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../../store';
 import axiosInstance from '../../../../api/axios';
-import { IElectronicInvoicing } from '../../../../types/User/electronicInvoicing.types';
+import { IElectronicInvoicing } from '../../../../types/UserPanel/05ElectronicInvoicing/02ElectronicInvoicing/electronicInvoicing.types';
 import { electronicInvoicingData, errorElectronicInvoicing, postElectronicInvoicingStart, getElectronicInvoicingStart, getElectronicInvoicingPaginatedStart, getElectronicInvoicingByIdStart, putElectronicInvoicingStart, deleteElectronicInvoicingStart } from './electronicInvoicingSlice';
 
 // CREA UNA FACTURA ELECTRONICA

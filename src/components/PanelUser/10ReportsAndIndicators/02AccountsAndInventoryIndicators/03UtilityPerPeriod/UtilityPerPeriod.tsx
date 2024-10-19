@@ -14,7 +14,7 @@ import { getAllTransactionsPerPeriod, getAllTransactionsPerPeriodByBranch } from
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook } from "../../../../../types/User/accountsBook.types";
+import { IAccountsBook } from "../../../../../types/UserPanel/04Accounts/accountsBook.types";
 import DownloadUtilityPerPeriod from './DownloadUtilityPerPeriod';
 import ModalUtilityPerPeriod from './ModalUtilityPerPeriod';
 import Chart from 'chart.js/auto';

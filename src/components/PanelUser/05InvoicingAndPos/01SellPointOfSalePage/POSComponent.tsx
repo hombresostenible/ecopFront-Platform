@@ -10,7 +10,7 @@ import { postAccountsBook } from '../../../../redux/User/04AccountsSlice/actions
 import { getBranches } from '../../../../redux/User/02BranchSlice/actions';
 import { getItemByBarCode } from '../../../../redux/User/itemBybarCodeOrName/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook, IAccountsBookItems } from "../../../../types/User/accountsBook.types";
+import { IAccountsBook, IAccountsBookItems } from "../../../../types/UserPanel/04Accounts/accountsBook.types";
 import SearchItemName from '../../../../helpers/SearchItemName/SearchItemName';
 import ModalChangeQuantityPerItem from '../../../../helpers/ModalChangeQuantityPerItem/ModalChangeQuantityPerItem';
 import SearchClientCrm from '../../../../helpers/SearchClientCrm/SearchClientCrm';

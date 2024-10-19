@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { patchAddInventoryMerchandise, getMerchandises } from '../../../../../redux/User/03Inventories/02InventoryMerchadisesSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IMerchandise } from '../../../../../types/User/merchandise.types';
+import { IMerchandise } from '../../../../../types/UserPanel/03Inventories/merchandise.types';
 import styles from './styles.module.css';
 
 interface AddInventoryMerchandiseProps {

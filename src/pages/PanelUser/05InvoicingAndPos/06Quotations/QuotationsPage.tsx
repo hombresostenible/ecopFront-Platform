@@ -14,11 +14,11 @@
 // import Footer from '../../../components/PanelUser/Footer/Footer.tsx';
 // import SearchClientCrm from '../../../../../helpers/SearchClientCrm/SearchClientCrm.tsx';
 // import { ICrmClient } from '../../../../../types/User/crmClient.types.ts';
-// import { IService } from '../../../../../types/User/services.types.ts';
-// import { IRawMaterial } from '../../../../../types/User/rawMaterial.types.ts';
-// import { IProduct } from '../../../../../types/User/products.types.ts';
-// import { IMerchandise } from '../../../../../types/User/merchandise.types.ts';
-// import { IAssets } from '../../../../../types/User/assets.types.ts';
+// import { IService } from '../../../../../types/UserPanel/03Inventories/services.types.ts';
+// import { IRawMaterial } from '../../../../../types/UserPanel/03Inventories/rawMaterial.types.ts';
+// import { IProduct } from '../../../../../types/UserPanel/03Inventories/products.types.ts';
+// import { IMerchandise } from '../../../../../types/UserPanel/03Inventories/merchandise.types.ts';
+// import { IAssets } from '../../../../../types/UserPanel/03Inventories/assets.types.ts';
 
 
 // import styles from './styles.module.css';

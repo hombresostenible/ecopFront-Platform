@@ -10,8 +10,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { postAsset, getAssets } from '../../../../../redux/User/03Inventories/01InventoryAssetsSlice/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { IAssets } from '../../../../../types/User/assets.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IAssets } from '../../../../../types/UserPanel/03Inventories/assets.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types.ts';
 import CreateManyAssets from '../../../../../components/PanelUser/03Inventories/01Assets/CreateManyAssets/CreateManyAssets';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';

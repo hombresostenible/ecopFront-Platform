@@ -1,6 +1,6 @@
-import { IUser } from "../../../types/User/user.types";
+import { IUser } from "../../../../types/User/user.types";
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-import CIIUCodes from '../../../helpers/CodesCiiu/CodesCiiu';
+import CIIUCodes from '../../../../helpers/CodesCiiu/CodesCiiu';
 import styles from './styles.module.css';
 
 interface EconomicSectionProps {

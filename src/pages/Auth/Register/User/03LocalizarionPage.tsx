@@ -1,6 +1,6 @@
-import { IUser } from "../../../types/User/user.types";
+import { IUser } from "../../../../types/User/user.types";
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-import DepartmenAndCity from '../../../helpers/DepartmenAndCity/DepartmenAndCity';
+import DepartmenAndCity from '../../../../helpers/DepartmenAndCity/DepartmenAndCity';
 import styles from './styles.module.css';
 
 interface UserInfoSectionProps {

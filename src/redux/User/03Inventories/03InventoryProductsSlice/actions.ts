@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../../store';
 import axiosInstance from '../../../../api/axios';
-import { IProduct } from '../../../../types/User/products.types';
+import { IProduct } from '../../../../types/UserPanel/03Inventories/products.types';
 import { productData, errorProduct, postProductStart, postManyProductsStart, getProductsStart, getProductsPaginatedStart, getProductByIdStart, getProductsByBranchStart, getProductsOffStart, putProductStart, putManyProductsStart, patchProductStart, patchAddInventoryProductStart, deleteProductStart } from './productSlice';
 
 //CREAR DE UN PRODUCTO

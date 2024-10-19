@@ -8,8 +8,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 import { postManyAssets, getAssets } from '../../../../../redux/User/03Inventories/01InventoryAssetsSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IBranch } from '../../../../../types/User/branch.types';
-import { IAssets } from "../../../../../types/User/assets.types";
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
+import { IAssets } from "../../../../../types/UserPanel/03Inventories/assets.types";
 import styles from './styles.module.css';
 
 interface CreateManyMerchandisesProps {

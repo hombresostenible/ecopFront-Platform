@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../redux/store';
 import { postCrmClient, getCrmClients } from '../../../../redux/User/07CrmClientSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmClient } from '../../../../types/User/crmClient.types';
+import { ICrmClient } from '../../../../types/UserPanel/07CrmClientSlice/crmClient.types.ts';
 import NavBar from '../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../components/PanelUser/Footer/Footer';

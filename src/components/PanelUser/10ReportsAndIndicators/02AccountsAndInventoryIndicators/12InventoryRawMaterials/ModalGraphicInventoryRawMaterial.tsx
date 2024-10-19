@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-date-fns';
-import { IRawMaterial } from '../../../../../types/User/rawMaterial.types';
+import { IRawMaterial } from '../../../../../types/UserPanel/03Inventories/rawMaterial.types';
 
 interface ModalInventoryRawMaterialProps {
     selectedRawMaterial: IRawMaterial | null;

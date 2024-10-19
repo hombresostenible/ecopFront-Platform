@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-date-fns';
-import { IProduct } from '../../../../../types/User/products.types';
+import { IProduct } from '../../../../../types/UserPanel/03Inventories/products.types';
 
 interface ModalInventoryProductProps {
     selectedProduct: IProduct | null;

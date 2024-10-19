@@ -1,5 +1,5 @@
 // ELEMENTOS DEL COMPONENTE
-import { IBranch } from '../../../../types/User/branch.types';
+import { IBranch } from '../../../../types/UserPanel/02Branch/branch.types';
 import styles from './styles.module.css';
 
 interface SeeBranchProps {

@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../../redux/store';
 import { postManyCrmSuppliers, getCrmSuppliers } from '../../../../redux/User/08CrmSupplierSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { ICrmSupplier } from '../../../../types/User/crmSupplier.types';
+import { ICrmSupplier } from '../../../../types/UserPanel/08CrmSupplierSlice/crmSupplier.types';
 import styles from './styles.module.css';
 
 interface CreateManySuppliersProps {

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IUserPlatform } from '../../../types/User/userPlatform.types';
+import { IUserPlatform } from '../../../types/UserPanel/06ElectronicPayroll/userPlatform.types';
 
 interface UsersPlatformState {
     usersPlatform: IUserPlatform | IUserPlatform[] | null;

@@ -1,5 +1,5 @@
 // ELEMENTOS DEL COMPONENTE
-import { ICrmClient } from '../../../../types/User/crmClient.types';
+import { ICrmClient } from '../../../../types/UserPanel/07CrmClientSlice/crmClient.types';
 import styles from './styles.module.css';
 
 interface SeeCrmClientProps {
