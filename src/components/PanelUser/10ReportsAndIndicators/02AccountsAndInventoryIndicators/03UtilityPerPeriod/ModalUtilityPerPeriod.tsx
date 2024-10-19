@@ -7,7 +7,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAllTransactionsPerPeriod } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook } from '../../../../../types/User/accountsBook.types';
+import { IAccountsBook } from '../../../../../types/UserPanel/04Accounts/accountsBook.types';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';
 

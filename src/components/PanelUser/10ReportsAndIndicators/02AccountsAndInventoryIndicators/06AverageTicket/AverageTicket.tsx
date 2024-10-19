@@ -10,7 +10,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAverageTicketPerPeriod, getAverageTicketPerPeriodByBranch } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook } from "../../../../../types/User/accountsBook.types";
+import { IAccountsBook } from "../../../../../types/UserPanel/04Accounts/accountsBook.types";
 import DownloadAverageTicket from './DownloadAverageTicket';
 import ModalAverageTicket from './ModalAverageTicket';
 import { BsCart } from 'react-icons/bs';

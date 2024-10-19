@@ -10,7 +10,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAssetsInventory, getAssetsInventoryByBranch } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAssets } from '../../../../../types/User/assets.types';
+import { IAssets } from '../../../../../types/UserPanel/03Inventories/assets.types';
 import DownloadInventoryAssets from './DownloadInventoryAssets';
 import ModalInventoryAssets from './ModalInventoryAssets';
 import { PiExportBold } from "react-icons/pi";

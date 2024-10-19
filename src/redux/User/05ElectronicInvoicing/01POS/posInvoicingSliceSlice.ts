@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IPosInvoicing } from '../../../../types/User/posInvoicing.types';
+import { IPosInvoicing } from '../../../../types/UserPanel/05ElectronicInvoicing/01POS/posInvoicing.types';
 
 interface PosInvoicingSliceState {
     posInvoicingSlice: IPosInvoicing | IPosInvoicing[] | null;

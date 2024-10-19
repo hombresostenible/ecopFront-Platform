@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../../redux/store';
 import { getAccountsBooksIncomes, putAccountsBook } from '../../../../redux/User/04AccountsSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook } from '../../../../types/User/accountsBook.types';
-import { IBranch } from '../../../../types/User/branch.types';
+import { IAccountsBook } from '../../../../types/UserPanel/04Accounts/accountsBook.types';
+import { IBranch } from '../../../../types/UserPanel/02Branch/branch.types';
 import styles from './styles.module.css';
 
 interface ModalEditAccountsBookProps {

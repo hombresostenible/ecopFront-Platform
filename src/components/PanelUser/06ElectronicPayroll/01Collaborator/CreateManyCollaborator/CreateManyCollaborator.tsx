@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../../../redux/store';
 import { postManyUsersPlatform, getUsersPlatform } from '../../../../../redux/User/userPlatformSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { IBranch } from '../../../../../types/User/branch.types';
-import { IUserPlatform } from '../../../../../types/User/userPlatform.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
+import { IUserPlatform } from '../../../../../types/UserPanel/06ElectronicPayroll/userPlatform.types';
 import styles from './styles.module.css';
 
 interface CreateManyCollaboratorsProps {

@@ -1,6 +1,6 @@
 // ELEMENTOS DEL COMPONENTE
-import { IProduct } from '../../../../../types/User/products.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IProduct } from '../../../../../types/UserPanel/03Inventories/products.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';
 

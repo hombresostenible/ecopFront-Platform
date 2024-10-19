@@ -13,8 +13,8 @@ import { getRawMaterials, getRawMaterialsByBranch } from '../../../../../redux/U
 import { postService, getServices } from '../../../../../redux/User/03Inventories/05InventoryServicesSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { IService } from '../../../../../types/User/services.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IService } from '../../../../../types/UserPanel/03Inventories/services.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types.ts';
 import CreateManyServices from '../../../../../components/PanelUser/03Inventories/05Servicios/CreateManyServices/CreateManyServices';
 import CreateAsset from '../../../../../components/PanelUser/03Inventories/CreateComponents/01CreateAssets';
 import CreateProduct from '../../../../../components/PanelUser/03Inventories/CreateComponents/02CreateProduct';

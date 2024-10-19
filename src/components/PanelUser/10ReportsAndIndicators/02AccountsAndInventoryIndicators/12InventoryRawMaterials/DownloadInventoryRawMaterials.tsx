@@ -1,5 +1,5 @@
 import { Document, Page, Text } from '@react-pdf/renderer';
-import { IRawMaterial } from '../../../../../types/User/rawMaterial.types';
+import { IRawMaterial } from '../../../../../types/UserPanel/03Inventories/rawMaterial.types';
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 
 interface DownloadInventoryAssetsProps {

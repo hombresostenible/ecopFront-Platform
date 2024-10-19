@@ -4,17 +4,17 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from '../../../redux/store';
-import { postRegisterClient } from '../../../redux/User/userSlice/actions';
-import { clearUserErrors } from '../../../redux/User/userSlice/userSlice';
+import type { RootState, AppDispatch } from '../../../../redux/store';
+import { postRegisterClient } from '../../../../redux/User/userSlice/actions';
+import { clearUserErrors } from '../../../../redux/User/userSlice/userSlice';
 //ELEMENTOS DEL COMPONENTE
-import { IUser } from "../../../types/User/user.types";
-import Loading from '../../../components/GeneralComponents/Loading/Loading';
+import { IUser } from "../../../../types/User/user.types";
+import Loading from '../../../../components/GeneralComponents/Loading/Loading';
 import UserInformationPage from './01UserInformationPage';
 import EconomicActivityPage from './02EconomicActivityPage';
 import LocalizarionPage from './03LocalizarionPage';
 import UserCredentialsPage from './04UserCredentialsPage';
-import Logo from '../../../assets/LogoEcopcion.svg';
+import Logo from '../../../../assets/LogoEcopcion.svg';
 import { PiWarningCircle } from 'react-icons/pi';
 import styles from './styles.module.css';
 

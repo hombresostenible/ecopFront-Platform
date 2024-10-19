@@ -4,11 +4,11 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from '../../../redux/store';
-import { putResetPassword } from '../../../redux/User/userSlice/actions';
+import type { RootState, AppDispatch } from '../../../../redux/store';
+import { putResetPassword } from '../../../../redux/User/userSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IResetPassword } from '../../../types/Auth/resetPassword.types';
-import Logo from '../../../assets/LogoEcopcion.svg';
+import { IResetPassword } from '../../../../types/Auth/resetPassword.types';
+import Logo from '../../../../assets/LogoEcopcion.svg';
 import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
 import styles from './styles.module.css';
 

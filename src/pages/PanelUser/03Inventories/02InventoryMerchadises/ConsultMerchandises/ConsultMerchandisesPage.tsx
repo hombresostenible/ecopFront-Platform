@@ -9,8 +9,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getMerchandisesPaginated, getMerchandisesByBranch } from '../../../../../redux/User/03Inventories/02InventoryMerchadisesSlice/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IMerchandise } from '../../../../../types/User/merchandise.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IMerchandise } from '../../../../../types/UserPanel/03Inventories/merchandise.types.ts';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types.ts';
 import ColumnSelector from '../../../../../helpers/ColumnSelector/ColumnSelector';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IBranch } from '../../../types/User/branch.types';
+import { IBranch } from '../../../types/UserPanel/02Branch/branch.types';
 
 interface BranchState {
     branch: IBranch | IBranch[] | null;

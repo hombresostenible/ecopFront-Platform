@@ -154,7 +154,7 @@ function ProfileUserPage() {
             //https://console.cloudinary.com/settings/c-bca001092476ab04ce992efda02d0c/upload_presets/1cac495dfbca9fc61f64efcd83acd244/edit
             formData.append("upload_preset", "profiles");   // Asegúrate de que este preset esté configurado en Cloudinary
             formData.append("folder", "profiles");          // Especifica la carpeta en la que quieres guardar la imagen
-            const response = await axios.post(import.meta.env.VITE_CLOUDINARY_LOGO_CLIENTS, formData);
+            const response = await axios.post(import.meta.env.VITE_CLOUDINARY, formData);
             const imageUrl = response.data.secure_url;
             const userData: Partial<IUser> = {
                 logo: imageUrl,

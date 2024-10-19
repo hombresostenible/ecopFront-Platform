@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { postAccountsBook } from '../../../../../redux/User/04AccountsSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook } from "../../../../../types/User/accountsBook.types";
+import { IAccountsBook } from "../../../../../types/UserPanel/04Accounts/accountsBook.types";
 import { formatCurrency } from '../../../../../helpers/FormatCurrency/FormatCurrency';
 import SearchSupplierCrm from '../../../../../helpers/SearchSupplierCrm/SearchSupplierCrm';
 import styles from './styles.module.css';

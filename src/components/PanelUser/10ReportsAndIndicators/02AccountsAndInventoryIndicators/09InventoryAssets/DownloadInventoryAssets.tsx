@@ -1,5 +1,5 @@
 import { Document, Page, Text } from '@react-pdf/renderer';
-import { IAssets } from '../../../../../types/User/assets.types';
+import { IAssets } from '../../../../../types/UserPanel/03Inventories/assets.types';
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 
 interface DownloadInventoryAssetsProps {

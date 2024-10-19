@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../redux/store';
 import { getCrmClients } from '../../redux/User/07CrmClientSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmClient } from '../../types/User/crmClient.types';
+import { ICrmClient } from '../../types/UserPanel/07CrmClientSlice/crmClient.types';
 import CreateClient from '../../components/PanelUser/04Accounts/CreateClientAndSupplier/CreateClient';
 import { StylesReactSelect } from '../StylesComponents/StylesReactSelect';
 

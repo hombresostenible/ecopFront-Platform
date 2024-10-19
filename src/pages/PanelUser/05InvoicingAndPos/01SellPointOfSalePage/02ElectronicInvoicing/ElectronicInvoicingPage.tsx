@@ -9,13 +9,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
+import { postElectronicInvoicing } from '../../../../../redux/User/05ElectronicInvoicing/02ElectronicInvoicing/actions.ts';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmClient } from '../../../../../types/User/crmClient.types';
-import { IAssets } from "../../../../../types/User/assets.types";
-import { IMerchandise } from "../../../../../types/User/merchandise.types";
-import { IProduct } from "../../../../../types/User/products.types";
-import { IRawMaterial } from "../../../../../types/User/rawMaterial.types";
-import { IService } from "../../../../../types/User/services.types";
+import { ICrmClient } from '../../../../../types/UserPanel/07CrmClientSlice/crmClient.types.ts';
+import { IAssets } from "../../../../../types/UserPanel/03Inventories/assets.types";
+import { IMerchandise } from "../../../../../types/UserPanel/03Inventories/merchandise.types";
+import { IProduct } from "../../../../../types/UserPanel/03Inventories/products.types";
+import { IRawMaterial } from "../../../../../types/UserPanel/03Inventories/rawMaterial.types";
+import { IService } from "../../../../../types/UserPanel/03Inventories/services.types";
 import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname copy.tsx';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
@@ -34,6 +35,7 @@ function ElectronicInvoicingPage() {
     const dispatch: AppDispatch = useDispatch();
     const user = useSelector((state: RootState) => state.user.user);
     const branches = useSelector((state: RootState) => state.branch.branch);
+    const errorElectronicInvoicing = useSelector((state: RootState) => state.electronicInvoicing.errorElectronicInvoicing);
 
     useEffect(() => {
         if (token) {

@@ -7,7 +7,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAccountsReceivable } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsReceivable } from '../../../../../types/User/accountsReceivable.types';
+import { IAccountsReceivable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsReceivable.types';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';
 

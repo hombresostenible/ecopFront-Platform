@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../redux/store.ts';
 import { getCrmClientsPaginated } from '../../../../redux/User/07CrmClientSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmClient } from '../../../../types/User/crmClient.types.ts';
+import { ICrmClient } from '../../../../types/UserPanel/07CrmClientSlice/crmClient.types.ts';
 import ColumnSelector from '../../../../helpers/ColumnSelector/ColumnSelector';
 import NavBar from '../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../components/PanelUser/SideBar/SideBar.tsx';

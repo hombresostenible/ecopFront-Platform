@@ -7,7 +7,7 @@ import type { RootState, AppDispatch } from '../../../../redux/store';
 import { getProfileUser } from '../../../../redux/User/userSlice/actions';
 import { sendEmailCRMSupplier } from '../../../../redux/User/08CrmSupplierSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmSupplier } from '../../../../types/User/crmSupplier.types';
+import { ICrmSupplier } from '../../../../types/UserPanel/08CrmSupplierSlice/crmSupplier.types';
 import styles from './styles.module.css';
 
 interface SendEmailSuppliersProps {

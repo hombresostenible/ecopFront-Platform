@@ -2,11 +2,11 @@
 import { useEffect } from 'react';
 // REDUX
 import { useDispatch } from 'react-redux';
-import type { AppDispatch } from '../../redux/store';
-import { clearUserErrors } from '../../redux/User/userSlice/userSlice';
+import type { AppDispatch } from '../../../redux/store';
+import { clearUserErrors } from '../../../redux/User/userSlice/userSlice';
 // ELEMENTOS DEL COMPONENTE
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/LogoEcopcion.svg';
+import Logo from '../../../assets/LogoEcopcion.svg';
 import styles from './styles.module.css';
 
 function RegisterPage() {

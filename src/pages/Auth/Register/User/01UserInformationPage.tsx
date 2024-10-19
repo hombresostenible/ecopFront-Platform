@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { IUser } from "../../../types/User/user.types";
+import { IUser } from "../../../../types/User/user.types";
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import styles from './styles.module.css';
 

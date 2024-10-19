@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-import { IUser } from "../../../types/User/user.types";
+import { IUser } from "../../../../types/User/user.types";
 import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
 import styles from './styles.module.css';
 
