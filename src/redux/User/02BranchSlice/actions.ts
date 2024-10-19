@@ -44,7 +44,7 @@ export const postManyBranch = (formData: IBranch[], token: string) => async (dis
     }
 };
 
-//OBTENER TODAS LAS SEDES PAGINADAS PARA RENDERIZARLAS EN LA TABLA DE CONSULTA
+//OBTENER TODAS LAS SEDES
 export const getBranches = (token: string) => async (dispatch: AppDispatch) => {
     try {
         const response = await axiosInstance.get(`/branch`, {

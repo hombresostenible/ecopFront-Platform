@@ -18,7 +18,7 @@ import SideBar from '../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../components/PanelUser/Footer/Footer';
 import SeeRegisterAccountsBook from '../../../../components/PanelUser/04Accounts/05PendingApproval/01SeeRegisterAccountsBook/SeeRegisterAccountsBook';
 import ApprovalRegister from '../../../../components/PanelUser/04Accounts/05PendingApproval/04ApprovalRegister/ApprovalRegister';
-import ComponentPaginated from '../../../../components/PanelUser/ComponentPaginated/ComponentPaginated.tsx';
+import ComponentPaginated from '../../../../components/GeneralComponents/Paginated/ComponentPaginated.tsx';
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaCheck } from "react-icons/fa6";
 import styles from './styles.module.css';

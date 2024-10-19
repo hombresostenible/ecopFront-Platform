@@ -345,7 +345,13 @@ function SideBar() {
                             location.pathname === '/accounts/create-incomes' ||
                             location.pathname === '/accounts/fast-incomes' ||
                             location.pathname === '/accounts/create-expenses' ||
-                            location.pathname === '/accounts/consult-pending-approval') ? styles.active__Icon_Section : ''} `} onClick={handleAccountsClick}/>
+                            location.pathname === '/accounts/consult-pending-approval' ||
+
+                            location.pathname === '/accounts/consult-incomes' ||
+                            location.pathname === '/accounts/consult-cxc' ||
+                            location.pathname === '/accounts/consult-expences' ||
+                            location.pathname === '/accounts/consult-cxp'
+                            ) ? styles.active__Icon_Section : ''} `} onClick={handleAccountsClick}/>
                         </div>
                         {menuVisible &&
                             <div className={`${styles.link__Side_Bar} p-1 d-flex align-items-center justify-content-between`} onClick={toggleAccountsSubMenuOpen} >Cuentas {isAccountsSubMenuOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}  </div>

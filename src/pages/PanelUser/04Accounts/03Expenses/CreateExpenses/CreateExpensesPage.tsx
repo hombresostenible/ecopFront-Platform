@@ -215,7 +215,6 @@ function CreateExpensesPage() {
                             <ExpenseCash
                                 token={token}
                                 decodeUserIdRegister={decodeUserIdRegister}
-                                // usersPlatform={usersPlatform}
                                 selectedBranch={selectedBranch}
                                 defaultDates={defaultDates}
                                 registrationDate={formattedRegistrationDate}

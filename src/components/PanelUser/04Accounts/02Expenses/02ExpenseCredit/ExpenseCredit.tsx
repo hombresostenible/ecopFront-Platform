@@ -247,12 +247,6 @@ function ExpenseCredit({ token, decodeUserIdRegister, selectedBranch, defaultDat
             navigate('/accounts/see-records');
         }
     }, [ shouldNavigate, navigate ]);
-    
-
-
-
-
-    
 
     return (
         <div>
@@ -288,7 +282,7 @@ function ExpenseCredit({ token, decodeUserIdRegister, selectedBranch, defaultDat
                     <h3 className="text-primary-emphasis text-center">Relación de artículos</h3>
                     <div className={`${styles.container__Table} mt-2 mb-2 mx-auto`}>
                         <table className="table">
-                        <thead className={`${styles.container__Head} `}>
+                            <thead className={`${styles.container__Head} `}>
                                 <tr className={`${styles.container__Tr} d-flex align-items-center justify-content-between`}>
                                     <th className={`${styles.quantity} d-flex align-items-center justify-content-center text-center`}>Cantidad</th>
                                     <th className={`${styles.description__Item} d-flex align-items-center justify-content-center text-center`}>Descripción artículo</th>
@@ -319,7 +313,7 @@ function ExpenseCredit({ token, decodeUserIdRegister, selectedBranch, defaultDat
                                             <td className={`${styles.description__Item} d-flex align-items-center justify-content-center`}>
                                                 <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}>{item.nameItem}</span>
                                             </td>
-                                            <td className={`${styles.unit__Price} d-flex align-items-center justify-content-center`}>
+                                            <td className={`${styles.unit__Price} d-flex align-items-center justify-content-center position-relative`}>
                                                 <span className={`${styles.text__Ellipsis_Purchase_Price} overflow-hidden position-absolute`}>$</span>
                                                 <input
                                                     type="text"

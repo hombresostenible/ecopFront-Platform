@@ -5,7 +5,7 @@ import './styles.css';
 import WhatsApp from './components/GeneralComponents/WhatsApp/WhatsApp';
 import Telegram from './components/GeneralComponents/Telegram/Telegram';
 import Scroll from "./components/GeneralComponents/Scroll/Scroll";
-import Notification from './components/PanelUser/Notifications/Notification';
+import Notification from './components/GeneralComponents/Notifications/Notification';
 import ScrollToTop from './components/GeneralComponents/ScrollToTop/ScrollToTop';
 // REGISTER
 import RegisterPage from './pages/Register/RegisterPage';
