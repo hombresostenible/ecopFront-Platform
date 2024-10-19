@@ -70,17 +70,17 @@ import FastIncomesPage from './pages/PanelUser/04Accounts/FastIncomes/FastIncome
 import CreateExpensesPage from './pages/PanelUser/04Accounts/03Expenses/CreateExpenses/CreateExpensesPage';
 import PendingApprovalPage from './pages/PanelUser/04Accounts/04PendingApproval/PendingApprovalPage';
 // SIDEBAR - INVOICING-AND-POS
-import InvoicingAndPosPage from './pages/PanelUser/05InvoicingAndPos/InvoicingAndPosPage';
-import SellPointOfSalePage from './pages/PanelUser/05InvoicingAndPos/01SellPointOfSalePage/01SellPointOfSale/SellPointOfSalePage';
-import ElectronicInvoicingPage from './pages/PanelUser/05InvoicingAndPos/01SellPointOfSalePage/02ElectronicInvoicing/ElectronicInvoicingPage';
-import SeeElectronicInvoicingPosPage from './pages/PanelUser/05InvoicingAndPos/02SeeElectronicInvoicingPosPage/SeeElectronicInvoicingPosPage';
-import ConsultCreditNotes from './pages/PanelUser/05InvoicingAndPos/03CreditNotes/ConsultCreditNotes/ConsultCreditNotes';
-import CreateCreditNotesPage from './pages/PanelUser/05InvoicingAndPos/03CreditNotes/CreateCreditNotes/CreateCreditNotesPage';
-import ConsultDebitNotesPage from './pages/PanelUser/05InvoicingAndPos/04DebitNotes/ConsultDebitNotes/ConsultDebitNotesPage';
-import CreateDebitNotesPage from './pages/PanelUser/05InvoicingAndPos/04DebitNotes/CreateDebitNotes/CreateDebitNotesPage';
-import RecurringInvoicesPage from './pages/PanelUser/05InvoicingAndPos/05RecurringInvoices/RecurringInvoicesPage';
-// import QuotationsPage from './pages/PanelUser/05InvoicingAndPos/06Quotations/QuotationsPage';
-import ReceivedPaymentsPage from './pages/PanelUser/05InvoicingAndPos/07ReceivedPayments/ReceivedPaymentsPage';
+import InvoicingAndPosPage from './pages/PanelUser/05ElectronicInvoicing/InvoicingAndPosPage';
+import SellPointOfSalePage from './pages/PanelUser/05ElectronicInvoicing/01SellPointOfSalePage/01SellPointOfSale/SellPointOfSalePage';
+import ElectronicInvoicingPage from './pages/PanelUser/05ElectronicInvoicing/01SellPointOfSalePage/02ElectronicInvoicing/ElectronicInvoicingPage';
+import SeeElectronicInvoicingPosPage from './pages/PanelUser/05ElectronicInvoicing/02SeeElectronicInvoicingPosPage/SeeElectronicInvoicingPosPage';
+import ConsultCreditNotes from './pages/PanelUser/05ElectronicInvoicing/03CreditNotes/ConsultCreditNotes/ConsultCreditNotes';
+import CreateCreditNotesPage from './pages/PanelUser/05ElectronicInvoicing/03CreditNotes/CreateCreditNotes/CreateCreditNotesPage';
+import ConsultDebitNotesPage from './pages/PanelUser/05ElectronicInvoicing/04DebitNotes/ConsultDebitNotes/ConsultDebitNotesPage';
+import CreateDebitNotesPage from './pages/PanelUser/05ElectronicInvoicing/04DebitNotes/CreateDebitNotes/CreateDebitNotesPage';
+import RecurringInvoicesPage from './pages/PanelUser/05ElectronicInvoicing/05RecurringInvoices/RecurringInvoicesPage';
+// import QuotationsPage from './pages/PanelUser/05ElectronicInvoicing/06Quotations/QuotationsPage';
+import ReceivedPaymentsPage from './pages/PanelUser/05ElectronicInvoicing/07ReceivedPayments/ReceivedPaymentsPage';
 // SIDEBAR - ELECTRONIC-PAYROLL
 import ElectronicPayrollPage from './pages/PanelUser/06ElectronicPayroll/ElectronicPayrollPage';
 import ConsultCollaboratorPage from './pages/PanelUser/06ElectronicPayroll/01Collaborator/01ConsultCollaborator/ConsultCollaboratorPage';

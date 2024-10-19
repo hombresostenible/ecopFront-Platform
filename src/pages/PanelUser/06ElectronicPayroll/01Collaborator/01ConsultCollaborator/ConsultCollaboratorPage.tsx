@@ -118,8 +118,8 @@ function ConsultCollaboratorPage() {
                     <div className={`${styles.container__Component} px-5 overflow-hidden overflow-y-auto`}>
                         <h1 className={`${styles.title} mb-4 mt-4`}>Colaboradores</h1>
 
-                        <div className='mb-4 d-flex align-items-center justify-content-between'>
-                            <div className="d-flex"></div>
+                        <div className={`${styles.container__Link_Head_Navigate} mb-3 mx-auto d-flex align-items-center justify-content-between`}>
+                            <div></div>
                             <div className={styles.link__Head_Navigate}>
                                 <FaPlus className={`${styles.icon__Plus} `}/>
                                 <Link to='/electronic-payroll/create-collaborators' className={`${styles.link} text-decoration-none`}>Crea tus colaboradores</Link>
@@ -151,9 +151,9 @@ function ConsultCollaboratorPage() {
                             )}
                         </div>
 
-                        <div className={`${styles.container__Table} mt-2 mb-2 mx-auto table-responsive`}>
-                            <table className="table table-striped">
-                                <thead className={`${styles.container__Head}`}>
+                        <div className={`${styles.container__Table} mt-2 mb-2 mx-auto`}>
+                            <table className="table">
+                                <thead className={`${styles.container__Head} `}>
                                     <tr className={`${styles.container__Tr} d-flex align-items-center justify-content-between`}>
                                         {selectedColumns.includes('Nombres') && (
                                             <th className={`${styles.name} d-flex align-items-center justify-content-center text-center`}>Nombres</th>
@@ -189,63 +189,63 @@ function ConsultCollaboratorPage() {
                                     </tr>
                                 </thead>
                                 
-                                <tbody className={`${styles.container__Body}`}>
+                                <tbody className={`${styles.container__Body} `}>
                                     {Array.isArray(userPlatforms) && userPlatforms.length > 0 ? (
                                         userPlatforms.map((userPlatform) => (
-                                        <tr key={userPlatform.id} className={`${styles.container__Info} d-flex align-items-center justify-content-between`}>
-                                            {selectedColumns.includes('Nombres') && (
-                                                <td className={`${styles.name} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.name}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Apellidos') && (
-                                                <td className={`${styles.last__Name} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.lastName}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Tipo de Doc. Id') && (
-                                                <td className={`${styles.type__Document_Id} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.typeDocumentId}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Documento identidad') && (
-                                                <td className={`${styles.document__Id} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.documentId}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Tipo de rol') && (
-                                                <td className={`${styles.type__Role} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.typeRole}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Departamento') && (
-                                                <td className={`${styles.department} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.department ? userPlatform.department : 'No definido'}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Ciudad') && (
-                                                <td className={`${styles.city} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.city ? userPlatform.city : 'No definido'}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Dirección') && (
-                                                <td className={`${styles.address} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.address}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Teléfono') && (
-                                                <td className={`${styles.phone} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.phone ? userPlatform.phone : 'No registrado'}</span>
-                                                </td>
-                                            )}
-                                            {selectedColumns.includes('Email') && (
-                                                <td className={`${styles.email} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                    <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.email}</span>
-                                                </td>
-                                            )}
-                                            <td className={`${styles.action} d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                <div className={`${styles.container__Icons} d-flex align-items-center justify-content-center overflow-hidden`}>
+                                            <tr key={userPlatform.id} className={`${styles.container__Info} d-flex align-items-center justify-content-between`}>
+                                                {selectedColumns.includes('Nombres') && (
+                                                    <td className={`${styles.name} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.name}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Apellidos') && (
+                                                    <td className={`${styles.last__Name} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.lastName}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Tipo de Doc. Id') && (
+                                                    <td className={`${styles.type__Document_Id} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.typeDocumentId}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Documento identidad') && (
+                                                    <td className={`${styles.document__Id} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.documentId}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Tipo de rol') && (
+                                                    <td className={`${styles.type__Role} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.typeRole}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Departamento') && (
+                                                    <td className={`${styles.department} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.department ? userPlatform.department : 'No definido'}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Ciudad') && (
+                                                    <td className={`${styles.city} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.city ? userPlatform.city : 'No definido'}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Dirección') && (
+                                                    <td className={`${styles.address} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.address}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Teléfono') && (
+                                                    <td className={`${styles.phone} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.phone ? userPlatform.phone : 'No registrado'}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('Email') && (
+                                                    <td className={`${styles.email} d-flex align-items-center justify-content-center`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{userPlatform.email}</span>
+                                                    </td>
+                                                )}
+                                                <td className={`${styles.action} d-flex align-items-center justify-content-center overflow-hidden`}>
                                                     <div className={`${styles.container__Icons} d-flex align-items-center justify-content-center overflow-hidden`}>
+                                                        <div className={`${styles.container__Icons} d-flex align-items-center justify-content-center overflow-hidden`}>
                                                         <MdOutlineRemoveRedEye
                                                             className={`${styles.button__Edit} `}
                                                             onClick={() => {

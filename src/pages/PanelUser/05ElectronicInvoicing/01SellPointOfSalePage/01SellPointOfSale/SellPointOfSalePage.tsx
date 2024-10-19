@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../../../../../redux/store';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import POSComponent from '../../../../../components/PanelUser/05InvoicingAndPos/01SellPointOfSalePage/POSComponent';
+import POSComponent from '../../../../../components/PanelUser/05ElectronicInvoicing/01SellPointOfSalePage/POSComponent';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../../components/PanelUser/Footer/Footer';
