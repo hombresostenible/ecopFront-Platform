@@ -7,7 +7,7 @@ import productReducer from './User/03Inventories/03InventoryProductsSlice/produc
 import rawMaterialReducer from './User/03Inventories/04InventoryRawMateralsSlice/rawMaterialSlice';
 import serviceReducer from './User/03Inventories/05InventoryServicesSlice/serviceSlice';
 import accountsBookReducer from './User/04AccountsSlice/accountsBookSlice';
-import electronicInvoicingReducer from './User/05ElectronicInvoicing/electronicInvoicingSlice';
+import electronicInvoicingReducer from './User/05ElectronicInvoicing/02ElectronicInvoicing/electronicInvoicingSlice';
 import usersPlatformReducer from './User/userPlatformSlice/userPlatformSlice';
 import crmClientReducer from './User/07CrmClientSlice/crmClientSlice';
 import crmSupplierReducer from './User/08CrmSupplierSlice/crmSupplierSlice';
