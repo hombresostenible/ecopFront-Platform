@@ -10,10 +10,9 @@
     color: #f28705;
     font-weight: 600;
     letter-spacing: 1px;
-    max-width: 1053px;
 }
 .container__Filters {
-    max-width: 1053px;
+    width: 100%;
 }
 .select__Branch {
     outline-color: #718bd8;
@@ -44,7 +43,7 @@
     cursor: pointer;
 }
 .container__Link_Head_Navigate {
-    max-width: 1053px;
+    width: 100%;
 }
 .Link__Consult {
     color: #718bd8;
@@ -84,7 +83,7 @@
     cursor: pointer;
 }
 .container__Paginated {
-    max-width: 1053px;
+    width: 100%;
 }
 .select {
     margin: 0 15px 0 10px;
@@ -93,51 +92,62 @@
 
 /* TABLA */
 .container__Table {
-    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
 }
 .container__Head {
-    background: #e9ecef;
     height: 60px;
     width: 100%;
     font-weight: 600;
 }
-.container__Tr {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 60px;
-}
 
 /* TITULOS DE LAS COLUMNAS */
+.container__Tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px;
+}
+.container__Tr, .container__Info {
+    flex-wrap: nowrap;
+}
 .issue__Date {
     height: 60px;
-    width: 100px;
+    min-width: 100px;
+    width: 9.5%;
 }
 .expiration__Date {
     height: 60px;
-    width: 100px;
+    min-width: 100px;
+    width: 9.5%;
 }
 .branch {
     height: 60px;
-    width: 200px;
+    min-width: 200px;
+    width: 20%;
 }
 .transaction__Counterpart {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 14%;
 }
 .total__Value {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 14%;
 }
 .dian__State {
     height: 60px;
-    width: 100px;
+    min-width: 100px;
+    width: 9.5%;
 }
 .state {
     height: 60px;
-    width: 100px;
+    min-width: 100px;
+    width: 9.5%;
 }
 .action {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 14%;
 }
 
 /* CONTENIDO DE LA TABLA */

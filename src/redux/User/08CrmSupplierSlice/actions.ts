@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
-import { ICrmSupplier } from '../../../types/User/crmSupplier.types';
+import { ICrmSupplier } from '../../../types/UserPanel/08CrmSupplierSlice/crmSupplier.types';
 import { crmSupplierData, errorCrmSupplier, postCrmSupplierStart, postManyCrmSuppliersStart, getCrmSuppliersStart, getCrmSuppliersPaginatedStart, getCrmSupplierByIdStart, getCrmSuppliersByBranchStart, putCrmSupplierStart, deleteCrmSupplierStart, sendEmailCRMSupplierStart } from './crmSupplierSlice';
 
 //CREAR DE UN PROVEEDOR

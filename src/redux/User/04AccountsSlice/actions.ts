@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
-import { IAccountsBook } from '../../../types/User/accountsBook.types';
+import { IAccountsBook } from '../../../types/UserPanel/04Accounts/accountsBook.types';
 import {
     accountsBookData,
     errorAccountsBook,

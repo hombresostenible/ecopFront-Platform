@@ -1,6 +1,6 @@
 // ELEMENTOS DEL COMPONENTE
-import { IRawMaterial } from '../../../../../types/User/rawMaterial.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IRawMaterial } from '../../../../../types/UserPanel/03Inventories/rawMaterial.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';
 

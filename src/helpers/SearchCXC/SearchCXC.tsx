@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../redux/store';
 import { getAccountsReceivableByBranch } from '../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsReceivable } from "../../types/User/accountsReceivable.types";
+import { IAccountsReceivable } from "../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsReceivable.types";
 
 interface SearchCXCProps {
     token: string;

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IService } from '../../../../types/User/services.types';
+import { IService } from '../../../../types/UserPanel/03Inventories/services.types';
 
 interface ServiceState {
     service: IService | IService[] | null;

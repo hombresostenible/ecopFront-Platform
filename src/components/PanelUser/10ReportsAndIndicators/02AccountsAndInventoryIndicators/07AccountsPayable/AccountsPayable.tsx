@@ -12,7 +12,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAccountsPayable, getAccountsPayableByBranch } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsPayable } from '../../../../../types/User/accountsPayable.types';
+import { IAccountsPayable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsPayable.types';
 import DownloadAccountsPayable from './DownloadAccountsPayable';
 import ModalAccountsPayable from './ModaAccountsPayable';
 import { PiExportBold } from "react-icons/pi";

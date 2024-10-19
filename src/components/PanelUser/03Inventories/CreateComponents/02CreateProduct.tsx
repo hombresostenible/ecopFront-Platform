@@ -10,8 +10,8 @@ import { getBranches } from '../../../../redux/User/02BranchSlice/actions';
 import { getAssetsByBranch } from '../../../../redux/User/03Inventories/01InventoryAssetsSlice/actions';
 import { getRawMaterialsByBranch } from '../../../../redux/User/03Inventories/04InventoryRawMateralsSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { IProduct } from '../../../../types/User/products.types';
-import { IBranch } from '../../../../types/User/branch.types';
+import { IProduct } from '../../../../types/UserPanel/03Inventories/products.types';
+import { IBranch } from '../../../../types/UserPanel/02Branch/branch.types';
 import styles from './styles.module.css';
 
 interface CreateProductProps {

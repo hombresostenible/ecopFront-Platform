@@ -10,8 +10,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store.ts';
 import { postUserPlatform, getUsersPlatform } from '../../../../../redux/User/userPlatformSlice/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions.ts';
 // ELEMENTOS DEL COMPONENTE
-import { IUserPlatform } from '../../../../../types/User/userPlatform.types.ts';
-import { IBranch } from '../../../../../types/User/branch.types.ts';
+import { IUserPlatform } from '../../../../../types/UserPanel/06ElectronicPayroll/userPlatform.types.ts';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types.ts';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../../components/PanelUser/Footer/Footer.tsx';

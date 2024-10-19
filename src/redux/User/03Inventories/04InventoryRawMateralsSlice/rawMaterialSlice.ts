@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IRawMaterial } from '../../../../types/User/rawMaterial.types';
+import { IRawMaterial } from '../../../../types/UserPanel/03Inventories/rawMaterial.types';
 
 interface RawMaterialState {
     rawMaterial: IRawMaterial | IRawMaterial[] | null;

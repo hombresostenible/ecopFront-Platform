@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../../store';
 import axiosInstance from '../../../../api/axios';
-import { IMerchandise } from '../../../../types/User/merchandise.types';
+import { IMerchandise } from '../../../../types/UserPanel/03Inventories/merchandise.types';
 import { merchandiseData, errorMerchandise, postMerchandisetart, postManyMerchandisesStart, getMerchandisesStart, getMerchandisesPaginatedStart, getMerchandiseByIdStart, getMerchandisesByBranchStart, getMerchandisesOffStart, putMerchandiseStart, putManyMerchandisesStart, patchMerchandiseStart, patchAddInventoryMerchandiseStart, deleteMerchandiseStart } from './merchandiseSlice';
 
 //CREAR UNA MERCANCIA

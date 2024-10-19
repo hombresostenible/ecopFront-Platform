@@ -10,7 +10,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getRawmaterialsInventory, getRawmaterialsInventoryByBranch } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IRawMaterial } from '../../../../../types/User/rawMaterial.types';
+import { IRawMaterial } from '../../../../../types/UserPanel/03Inventories/rawMaterial.types';
 import DownloadInventoryRawMaterials from './DownloadInventoryRawMaterials';
 import ModalInventoryRawMaterials from './ModalInventoryRawMaterials';
 import ModalGraphicInventoryRawMaterial from './ModalGraphicInventoryRawMaterial';

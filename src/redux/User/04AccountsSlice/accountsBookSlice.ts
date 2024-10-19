@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IAccountsBook } from '../../../types/User/accountsBook.types';
+import { IAccountsBook } from '../../../types/UserPanel/04Accounts/accountsBook.types';
 
 interface UserState {
     accountsBook: IAccountsBook | IAccountsBook[] | null;

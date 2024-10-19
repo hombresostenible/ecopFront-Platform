@@ -9,8 +9,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getRawMaterialsPaginated, getRawMaterialsByBranch } from '../../../../../redux/User/03Inventories/04InventoryRawMateralsSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IRawMaterial } from '../../../../../types/User/rawMaterial.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IRawMaterial } from '../../../../../types/UserPanel/03Inventories/rawMaterial.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types.ts';
 import ColumnSelector from '../../../../../helpers/ColumnSelector/ColumnSelector';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';

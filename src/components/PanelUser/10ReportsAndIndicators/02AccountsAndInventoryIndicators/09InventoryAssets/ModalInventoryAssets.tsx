@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAssets } from "../../../../../types/User/assets.types";
+import { IAssets } from "../../../../../types/UserPanel/03Inventories/assets.types";
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';
 

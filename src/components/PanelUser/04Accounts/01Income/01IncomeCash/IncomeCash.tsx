@@ -9,8 +9,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { postAccountsBook } from '../../../../../redux/User/04AccountsSlice/actions';
 import { getItemByBarCode } from '../../../../../redux/User/itemBybarCodeOrName/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook, IAccountsBookItems } from "../../../../../types/User/accountsBook.types";
-import { IUserPlatform } from '../../../../../types/User/userPlatform.types';
+import { IAccountsBook, IAccountsBookItems } from "../../../../../types/UserPanel/04Accounts/accountsBook.types";
+import { IUserPlatform } from '../../../../../types/UserPanel/06ElectronicPayroll/userPlatform.types';
 import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname';
 import ModalChangeQuantityPerItem from '../../../../../helpers/ModalChangeQuantityPerItem/ModalChangeQuantityPerItem';
 import SearchClientCrm from '../../../../../helpers/SearchClientCrm/SearchClientCrm';

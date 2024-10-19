@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../redux/store';
 import { getAccountsPayableByBranch } from '../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsPayable } from "../../types/User/accountsPayable.types";
+import { IAccountsPayable } from "../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsPayable.types";
 
 interface SearchCXPProps {
     token: string;

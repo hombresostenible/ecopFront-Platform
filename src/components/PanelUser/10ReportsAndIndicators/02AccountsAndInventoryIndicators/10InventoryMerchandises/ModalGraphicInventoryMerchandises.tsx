@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-date-fns';
-import { IMerchandise } from '../../../../../types/User/merchandise.types';
+import { IMerchandise } from '../../../../../types/UserPanel/03Inventories/merchandise.types';
 
 interface ModalInventoryProductProps {
     selectedMerchandise: IMerchandise | null;

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICrmSupplier } from '../../../types/User/crmSupplier.types';
+import { ICrmSupplier } from '../../../types/UserPanel/08CrmSupplierSlice/crmSupplier.types';
 
 interface CrmSupplierState {
     crmSupplier: ICrmSupplier | ICrmSupplier[] | null;

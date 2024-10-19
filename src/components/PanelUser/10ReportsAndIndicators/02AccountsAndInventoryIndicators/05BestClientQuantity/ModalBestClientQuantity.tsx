@@ -7,7 +7,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IBestClientQuantity } from "../../../../../types/User/financialIndicators.types";
+import { IBestClientQuantity } from "../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/financialIndicators.types";
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 
 interface ModalBestClientQuantityProps {

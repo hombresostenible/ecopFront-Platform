@@ -8,9 +8,9 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { postAccountsBook } from '../../../../../redux/User/04AccountsSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsBook } from "../../../../../types/User/accountsBook.types";
-import { IAccountsPayable } from '../../../../../types/User/accountsPayable.types';
-import { IUserPlatform } from '../../../../../types/User/userPlatform.types';
+import { IAccountsBook } from "../../../../../types/UserPanel/04Accounts/accountsBook.types";
+import { IAccountsPayable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsPayable.types';
+import { IUserPlatform } from '../../../../../types/UserPanel/06ElectronicPayroll/userPlatform.types';
 import SearchCXP from '../../../../../helpers/SearchCXP/SearchCXP';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';

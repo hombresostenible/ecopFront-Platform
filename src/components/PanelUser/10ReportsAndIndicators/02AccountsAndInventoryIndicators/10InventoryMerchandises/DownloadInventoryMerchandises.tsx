@@ -1,5 +1,5 @@
 import { Document, Page, Text } from '@react-pdf/renderer';
-import { IMerchandise } from '../../../../../types/User/merchandise.types';
+import { IMerchandise } from '../../../../../types/UserPanel/03Inventories/merchandise.types';
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 
 interface DownloadInventoryMerchandisesProps {

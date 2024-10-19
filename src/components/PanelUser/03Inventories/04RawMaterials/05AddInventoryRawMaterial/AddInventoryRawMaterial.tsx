@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { patchAddInventoryRawMaterial, getRawMaterials } from '../../../../../redux/User/03Inventories/04InventoryRawMateralsSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IRawMaterial } from '../../../../../types/User/rawMaterial.types';
+import { IRawMaterial } from '../../../../../types/UserPanel/03Inventories/rawMaterial.types';
 import styles from './styles.module.css';
 
 interface AddInventoryRawMaterialProps {

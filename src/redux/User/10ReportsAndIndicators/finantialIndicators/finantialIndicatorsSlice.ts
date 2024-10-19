@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IAccountsPayable } from '../../../../types/User/accountsPayable.types';
-import { IAccountsReceivable } from '../../../../types/User/accountsReceivable.types';
+import { IAccountsPayable } from '../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsPayable.types';
+import { IAccountsReceivable } from '../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsReceivable.types';
 
 interface FinantialIndicatorState {
     salesPerPeriod: any;                        //

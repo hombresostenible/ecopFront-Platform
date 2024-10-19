@@ -9,7 +9,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAccountsReceivablePaginated, getAccountsReceivableByBranchPaginated } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IAccountsReceivable } from '../../../../../types/User/accountsReceivable.types.ts';
+import { IAccountsReceivable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsReceivable.types.ts';
 import ColumnSelector from '../../../../../helpers/ColumnSelector/ColumnSelector';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';

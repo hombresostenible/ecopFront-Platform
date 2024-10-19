@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../../redux/store';
 import { putCrmClient, getCrmClients } from '../../../../redux/User/07CrmClientSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmClient } from '../../../../types/User/crmClient.types';
+import { ICrmClient } from '../../../../types/UserPanel/07CrmClientSlice/crmClient.types';
 import DepartmenAndCity from '../../../../helpers/DepartmenAndCity/DepartmenAndCity';
 import styles from './styles.module.css';
 

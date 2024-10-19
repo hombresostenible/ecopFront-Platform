@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../../../redux/store';
 import { putUserPlatform, getUsersPlatform } from '../../../../../redux/User/userPlatformSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IUserPlatform } from '../../../../../types/User/userPlatform.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IUserPlatform } from '../../../../../types/UserPanel/06ElectronicPayroll/userPlatform.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
 import DepartmenAndCity from '../../../../../helpers/DepartmenAndCity/DepartmenAndCity';
 import styles from './styles.module.css';
 

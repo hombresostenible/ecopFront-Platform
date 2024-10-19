@@ -10,12 +10,12 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { ICrmClient } from '../../../../../types/User/crmClient.types';
-import { IAssets } from "../../../../../types/User/assets.types";
-import { IMerchandise } from "../../../../../types/User/merchandise.types";
-import { IProduct } from "../../../../../types/User/products.types";
-import { IRawMaterial } from "../../../../../types/User/rawMaterial.types";
-import { IService } from "../../../../../types/User/services.types";
+import { ICrmClient } from '../../../../../types/UserPanel/07CrmClientSlice/crmClient.types.ts';
+import { IAssets } from "../../../../../types/UserPanel/03Inventories/assets.types";
+import { IMerchandise } from "../../../../../types/UserPanel/03Inventories/merchandise.types";
+import { IProduct } from "../../../../../types/UserPanel/03Inventories/products.types";
+import { IRawMaterial } from "../../../../../types/UserPanel/03Inventories/rawMaterial.types";
+import { IService } from "../../../../../types/UserPanel/03Inventories/services.types";
 import SearchClientCrm from '../../../../../helpers/SearchClientCrm/SearchClientCrm';
 import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
-import { ICrmClient } from '../../../types/User/crmClient.types';
+import { ICrmClient } from '../../../types/UserPanel/07CrmClientSlice/crmClient.types';
 import { crmClientData, errorCrmClient, postCrmClientStart, postManyCrmClientsStart, getCrmClientsStart, getCrmClientsPaginatedStart, getCrmClientByIdStart, getCrmClientsByBranchStart, putCrmClientStart, deleteCrmClientStart, sendEmailCRMClientStart } from './crmClientSlice';
 
 //CREAR DE UN CLIENTE

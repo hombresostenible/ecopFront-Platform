@@ -5,11 +5,11 @@ import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from '../../redux/store';
-import { loginUser, setRecaptchaVerified } from '../../redux/User/userSlice/actions';
+import type { RootState, AppDispatch } from '../../../redux/store';
+import { loginUser, setRecaptchaVerified } from '../../../redux/User/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { ILogin } from '../../types/Auth/login.types'
-import Logo from '../../assets/LogoEcopcion.svg';
+import { ILogin } from '../../../types/Auth/login.types'
+import Logo from '../../../assets/LogoEcopcion.svg';
 import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
 import { PiWarningCircle } from 'react-icons/pi';
 import styles from './styles.module.css';

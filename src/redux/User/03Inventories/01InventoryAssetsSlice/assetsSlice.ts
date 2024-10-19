@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IAssets } from '../../../../types/User/assets.types';
+import { IAssets } from '../../../../types/UserPanel/03Inventories/assets.types';
 
 interface AssetState {
     assets: IAssets | IAssets[] | null;

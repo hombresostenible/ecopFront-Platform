@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../../redux/store';
 import { putBranch, getBranches } from '../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IBranch } from '../../../../types/User/branch.types';
+import { IBranch } from '../../../../types/UserPanel/02Branch/branch.types';
 import DepartmenAndCity from '../../../../helpers/DepartmenAndCity/DepartmenAndCity';
 import styles from './styles.module.css';
 

@@ -1,5 +1,5 @@
-import { IAccountsBook } from '../../../../../types/User/accountsBook.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IAccountsBook } from '../../../../../types/UserPanel/04Accounts/accountsBook.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import styles from './styles.module.css';
 

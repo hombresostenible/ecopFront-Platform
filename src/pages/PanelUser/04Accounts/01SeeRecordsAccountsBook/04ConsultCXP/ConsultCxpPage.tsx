@@ -9,7 +9,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getAccountsPayablePaginated, getAccountsPayableByBranchPaginated } from '../../../../../redux/User/10ReportsAndIndicators/finantialIndicators/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE 
-import { IAccountsPayable } from '../../../../../types/User/accountsPayable.types.ts';
+import { IAccountsPayable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsPayable.types.ts';
 import ColumnSelector from '../../../../../helpers/ColumnSelector/ColumnSelector';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';

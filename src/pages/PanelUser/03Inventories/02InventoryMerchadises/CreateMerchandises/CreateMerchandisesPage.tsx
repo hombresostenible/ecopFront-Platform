@@ -10,8 +10,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { postMerchandise, getMerchandises } from '../../../../../redux/User/03Inventories/02InventoryMerchadisesSlice/actions.ts';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IMerchandise } from '../../../../../types/User/merchandise.types';
-import { IBranch } from '../../../../../types/User/branch.types';
+import { IMerchandise } from '../../../../../types/UserPanel/03Inventories/merchandise.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types.ts';
 import CreateManyMerchandises from '../../../../../components/PanelUser/03Inventories/02Merchandises/CreateManyMerchandises/CreateManyMerchandises';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';

@@ -12,7 +12,7 @@ import { getBestClientValue, getBestClientValueByBranch } from '../../../../../r
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IBestClientValue } from "../../../../../types/User/financialIndicators.types";
+import { IBestClientValue } from "../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/financialIndicators.types";
 import DownloadBestClientValue from './DownloadBestClientValue';
 import ModalBestClientValue from './ModalBestClientValue';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';

@@ -8,8 +8,8 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 import { postManyServices, getServices } from '../../../../../redux/User/03Inventories/05InventoryServicesSlice/actions';
 // ELEMENTOS DEL COMPONENTE
-import { IBranch } from '../../../../../types/User/branch.types';
-import { IService } from '../../../../../types/User/services.types';
+import { IBranch } from '../../../../../types/UserPanel/02Branch/branch.types';
+import { IService } from '../../../../../types/UserPanel/03Inventories/services.types';
 import styles from './styles.module.css';
 
 interface CreateManyRawMateralsProps {

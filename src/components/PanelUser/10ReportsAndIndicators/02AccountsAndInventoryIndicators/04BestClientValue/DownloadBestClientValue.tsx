@@ -1,7 +1,7 @@
 import { Document, Image, View, Page, Text } from '@react-pdf/renderer';
 // ELEMENTOS DEL COMPONENTE
 import { IUser } from '../../../../../types/User/user.types';
-import { IBestClientValue } from "../../../../../types/User/financialIndicators.types";
+import { IBestClientValue } from "../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/financialIndicators.types";
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 

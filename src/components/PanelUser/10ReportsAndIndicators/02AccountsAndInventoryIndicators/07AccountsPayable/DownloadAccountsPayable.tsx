@@ -1,5 +1,5 @@
 import { Document, Page, Text } from '@react-pdf/renderer';
-import { IAccountsPayable } from '../../../../../types/User/accountsPayable.types';
+import { IAccountsPayable } from '../../../../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsPayable.types';
 import { stylesPDFDownloadIndicator } from '../../../../../helpers/StylesComponents/stylesPDFDownloadIndicator';
 
 interface DownloadAccountsPayableProps {
