@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AppDispatch } from '../../store';
-import axiosInstance from '../../../api/axios';
-import { IBranch } from '../../../types/User/branch.types';
+import { AppDispatch } from '../../../store';
+import axiosInstance from '../../../../api/axios';
+import { IElectronicInvoicing } from '../../../../types/User/electronicInvoicing.types';
 import { electronicInvoicingData, errorElectronicInvoicing, postElectronicInvoicingStart, getElectronicInvoicingStart, getElectronicInvoicingPaginatedStart, getElectronicInvoicingByIdStart, putElectronicInvoicingStart, deleteElectronicInvoicingStart } from './electronicInvoicingSlice';
 
 // CREA UNA FACTURA ELECTRONICA
-export const postElectronicInvoicing = (formData: IBranch, token: string) => async (dispatch: AppDispatch) => {
+export const postElectronicInvoicing = (formData: IElectronicInvoicing, token: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(postElectronicInvoicingStart());
         const response = await axiosInstance.post(`/electronic-invoicing`, formData, {
@@ -27,7 +27,7 @@ export const postElectronicInvoicing = (formData: IBranch, token: string) => asy
 // OBTIENE TODAS LAS FACTURAS ELECTRONICAS
 export const getElectronicInvoicing = (token: string) => async (dispatch: AppDispatch) => {
     try {
-        const response = await axiosInstance.get(`/branch`, {
+        const response = await axiosInstance.get(`/electronic-invoicing`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export const getElectronicInvoicing = (token: string) => async (dispatch: AppDis
 // OBTIENE TODAS LAS FACTURAS ELECTRONICAS PAGINADAS
 export const getElectronicInvoicingPaginated = (token: string, page: number, limit: number) => async (dispatch: AppDispatch) => {
     try {
-        const response = await axiosInstance.get(`/branch/paginated?page=${page}&limit=${limit}`, {
+        const response = await axiosInstance.get(`/electronic-invoicing/paginated?page=${page}&limit=${limit}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
@@ -70,7 +70,7 @@ export const getElectronicInvoicingPaginated = (token: string, page: number, lim
 // OBTIENE UNA FACTURA ELECTRONICA POR ID
 export const getElectronicInvoicingById = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
-        const response = await axiosInstance.get(`/branch/${idBranch}`, {
+        const response = await axiosInstance.get(`/electronic-invoicing/${idBranch}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
@@ -87,10 +87,10 @@ export const getElectronicInvoicingById = (idBranch: string, token: string) => a
 };
 
 // ACTUALIZA UNA FACTURA ELECTRONICA
-export const putElectronicInvoicing = (idBranch: string, formData: IBranch, token: string) => async (dispatch: AppDispatch) => {
+export const putElectronicInvoicing = (idBranch: string, formData: IElectronicInvoicing, token: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(putElectronicInvoicingStart());
-        const response = await axiosInstance.put(`/branch/${idBranch}`, formData, {
+        const response = await axiosInstance.put(`/electronic-invoicing/${idBranch}`, formData, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
@@ -110,7 +110,7 @@ export const putElectronicInvoicing = (idBranch: string, formData: IBranch, toke
 export const deleteElectronicInvoicing = (idBranch: string, token: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(deleteElectronicInvoicingStart());
-        const response = await axiosInstance.delete(`/branch/${idBranch}`, {
+        const response = await axiosInstance.delete(`/electronic-invoicing/${idBranch}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
