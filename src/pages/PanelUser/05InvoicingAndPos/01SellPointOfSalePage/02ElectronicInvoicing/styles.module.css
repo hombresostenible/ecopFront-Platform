@@ -138,7 +138,6 @@
 .container__Table {
     border: 1px solid rgba(0, 0, 0, 0.2);
     width: 100%;
-    overflow-x: auto;
 }
 .container__Head {
     height: 60px;
@@ -157,14 +156,14 @@
 .number {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 80px;
-    width: 8%;
+    min-width: 50px;
+    width: 5%;
 }
 .code {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    min-width: 140px;
-    width: 14%;
+    min-width: 190px;
+    width: 19%;
 }
 .product__Service {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -199,8 +198,8 @@
 .discount__Value {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
-    width: 14%;
-    min-width: 140px;
+    min-width: 120px;
+    width: 12%;
 }
 .subtotal {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -225,12 +224,7 @@
 
 /* CONTENIDO DE LA TABLA */
 .container__Body {
-    height: 60px;
     width: 100%;
-}
-.container__Info {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    height: 60px;
 }
 .text__Ellipsis {
     opacity: 0.75;
@@ -325,11 +319,6 @@
 .retention__Value {
     width: 140px;
 }
-
-
-
-
-
 
 .container__Retention_Values {
     border-top: 1px solid rgba(0, 0, 0, 0.2);

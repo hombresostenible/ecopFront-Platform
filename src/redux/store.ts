@@ -1,16 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import accountsBookReducer from './User/04AccountsSlice/accountsBookSlice';
-import assetsReducer from './User/03Inventories/01InventoryAssetsSlice/assetsSlice';
+import userReducer from './User/userSlice/userSlice';
 import branchReducer from './User/02BranchSlice/branchSlice';
-import crmClientReducer from './User/07CrmClientSlice/crmClientSlice';
-import crmSupplierReducer from './User/08CrmSupplierSlice/crmSupplierSlice';
+import assetsReducer from './User/03Inventories/01InventoryAssetsSlice/assetsSlice';
 import merchandiseReducer from './User/03Inventories/02InventoryMerchadisesSlice/merchandiseSlice';
 import productReducer from './User/03Inventories/03InventoryProductsSlice/productSlice';
 import rawMaterialReducer from './User/03Inventories/04InventoryRawMateralsSlice/rawMaterialSlice';
 import serviceReducer from './User/03Inventories/05InventoryServicesSlice/serviceSlice';
-import userReducer from './User/userSlice/userSlice';
+import accountsBookReducer from './User/04AccountsSlice/accountsBookSlice';
+import electronicInvoicingReducer from './User/05ElectronicInvoicing/electronicInvoicingSlice';
 import usersPlatformReducer from './User/userPlatformSlice/userPlatformSlice';
-import finantialIndicatorsReducer from './User/indicator/finantialIndicators/finantialIndicatorsSlice';
+import crmClientReducer from './User/07CrmClientSlice/crmClientSlice';
+import crmSupplierReducer from './User/08CrmSupplierSlice/crmSupplierSlice';
+import finantialIndicatorsReducer from './User/10ReportsAndIndicators/finantialIndicators/finantialIndicatorsSlice';
 import itemByBarCodeOrNameReducer from './User/itemBybarCodeOrName/itemByBarCodeOrNameSlice';
 import searchItemsReducer from './User/searchItems/searchItemsSlice';
 
@@ -18,17 +19,18 @@ import searchItemsReducer from './User/searchItems/searchItemsSlice';
 export type RootState = ReturnType<typeof store.getState>;
 
 const rootReducer = {
-    accountsBook: accountsBookReducer,
-    assets: assetsReducer,
+    user: userReducer,
     branch: branchReducer,
-    crmClient: crmClientReducer,
-    crmSupplier: crmSupplierReducer,
+    assets: assetsReducer,
     merchandise: merchandiseReducer,
     product: productReducer,
     rawMaterial: rawMaterialReducer,
     service: serviceReducer,
-    user: userReducer,
+    accountsBook: accountsBookReducer,
+    electronicInvoicing: electronicInvoicingReducer,
     usersPlatform: usersPlatformReducer,
+    crmClient: crmClientReducer,
+    crmSupplier: crmSupplierReducer,
     finantialIndicators: finantialIndicatorsReducer, // Engloba a todos los slices de indicadores
     itemByBarCodeOrName: itemByBarCodeOrNameReducer,
     searchItems: searchItemsReducer,

@@ -10,10 +10,9 @@
     color: #f28705;
     font-weight: 600;
     letter-spacing: 1px;
-    max-width: 1203px;
 }
 .container__Filters {
-    max-width: 1203px;
+    width: 100%;
 }
 .select__Branch {
     outline-color: #718bd8;
@@ -44,7 +43,7 @@
     cursor: pointer;
 }
 .container__Link_Head_Navigate {
-    max-width: 1203px;
+    width: 100%;
 }
 .Link__Consult {
     color: #718bd8;
@@ -90,18 +89,16 @@
     cursor: pointer;
 }
 .container__Paginated {
-    max-width: 1203px;
+    width: 100%;
 }
 .select {
     margin: 0 15px 0 10px;
     outline-color: #718bd8;
 }
 
-
 /* TABLA */
 .container__Table {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    max-width: 960px;
     overflow-x: auto;
 }
 .container__Head {
@@ -121,27 +118,33 @@
 }
 .transaction__Date {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 16%;
 }
 .branch {
     height: 60px;
-    width: 200px;
+    min-width: 150px;
+    width: 20%;
 }
 .initial__Number_Payments {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 16%;
 }
 .payment__Value {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 16%;
 }
 .transaction__Counterpart {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 16%;
 }
 .total__Value {
     height: 60px;
-    width: 150px;
+    min-width: 150px;
+    width: 16%;
 }
 
 /* CONTENIDO DE LA TABLA */
