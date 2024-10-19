@@ -11,8 +11,10 @@
     font-weight: 600;
     letter-spacing: 1px;
 }
+.container__Link_Head_Navigate {
+    width: 100%;
+}
 .link__Head_Navigate {
-    color: #fff;
     padding: 10px 20px;
     color: white;
     background: #718bd8;
@@ -57,12 +59,10 @@
 
 /* TABLA */
 .container__Table {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     overflow-x: auto;
 }
 .container__Head {
-    background: #e9ecef;
     height: 60px;
     width: 100%;
     font-weight: 600;
@@ -70,13 +70,11 @@
 
 /* TITULOS DE LAS COLUMNAS */
 .container__Tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     height: 60px;
 }
 .container__Tr, .container__Info {
-    display: flex;
-    flex-wrap: nowrap; /* Evita que las columnas se apilen */
-    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 .name {
     height: 60px;
