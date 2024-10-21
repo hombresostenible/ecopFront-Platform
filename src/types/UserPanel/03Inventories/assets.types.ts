@@ -1,4 +1,4 @@
-import { IInventoryOffAssets } from '../../types/User/InventoryOffItem/iInventoryOffItem.types';
+import { IInventoryOffAssets } from './InventoryOffItem/iInventoryOffItem.types';
 
 export interface IAssets {
     id: string;

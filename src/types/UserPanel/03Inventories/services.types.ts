@@ -1,4 +1,4 @@
-import { IIvaAiu } from '../../types/User/RetentonAndTaxes/ivaAiu.types';
+import { IIvaAiu } from './RetentonAndTaxes/ivaAiu.types';
 
 export interface IService {
     id: string;
