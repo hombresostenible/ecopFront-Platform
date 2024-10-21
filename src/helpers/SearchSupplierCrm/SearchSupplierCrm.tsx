@@ -104,7 +104,7 @@ function SearchSupplierCrm({ token, onSupplierSelect }: SearchSupplierCrmCrmProp
                 styles={StylesReactSelect}
             />
 
-            <Modal show={showCancelModalCreateSupplier} onHide={() => setShowCancelModalCreateSupplier(false)} >
+            <Modal show={showCancelModalCreateSupplier} onHide={() => setShowCancelModalCreateSupplier(false)} backdrop="static" keyboard={false} >
                 <Modal.Header closeButton onClick={() => setShowCancelModalCreateSupplier(false)}>
                     <Modal.Title>Crea tu proveedor</Modal.Title>
                 </Modal.Header>

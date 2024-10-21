@@ -119,7 +119,7 @@ function SearchClientCrm({ token, onClientSelect, onDataClientSelect }: SearchCl
                 styles={StylesReactSelect}
             />
 
-            <Modal show={showCancelModalCreateClient} onHide={onCloseCreateClientModal}>
+            <Modal show={showCancelModalCreateClient} onHide={onCloseCreateClientModal} backdrop="static" keyboard={false}>
                 <Modal.Header closeButton>
                     <Modal.Title className='text-primary-emphasis text-start'>Crea tu cliente</Modal.Title>
                 </Modal.Header>

@@ -121,11 +121,11 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                         type="text"
                         {...register('documentId', { 
                             required: true,
-                            pattern: /^\d{1,9}$/
+                            pattern: /^\d{1,10}$/
                         })}
                         className={`${styles.input} p-2 border `}
                         placeholder='¿Cuál es tu número de identificación?'
-                        maxLength={9}
+                        maxLength={10}
                         onKeyDown={(e) => {
                             if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.' || e.key === ' ') {
                                 e.preventDefault();

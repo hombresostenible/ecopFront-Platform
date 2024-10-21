@@ -9,9 +9,7 @@ interface ModalInventoryProductProps {
     selectedProduct: IProduct | null;
 }
 
-function ModalGraphicInventoryProduct ({ selectedProduct }: ModalInventoryProductProps) {
-    console.log('selectedProduct: ', selectedProduct);
-    
+function ModalGraphicInventoryProduct ({ selectedProduct }: ModalInventoryProductProps) {   
     const chartContainer = useRef<HTMLCanvasElement | null>(null);
     const chartInstance = useRef<Chart | null>(null);
     
