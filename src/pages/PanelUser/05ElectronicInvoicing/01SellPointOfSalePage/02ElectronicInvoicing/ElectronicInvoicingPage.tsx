@@ -19,7 +19,7 @@ import { IMerchandise } from "../../../../../types/UserPanel/03Inventories/merch
 import { IProduct } from "../../../../../types/UserPanel/03Inventories/products.types";
 import { IRawMaterial } from "../../../../../types/UserPanel/03Inventories/rawMaterial.types";
 import { IService } from "../../../../../types/UserPanel/03Inventories/services.types";
-import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname copy.tsx';
+import SearchItemsByname from '../../../../../helpers/SearchItemName/SearchItemsByname.tsx';
 import NavBar from '../../../../../components/PanelUser/00NavBar/NavBar.tsx';
 import SideBar from '../../../../../components/PanelUser/SideBar/SideBar.tsx';
 import Footer from '../../../../../components/PanelUser/Footer/Footer';
@@ -307,7 +307,6 @@ function ElectronicInvoicingPage() {
                     },
                 },
             };
-            console.log('formData: ', formData);
 
             // PARAMETROS
             if (formData.Parametros && formData.Parametros.ContactoReceptor && formData.Parametros.ContactoReceptor.length > 0) {

@@ -350,7 +350,7 @@ function ExpenseCash({ token, decodeUserIdRegister, selectedBranch, defaultDates
                         </table>
                     </div>
 
-                    <Modal show={changeQuantityIndex !== null} onHide={handleCloseModal}>
+                    <Modal show={changeQuantityIndex !== null} onHide={handleCloseModal} backdrop="static" keyboard={false}>
                         <Modal.Header closeButton>
                             <Modal.Title>Aumentar Cantidad</Modal.Title>
                         </Modal.Header>
