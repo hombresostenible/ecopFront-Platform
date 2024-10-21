@@ -293,7 +293,7 @@ function SideBar() {
                                 location.pathname === '/inventories/create-merchandises' ||
                                 location.pathname === '/inventories/consult-products' ||
                                 location.pathname === '/inventories/create-products' ||
-                                location.pathname === '/inventories/raw-materals' ||
+                                location.pathname === '/inventories/consult-raw-materals' ||
                                 location.pathname === '/inventories/create-raw-materals' ||
                                 location.pathname === '/inventories/consult-services' ||
                                 location.pathname === '/inventories/create-services' ) ? styles.active__Icon_Section : ''} `} onClick={handleInventoriesClick} />

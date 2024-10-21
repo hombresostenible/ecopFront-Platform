@@ -40,13 +40,9 @@ function CreateServicesPage({ addNotification }: CreateServicesPageProps) {
     const assets = useSelector((state: RootState) => state.assets.assets);
     const product = useSelector((state: RootState) => state.product.product);
     const rawMaterial = useSelector((state: RootState) => state.rawMaterial.rawMaterial);
-    
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<IService>();
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [loading, setLoading] = useState(false);
-    const [shouldNavigate, setShouldNavigate] = useState(false);
+
     const [selectedBranch, setSelectedBranch] = useState('');
-    
+
     useEffect(() => {
         dispatch(getBranches(token));
         dispatch(getAssets(token));
@@ -58,6 +54,11 @@ function CreateServicesPage({ addNotification }: CreateServicesPageProps) {
             dispatch(getRawMaterialsByBranch(selectedBranch, token));
         }
     }, [ token, selectedBranch ]);
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<IService>();
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [shouldNavigate, setShouldNavigate] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const [showCancelModal, setShowCancelModal] = useState(false);
     const onCloseCreateManyModal = () => {
@@ -329,7 +330,6 @@ function CreateServicesPage({ addNotification }: CreateServicesPageProps) {
                             quantity: String(rawMaterialQuantities[rawMaterial.id] || 0),
                         })),
                 } as IService;
-
                 dispatch(postService(formData, token));
                 setFormSubmitted(true);
                 dispatch(getServices(token));

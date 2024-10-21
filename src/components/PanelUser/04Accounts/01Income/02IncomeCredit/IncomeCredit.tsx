@@ -335,7 +335,7 @@ function IncomeCredit({ token, decodeUserIdRegister, usersPlatform, selectedBran
                         </table>
                     </div>
 
-                    <Modal show={changeQuantityIndex !== null} onHide={handleCloseModal}>
+                    <Modal show={changeQuantityIndex !== null} onHide={handleCloseModal} backdrop="static" keyboard={false}>
                         <Modal.Header closeButton>
                             <Modal.Title>Aumentar Cantidad</Modal.Title>
                         </Modal.Header>
