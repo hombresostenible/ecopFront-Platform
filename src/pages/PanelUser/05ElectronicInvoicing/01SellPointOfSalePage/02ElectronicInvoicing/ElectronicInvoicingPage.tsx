@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps, @typescript-eslint/no-explicit-any */
 import { useState, useEffect, ChangeEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import jsCookie from 'js-cookie';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -11,6 +12,7 @@ import { getProfileUser } from '../../../../../redux/User/userSlice/actions';
 import { getBranches } from '../../../../../redux/User/02BranchSlice/actions';
 import { postElectronicInvoicing } from '../../../../../redux/User/05ElectronicInvoicing/02ElectronicInvoicing/actions.ts';
 // ELEMENTOS DEL COMPONENTE
+import { IElectronicInvoicing } from '../../../../../types/UserPanel/05ElectronicInvoicing/02ElectronicInvoicing/electronicInvoicing.types.ts';
 import { ICrmClient } from '../../../../../types/UserPanel/07CrmClientSlice/crmClient.types.ts';
 import { IAssets } from "../../../../../types/UserPanel/03Inventories/assets.types";
 import { IMerchandise } from "../../../../../types/UserPanel/03Inventories/merchandise.types";
@@ -27,8 +29,10 @@ import { LiaFileInvoiceSolid } from "react-icons/lia";
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { FaPlus } from "react-icons/fa";
 import styles from './styles.module.css';
+import { ILineas } from '../../../../../types/UserPanel/05ElectronicInvoicing/02ElectronicInvoicing/electronicInvoicing.types.ts';
 
 function ElectronicInvoicingPage() {
+    const navigate = useNavigate();
     const token = jsCookie.get("token") || '';
     
     // REDUX
@@ -44,40 +48,50 @@ function ElectronicInvoicingPage() {
         }
     }, [token]);
 
-    const [selectedBranch, setSelectedBranch] = useState('');
+    const { handleSubmit, reset } = useForm<IElectronicInvoicing>();
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [messageSelectedBranch, setMessageSelectedBranch] = useState<string | null>('');
+    const [messageSelectedClient, setMessageSelectedClient] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [shouldNavigate, setShouldNavigate] = useState(false);
 
+    // SETEA LA SEDE
+    const [selectedBranch, setSelectedBranch] = useState('');
     const handleBranchChange = (e: ChangeEvent<HTMLSelectElement>) => {
         const { value } = e.target;
         setSelectedBranch(value);
     };
     
-    const navigate = useNavigate();
-    const [shouldNavigate, setShouldNavigate] = useState(false);
-    
-    const [selectedClient, setSelectedClient] = useState<ICrmClient | null>(null);
-    
+    // SETEA LA FECHA DE EMISION DE LA FACTURA
     const [currentDate, setCurrentDate] = useState<Date>();
     useEffect(() => {
         const currentDate = new Date();
         setCurrentDate(currentDate);
     }, []);
     
-    const [rows, setRows] = useState<Array<{
+    // SETEA EL CLIENTE
+    const [selectedClient, setSelectedClient] = useState<ICrmClient | null>(null);
+    
+    // SETEA LOS ARTICULOS 
+    const [scannedItems, setScannedItems] = useState<Array<{
         id: number | null;
         item: IAssets | IMerchandise | IProduct | IRawMaterial | IService | null;
+        sellingPrice: number | null;
         quantity: number | null;
         discountPercentage: number | null;
     }>>([
-        { id: null, item: null, quantity: null, discountPercentage: null }
+        { id: null, item: null, sellingPrice: null, quantity: null, discountPercentage: null }
     ]);
-
+    
+    // EVENTO PARA AGREGAR MAS ARTICULOS
     const addRow = () => {
-        setRows(prevRows => [
+        setScannedItems(prevRows => [
             ...prevRows,
             { id: null, item: null, sellingPrice: null, quantity: null, discountPercentage: null }
         ]);
     };
-
+    
+    // CALCULA EL DESCUENTO
     const calculateDiscount = (quantity: number | null, sellingPrice: number | null, discountPercentage: number | null): number => {
         if (quantity && sellingPrice !== null && discountPercentage !== null) {
             const discountValue = (sellingPrice * discountPercentage / 100) * quantity;
@@ -85,7 +99,6 @@ function ElectronicInvoicingPage() {
         }
         return 0;
     };
-
 
     // TABLA DE RETENCIONES
     const calculateTaxableBaseForRow = (row: any) => {
@@ -95,7 +108,7 @@ function ElectronicInvoicingPage() {
     };
 
     const calculateTotalConsumptionTax = () => {
-        return parseFloat(rows.reduce((acc, row) => {
+        return parseFloat(scannedItems.reduce((acc, row) => {
             const consumptionTax = row.item?.consumptionTax;
             if (typeof consumptionTax === "string" && consumptionTax === "No aplica") {
                 return acc;
@@ -105,11 +118,11 @@ function ElectronicInvoicingPage() {
                 const taxAmount = taxableBase * (consumptionTaxValue / 100);
                 return acc + taxAmount;
             }
-        }, 0).toFixed(2)); // Convertir a número después de toFixed()
+        }, 0).toFixed(2));
     };
 
     const calculateTotalWithholdingTax = () => {
-        return parseFloat(rows.reduce((acc, row) => {
+        return parseFloat(scannedItems.reduce((acc, row) => {
             const withholdingTax = row.item?.withholdingTax;
             if (typeof withholdingTax === "string" && withholdingTax === "No aplica") {
                 return acc;
@@ -124,7 +137,7 @@ function ElectronicInvoicingPage() {
     };
     
     const calculateTotalWithholdingIVA = () => {
-        return parseFloat(rows.reduce((acc, row) => {
+        return parseFloat(scannedItems.reduce((acc, row) => {
             const withholdingIVA = row.item?.withholdingIVA;
             if (typeof withholdingIVA === "string" && withholdingIVA === "No aplica") {
                 return acc;
@@ -139,7 +152,7 @@ function ElectronicInvoicingPage() {
     };
     
     const calculateTotalWithholdingICA = () => {
-        return parseFloat(rows.reduce((acc, row) => {
+        return parseFloat(scannedItems.reduce((acc, row) => {
             const withholdingICA = row.item?.withholdingICA;
             if (typeof withholdingICA === "string" && withholdingICA === "No aplica") {
                 return acc;
@@ -154,14 +167,14 @@ function ElectronicInvoicingPage() {
     };
 
     const calculateSubtotal = () => {
-        return rows.reduce((acc, row) => {
+        return scannedItems.reduce((acc, row) => {
             const totalRowValue = (row.quantity || 1) * (row.item?.sellingPrice || 0);
             return acc + totalRowValue;
         }, 0);
     };
     
     const calculateDiscounts = () => {
-        return rows.reduce((acc, row) => {
+        return scannedItems.reduce((acc, row) => {
             const discountValue = ((row.discountPercentage || 0) / 100) * (row.quantity || 1) * (row.item?.sellingPrice || 0);
             return acc + discountValue;
         }, 0);
@@ -177,7 +190,7 @@ function ElectronicInvoicingPage() {
     
     const calculateTotalIVA = () => {
         const taxableBase = calculateTaxableBase();
-        return rows.reduce((acc, row) => {
+        return scannedItems.reduce((acc, row) => {
             const iva = row.item?.IVA;
             if (typeof iva === "string" && iva === "No aplica") {
                 return acc;
@@ -200,17 +213,154 @@ function ElectronicInvoicingPage() {
     const totalIVA = calculateTotalIVA();
     const totalInvoice = calculateTotalInvoice(taxableBase, totalIVA);
 
-    const onSubmit = async (values: any) => {
+    // SETEA LOS ARTICULOS PARA REGISTRO DE LA FACTURA ELECTRONICA
+    const transformScannedItemsToLineas = (items: typeof scannedItems): ILineas[] => {
+        return items.map(item => {
+            if (!item.item) return null;
+            return {
+                Id: {
+                    Value: item.id ? item.id.toString() : '',
+                },
+                Cantidad: {
+                    CodUnidad: "KGM",
+                    Value: item.quantity || 1,
+                },
+                ValorNeto: {
+                    IdMoneda: "COP",
+                    Value: (item.item?.sellingPrice ?? 0) * (item.quantity || 1) * (1 - (item.discountPercentage || 0) / 100),
+                },
+                FechaVigenciaImpuestoSpecified: true,
+                IndicaEsGratisSpecified: false,
+                Item: {
+                    Descripcion: [{ Value: item.item.nameItem }],
+                    ItemsPorEmpaqueSpecified: true,
+                    IndicaDesdeCatalogoSpecified: false,
+                    Nombre: { Value: item.item.nameItem },
+                    IndicadorDePeligroSpecified: false,
+                    IdItemEstandar: {
+                        Id: {
+                            SmaIdCodigo: "999",
+                            SmaIdNombre: "Estándar de adopción del contribuyente",
+                            Value: "001",
+                        },
+                    },
+                    PropiedadesAdicionalesItem: [],
+                },
+                Precio: {
+                    ValorPrecio: {
+                        IdMoneda: "COP",
+                        Value: (item.item?.sellingPrice ?? 0),
+                    },
+                    CantidadBase: {
+                        CodUnidad: "KGM",
+                        Value: item.quantity || 1,
+                    },
+                    FactorConvAUnidadPedidoSpecified: true,
+                },
+            };
+        }).filter(linea => linea !== null) as ILineas[];
+    };
+
+    const onSubmit = async (values: IElectronicInvoicing) => {
+        setLoading(true);
         try {
-            const formData = {
+            const formData: IElectronicInvoicing = {
                 ...values,
-            } as any;
-            console.log('formData: ', formData)
+                branchId: selectedBranch,
+                generationDate: currentDate,
+                Parametros: {
+                    ContactoReceptor: [{
+                        CorreoElectronico: "carlosmario.reyesp@gmail.com",
+                        IdEtiquetaUbicacionCorreo: "1",
+                        SoloEnvioCasoDeFalloSpecified: false,
+                    }],
+                },
+                Lineas: transformScannedItemsToLineas(scannedItems),
+                AgregadoComercial: {
+                    MediosDePago: [{
+                        Id: { Value: "1" },
+                        CodigoMedioDePago: { Value: "1" },
+                        FechaLimitePago: new Date("2024-12-31T16:59:03Z"), // Formato correcto de fecha
+                        FechaLimitePagoSpecified: true,
+                        NotaInstruccion: [{ Value: 'Nota de ejemplo para la factura' }],
+                        IdPago: [{ Value: '123456789' }],
+                    }],
+                },
+                Totales: {
+                    TotalMonetario: {
+                        ValorBruto: {
+                            IdMoneda: 'COP',
+                            Value: taxableBase,
+                        },
+                        ValorBaseImpuestos: {
+                            IdMoneda: 'COP',
+                            Value: calculateTotalConsumptionTax() + calculateTotalWithholdingTax() + calculateTotalWithholdingIVA() + calculateTotalWithholdingICA() + totalIVA,
+                        },
+                        TotalMasImpuestos: {
+                            IdMoneda: 'COP',
+                            Value: taxableBase + calculateTotalConsumptionTax() + calculateTotalWithholdingTax() + calculateTotalWithholdingIVA() + calculateTotalWithholdingICA() + totalIVA,
+                        },
+                        ValorAPagar: {
+                            IdMoneda: 'COP',
+                            Value: taxableBase + calculateTotalConsumptionTax() + calculateTotalWithholdingTax() + calculateTotalWithholdingIVA() + calculateTotalWithholdingICA() + totalIVA,
+                        },
+                    },
+                },
+            };
+            console.log('formData: ', formData);
+
+            // PARAMETROS
+            if (formData.Parametros && formData.Parametros.ContactoReceptor && formData.Parametros.ContactoReceptor.length > 0) {
+                formData.Parametros.ContactoReceptor[0].CorreoElectronico = "carlosmario.reyesp@gmail.com";
+                formData.Parametros.ContactoReceptor[0].IdEtiquetaUbicacionCorreo = "1";
+                formData.Parametros.ContactoReceptor[0].SoloEnvioCasoDeFalloSpecified = false;
+            } else throw new Error('Parametros o ContactoReceptor no está definido');
+
+            // AGREGADOCOMERCIAL --> PREGUNTAR POR QUE ES UN ARRAY
+            if (formData.AgregadoComercial && formData.AgregadoComercial.MediosDePago && formData.AgregadoComercial.MediosDePago.length > 0) {
+                formData.AgregadoComercial.MediosDePago[0].Id.Value = "1";
+                formData.AgregadoComercial.MediosDePago[0].CodigoMedioDePago.Value = "1";
+                formData.AgregadoComercial.MediosDePago[0].FechaLimitePago = new Date("2024-12-31 16:59:03");
+                formData.AgregadoComercial.MediosDePago[0].FechaLimitePagoSpecified = true;
+                formData.AgregadoComercial.MediosDePago[0].NotaInstruccion = [{ Value: 'Nota de ejemplo para la factura' }];
+                formData.AgregadoComercial.MediosDePago[0].IdPago = [{ Value: '123456789' }];
+            } else throw new Error('Parametros o ContactoReceptor no está definido');
+
+            formData.Lineas = transformScannedItemsToLineas(scannedItems);
+
+            // TOTALES DE LA FACTURA
+            formData.Totales.TotalMonetario.ValorBruto.IdMoneda = 'COP';
+            formData.Totales.TotalMonetario.ValorBruto.Value = taxableBase;
+            
+            formData.Totales.TotalMonetario.ValorBaseImpuestos.IdMoneda = 'COP';
+            formData.Totales.TotalMonetario.ValorBruto.Value = calculateTotalConsumptionTax() + calculateTotalWithholdingTax() + calculateTotalWithholdingIVA() + calculateTotalWithholdingICA() + totalIVA;
+
+            formData.Totales.TotalMonetario.TotalMasImpuestos.IdMoneda = 'COP';
+            formData.Totales.TotalMonetario.ValorBruto.Value = taxableBase + calculateTotalConsumptionTax() + calculateTotalWithholdingTax() + calculateTotalWithholdingIVA() + calculateTotalWithholdingICA() + totalIVA;
+            
+            formData.Totales.TotalMonetario.ValorAPagar.IdMoneda = 'COP';
+            formData.Totales.TotalMonetario.ValorBruto.Value = taxableBase + calculateTotalConsumptionTax() + calculateTotalWithholdingTax() + calculateTotalWithholdingIVA() + calculateTotalWithholdingICA() + totalIVA;
+            if (!selectedBranch) {
+                setMessageSelectedBranch('Debes de seleccionar una sede');
+                setTimeout(() => setMessageSelectedBranch(null), 5000);
+                return;
+            }
+            if (!selectedClient) {
+                setMessageSelectedClient('Debes de seleccionar un cliente o un proveedor');
+                setTimeout(() => setMessageSelectedClient(null), 5000);
+                return;
+            }
+            await dispatch(postElectronicInvoicing(formData, token));
+            setFormSubmitted(true);
+            reset();
+            setSelectedClient(null);
             setTimeout(() => {
                 setShouldNavigate(true);
             }, 1500);
         } catch (error) {
             throw new Error(`Error en el envío del formulario: ${error}`);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -229,32 +379,33 @@ function ElectronicInvoicingPage() {
                     <div className={`${styles.container__Component} px-5 overflow-hidden overflow-y-auto`}>
                         <div className="d-flex align-items-center justify-content-between">
                             <h1 className={`${styles.title} mb-4 mt-4`}>Facturación</h1>
+
                             <div className={styles.link__Head_Navigate}>
                                 <LiaFileInvoiceSolid className={`${styles.icon__Plus} `}/>
                                 <Link to='/invoicing-and-pos/pos' className={`${styles.link} text-decoration-none`}>POS</Link>
                             </div>
                         </div>
 
-                        <div className='d-flex gap-3'>
-                            <select
-                                className={`${styles.input__Branch} p-2 border `}
-                                value={selectedBranch}
-                                onChange={handleBranchChange}
-                            >
-                                <option value=''>Selecciona una Sede</option>
-                                {Array.isArray(branches) && branches.map((branch, index) => (
-                                    <option key={index} value={branch.id}>
-                                        {branch.nameBranch}
-                                    </option>
-                                ))}
-                            </select>
-                            <div className="p-2 d-flex flex-column border rounded">
-                                <p className={`${styles.text} mb-0`}>Usuario(a) que registra</p>
-                                <p className={`${styles.text} mb-0`}>{user?.name} {user?.lastName}</p>
+                        <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} m-auto d-flex flex-column position-relative`}>
+                            <div className='d-flex gap-3'>
+                                <select
+                                    className={`${styles.input__Branch} p-2 border `}
+                                    value={selectedBranch}
+                                    onChange={handleBranchChange}
+                                >
+                                    <option value=''>Selecciona una Sede</option>
+                                    {Array.isArray(branches) && branches.map((branch, index) => (
+                                        <option key={index} value={branch.id}>
+                                            {branch.nameBranch}
+                                        </option>
+                                    ))}
+                                </select>
+                                <div className="p-2 d-flex flex-column border rounded">
+                                    <p className={`${styles.text} mb-0`}>Usuario(a) que registra</p>
+                                    <p className={`${styles.text} mb-0`}>{user?.name} {user?.lastName}</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <form onSubmit={onSubmit} className={`${styles.form} position-relative`}>
                             <div className={`${styles.container__Invoice} mt-4 mb-5 px-4 d-flex flex-column align-items-center justify-content-center`}>
                                 <div className={`${styles.container__Header} mt-4 d-flex align-items-center justify-content-between`}>
                                     <div className={`${styles.container__Logo} d-flex align-items-center justify-content-center`}>
@@ -356,8 +507,8 @@ function ElectronicInvoicingPage() {
                                         </thead>
 
                                         <tbody className={`${styles.container__Body} `}>
-                                            {Array.isArray(rows) && rows.length > 0 ? (
-                                                rows.map((row, index) => (
+                                            {Array.isArray(scannedItems) && scannedItems.length > 0 ? (
+                                                scannedItems.map((row, index) => (
                                                     <tr key={index} className={`${styles.container__Info} d-flex`}>
                                                         <td className={`${styles.number} d-flex align-items-center justify-content-center`}>
                                                             <span className={`${styles.text__Ellipsis} overflow-hidden`}>{index + 1}</span>
@@ -367,14 +518,14 @@ function ElectronicInvoicingPage() {
                                                                 selectedBranch={selectedBranch}
                                                                 token={token}
                                                                 onItemSelect={() => {
-                                                                    const updatedRows = [...rows];
+                                                                    const updatedRows = [...scannedItems];
                                                                     updatedRows[index] = { ...updatedRows[index] };
-                                                                    setRows(updatedRows);
+                                                                    setScannedItems(updatedRows);
                                                                 }}
                                                                 onDataItemSelect={(item) => {
-                                                                    const updatedRows = [...rows];
+                                                                    const updatedRows = [...scannedItems];
                                                                     updatedRows[index] = { ...updatedRows[index], item };
-                                                                    setRows(updatedRows);
+                                                                    setScannedItems(updatedRows);
                                                                 }}
                                                             />
                                                         </td>
@@ -399,9 +550,9 @@ function ElectronicInvoicingPage() {
                                                                 value={row.quantity ?? ''}
                                                                 onChange={(e) => {
                                                                     const value = parseFloat(e.target.value);
-                                                                    const updatedRows = [...rows];
+                                                                    const updatedRows = [...scannedItems];
                                                                     updatedRows[index] = { ...updatedRows[index], quantity: !isNaN(value) ? value : null };
-                                                                    setRows(updatedRows);
+                                                                    setScannedItems(updatedRows);
                                                                 }}
                                                                 onKeyDown={(e) => {
                                                                     if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
@@ -422,9 +573,9 @@ function ElectronicInvoicingPage() {
                                                                 value={row.discountPercentage ?? ''}
                                                                 onChange={(e) => {
                                                                     const value = parseFloat(e.target.value);
-                                                                    const updatedRows = [...rows];
+                                                                    const updatedRows = [...scannedItems];
                                                                     updatedRows[index] = { ...updatedRows[index], discountPercentage: !isNaN(value) ? value : null };
-                                                                    setRows(updatedRows);
+                                                                    setScannedItems(updatedRows);
                                                                 }}
                                                                 onKeyDown={(e) => {
                                                                     if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
@@ -452,8 +603,8 @@ function ElectronicInvoicingPage() {
                                                             <RiDeleteBin6Line
                                                                 className={`${styles.button__Delete}`}
                                                                 onClick={() => {
-                                                                    const updatedRows = rows.filter((_, i) => i !== index);
-                                                                    setRows(updatedRows);
+                                                                    const updatedRows = scannedItems.filter((_, i) => i !== index);
+                                                                    setScannedItems(updatedRows);
                                                                 }}
                                                             />
                                                         </td>
@@ -486,16 +637,12 @@ function ElectronicInvoicingPage() {
                                         <div className={`${styles.title__Container_Totales} p-2 text-center`}>Totales retenciones</div>
                                         <div className={`${styles.ffffffffff} d-flex`}>
                                             <div className={styles.container__Column_Totals}>
-                                                {/* <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Totales IVA:</div> */}
                                                 <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Totales Impuesto al consumo:</div>
                                                 <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Totales Retefuente:</div>
                                                 <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Totales ReteIVA:</div>
                                                 <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Totales ReteICA:</div>
                                             </div>
                                             <div className={styles.container__Values_Totals}>
-                                                {/* <div className={`${styles.column__Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>
-                                                    $ {formatNumber(totalIVA)}
-                                                </div> */}
                                                 <div className={`${styles.column__Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>
                                                     $ {formatNumber(calculateTotalConsumptionTax())}
                                                 </div>
@@ -520,7 +667,7 @@ function ElectronicInvoicingPage() {
                                                 <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Descuentos:</div>
                                                 <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Total Base Imponible:</div>
                                                 <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>IVA:</div>
-                                                <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Total Impuestos:</div>
+                                                <div className={`${styles.title__Column_Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>Total Factura:</div>
                                             </div>
                                             <div className={`${styles.container__Values_Totals}`}>
                                                 <div className={`${styles.column__Totals} m-0 px-2 d-flex align-items-center justify-content-end`}>
@@ -547,9 +694,35 @@ function ElectronicInvoicingPage() {
                                 </div>
                             </div>
 
-                            <div className="mb-4 d-flex align-items-center justify-content-center">
-                                <button type='submit' className={`${styles.button__Submit} border-0 rounded text-decoration-none`} >Enviar</button>
+
+                            <div className="mb-4 d-flex align-items-center justify-content-center position-relative">
+                                {messageSelectedBranch && (
+                                    <div className={`${styles.error__Message_Selected_Branch} position-absolute`}>{messageSelectedBranch}</div>
+                                )}
+                                {messageSelectedClient && (
+                                    <div className={`${styles.error__Message_Selected_Client} position-absolute`}>{messageSelectedClient}</div>
+                                )}
+
+                                <div className="mb-5 d-flex">
+                                    {loading ? 
+                                        <div className={`${styles.container__Loading} position-relative w-100`}>
+                                            <button className={`${styles.button__Submit} border-0 mx-auto rounded m-auto text-decoration-none`} type='submit' >
+                                                <span className={`${styles.role} spinner-border spinner-border-sm`} role="status"></span> Guardando...
+                                            </button>
+                                        </div> 
+                                    :
+                                        <button className={`${styles.button__Submit} border-0 rounded m-auto text-decoration-none`} type='submit' >Enviar</button>
+                                    }
+                                </div>
                             </div>
+
+                            {formSubmitted && (
+                                <div className={`${styles.alert__Success} text-center position-absolute alert-success`}>El formulario se ha enviado con éxito</div>
+                            )}
+
+                            {Array.isArray(errorElectronicInvoicing) && errorElectronicInvoicing?.map((error, i) => (
+                                <div key={i} className={`${styles.alert__Danger} text-center position-absolute alert-danger`}>{error}</div>
+                            ))}
                         </form>
                     </div>
                     <Footer />
