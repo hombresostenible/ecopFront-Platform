@@ -1,5 +1,5 @@
-import { IInventoryOffItem } from '../../types/User/InventoryOffItem/iInventoryOffItem.types';
-import { IIvaAiu } from '../../types/User/RetentonAndTaxes/ivaAiu.types';
+import { IInventoryOffItem } from './InventoryOffItem/iInventoryOffItem.types';
+import { IIvaAiu } from './RetentonAndTaxes/ivaAiu.types';
 
 export interface IMerchandise {
     id: string;

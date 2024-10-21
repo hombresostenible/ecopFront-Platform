@@ -24,25 +24,24 @@ interface CreateMerchandisesPage {
 }
 
 function CreateMerchandisesPage({ addNotification }: CreateMerchandisesPage) {
-    const token = jsCookie.get('token') || '';
+    const navigate = useNavigate();
+    const token = jsCookie.get('token') || ''; 
+    
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
-
-    // Estados de Redux
     const errorMerchandise = useSelector((state: RootState) => state.merchandise.errorMerchandise);
     const branches = useSelector((state: RootState) => state.branch.branch);
-
-    const navigate = useNavigate();
-    const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm<IMerchandise>();
-
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [shouldNavigate, setShouldNavigate] = useState(false);
-    const [loading, setLoading] = useState(false);
-
+    
     useEffect(() => {
         if (token) {
             dispatch(getBranches(token));
         }
     }, [token, dispatch]);
+
+    const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm<IMerchandise>();
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [shouldNavigate, setShouldNavigate] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const [showCancelModal, setShowCancelModal] = useState(false);
     const onCloseMerchandiseModal = () => {
