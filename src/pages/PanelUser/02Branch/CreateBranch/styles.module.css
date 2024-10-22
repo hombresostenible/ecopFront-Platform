@@ -75,20 +75,17 @@
     width: 100%;
 }
 .alert__Success {
-    position: absolute;
     color: #4cb963;
     font-weight: 700;
+    width: 100%;
     top: 50px;
-    left: 50px;
-    right: 50px;
     z-index: 1;
 }
 .alert__Danger {
     color: #ff595e;
     font-weight: 800;
+    width: 100%;
     top: 100px;
-    left: 50px;
-    right: 50px;
     z-index: 1;
 }
 

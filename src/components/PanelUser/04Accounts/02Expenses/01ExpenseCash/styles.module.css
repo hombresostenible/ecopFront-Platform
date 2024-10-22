@@ -1,3 +1,4 @@
+
 .label {
     font-weight: 600;
 }
@@ -81,6 +82,18 @@
 .container__FaPlus {
     height: 50px;
     width: 50px;
+}
+.text__Ellipsis_Purchase_Price {
+    left: 15px;
+}
+.price__Input {
+    border: 1px solid #718bd8;
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+}
+.price__Input:focus {
+    outline-color: #718bd8;
 }
 .icon__FaPlus {
     color: #6c757d;

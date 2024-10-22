@@ -130,11 +130,13 @@ function ConsultCxcPage() {
     }, [ menuColumnSelector ]);
 
     const [selectedColumns, setSelectedColumns] = useState<string[]>([
-        'Fecha de transacción',
+        'FechaTransaccion',
         'Sede',
         'Cuotas',
-        'Valor de la cuota',
-        'Valor total',
+        'CuotasPendientes',
+        'ValorCuota',
+        'ValorInicial',
+        'ValorTotal',
         'Deudor',
     ]);
 
@@ -182,11 +184,13 @@ function ConsultCxcPage() {
                                             onChange={handleColumnChange}
                                             minSelectedColumns={3}
                                             availableColumns={[
-                                                'Fecha de transacción',
+                                                'FechaTransaccion',
                                                 'Sede',
                                                 'Cuotas',
-                                                'Valor de la cuota',
-                                                'Valor total',
+                                                'CuotasPendientes',
+                                                'ValorCuota',
+                                                'ValorInicial',
+                                                'ValorTotal',
                                                 'Deudor',
                                             ]}
                                         />
@@ -248,7 +252,7 @@ function ConsultCxcPage() {
                             <table className="table">
                                 <thead className={`${styles.container__Head} `}>
                                     <tr className={`${styles.container__Tr} d-flex align-items-center justify-content-between`}>
-                                        {selectedColumns.includes('Fecha de transacción') && (
+                                        {selectedColumns.includes('FechaTransaccion') && (
                                             <th className={`${styles.transaction__Date} d-flex align-items-center justify-content-center text-center`}>Fecha de TX</th>
                                         )}
                                         {selectedColumns.includes('Sede') && (
@@ -257,11 +261,17 @@ function ConsultCxcPage() {
                                         {selectedColumns.includes('Cuotas') && (
                                             <th className={`${styles.initial__Number_Payments} d-flex align-items-center justify-content-center text-center`}>Cuotas</th>
                                         )}
-                                        {selectedColumns.includes('Valor de la cuota') && (
-                                            <th className={`${styles.payment__Value} d-flex align-items-center justify-content-center text-center`}>Valor de la cuota</th>
+                                        {selectedColumns.includes('CuotasPendientes') && (
+                                            <th className={`${styles.initial__Number_Payments} d-flex align-items-center justify-content-center text-center`}>Cuotas</th>
                                         )}
-                                        {selectedColumns.includes('Valor total') && (
-                                            <th className={`${styles.total__Value} d-flex align-items-center justify-content-center text-center`}>Total</th>
+                                        {selectedColumns.includes('ValorCuota') && (
+                                            <th className={`${styles.payment__Value} d-flex align-items-center justify-content-center text-center`}>Valor de la Cuota</th>
+                                        )}
+                                        {selectedColumns.includes('ValorInicial') && (
+                                            <th className={`${styles.current__Balance} d-flex align-items-center justify-content-center text-center`}>Actualmente me deben</th>
+                                        )}
+                                        {selectedColumns.includes('ValorTotal') && (
+                                            <th className={`${styles.total__Value} d-flex align-items-center justify-content-center text-center`}>Saldo inicial</th>
                                         )}
                                         {selectedColumns.includes('Deudor') && (
                                             <th className={`${styles.transaction__Counterpart} d-flex align-items-center justify-content-center text-center`}>Deudor</th>
@@ -273,7 +283,7 @@ function ConsultCxcPage() {
                                     {Array.isArray(transactionsToShow) && transactionsToShow.length > 0 ? (
                                         transactionsToShow.map((accountsReceivable) => (
                                             <tr key={accountsReceivable.id} className={`${styles.container__Info} d-flex align-items-center justify-content-between`}>
-                                                {selectedColumns.includes('Fecha de transacción') && (
+                                                {selectedColumns.includes('FechaTransaccion') && (
                                                     <td className={`${styles.transaction__Date} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>{new Date(accountsReceivable.transactionDate).toLocaleDateString('en-GB')}</span>
                                                     </td>
@@ -294,14 +304,24 @@ function ConsultCxcPage() {
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsReceivable.initialNumberOfPayments}</span>
                                                     </td>
                                                 )}
-                                                {selectedColumns.includes('Valor de la cuota') && (
+                                                {selectedColumns.includes('CuotasPendientes') && (
+                                                    <td className={`${styles.initial__Number_Payments} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsReceivable.pendingNumberOfPayments}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('ValorCuota') && (
                                                     <td className={`${styles.payment__Value} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>$ {formatNumber(accountsReceivable.paymentValue)}</span>
                                                     </td>
                                                 )}
-                                                {selectedColumns.includes('Valor total') && (
-                                                    <td className={`${styles.total__Value} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
+                                                {selectedColumns.includes('ValorInicial') && (
+                                                    <td className={`${styles.current__Balance} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsReceivable.currentBalance? `$ ${formatNumber(accountsReceivable.currentBalance)}` : 'N/A'}</span>
+                                                    </td>
+                                                )}
+                                                {selectedColumns.includes('ValorTotal') && (
+                                                    <td className={`${styles.total__Value} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsReceivable.initialValue? `$ ${formatNumber(accountsReceivable.initialValue)}` : 'N/A'}</span>
                                                     </td>
                                                 )}
                                                 {selectedColumns.includes('Deudor') && (

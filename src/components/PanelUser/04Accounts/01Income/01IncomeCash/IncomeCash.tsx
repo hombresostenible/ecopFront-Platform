@@ -431,7 +431,7 @@ function IncomeCash({ token, decodeUserIdRegister, usersPlatform, selectedBranch
                                                     <input
                                                         type="text"
                                                         className={`${styles.input__Change} m-0 p-2 text-end border-0`}
-                                                        value={`$ ${new Intl.NumberFormat('es-ES').format(changeAmount)}`} // Formatear cambio como moneda
+                                                        value={`$ ${new Intl.NumberFormat('es-ES').format(changeAmount)}`}
                                                         readOnly
                                                     />
                                                 )}

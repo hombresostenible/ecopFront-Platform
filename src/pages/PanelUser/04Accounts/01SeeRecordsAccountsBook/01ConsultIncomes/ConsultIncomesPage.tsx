@@ -335,7 +335,7 @@ function ConsultIncomesPage() {
                                                 )}
                                                 {selectedColumns.includes('Medio de pago') && (
                                                     <td className={`${styles.mean__Payment} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsBook.creditCash}</span>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsBook.creditDescription ? 'Pago cuota' : accountsBook.creditCash}</span>
                                                     </td>
                                                 )}
                                                 {selectedColumns.includes('Valor total') && (

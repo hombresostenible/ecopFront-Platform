@@ -122,13 +122,6 @@ function CreateBranchPage({ addNotification }: CreateBranchProps) {
                         </Modal>
 
                         <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} m-auto d-flex flex-column align-items-center justify-content-center position-relative`}>
-                            {formSubmitted && (
-                                <div className={`${styles.alert__Success} text-center position-absolute alert-success`}>El formulario se ha enviado con éxito</div>
-                            )}
-                            {Array.isArray(errorBranch)&& errorBranch?.map((error, i) => (
-                                <div key={i} className={`${styles.alert__Danger} text-center position-absolute alert-danger`}>{error}</div>
-                            ))}
-
                             <div className="mb-4 w-100 position-relative">
                                 <p className={`${styles.label} mb-1`}><span className={`${styles.required__Information} `}>*</span> Nombre de la Sede</p>
                                 <input
@@ -261,7 +254,15 @@ function CreateBranchPage({ addNotification }: CreateBranchProps) {
                                 )}
                             </div>
 
-                            <div className="mb-5 d-flex">
+
+                            <div className="mb-5 d-flex position-relative w-100">
+                                {formSubmitted && (
+                                    <div className={`${styles.alert__Success} text-center position-absolute alert-success`}>El formulario se ha enviado con éxito</div>
+                                )}
+                                {Array.isArray(errorBranch)&& errorBranch?.map((error, i) => (
+                                    <div key={i} className={`${styles.alert__Danger} text-center position-absolute alert-danger`}>{error}</div>
+                                ))}
+
                                 {loading ? 
                                     <div className={`${styles.container__Loading} `}>
                                         <button className={`${styles.button__Submit} border-0 mx-auto rounded m-auto text-decoration-none`} type='submit' >
