@@ -69,7 +69,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                 ))}
 
                 <div className="w-100 position-relative">
-                    <h6 className={styles.label}>Tipo de identificación</h6>
+                    <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Tipo de identificación</h6>
                     <select
                         {...register('typeDocumentId', { required: true })}
                         className={`${styles.input} p-2 border`}
@@ -88,7 +88,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                 {(typeDocumentId === 'Cedula de Ciudadania' || typeDocumentId === 'Cedula de Extranjeria' || typeDocumentId === 'Pasaporte') && (
                     <div>
                         <div className="w-100 position-relative">
-                            <h6 className={styles.label}>Nombres de tu proveedor</h6>
+                            <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Nombres de tu proveedor</h6>
                             <input
                                 type="text"
                                 {...register('name')}
@@ -101,7 +101,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                         </div>
 
                         <div className="w-100 position-relative">
-                            <h6 className={styles.label}>Apellidos de tu proveedor</h6>
+                            <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Apellidos de tu proveedor</h6>
                             <input
                                 type="text"
                                 {...register('lastName')}
@@ -116,7 +116,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                 )}
 
                 <div className="w-100 position-relative">
-                    <h6 className={styles.label}>No. de identificación</h6>
+                    <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> No. de identificación</h6>
                     <input
                         type="text"
                         {...register('documentId', { 
@@ -142,7 +142,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                     <input
                         type="text"
                         {...register('verificationDigit', { 
-                            required: true,
+                            // required: true,
                             pattern: /^\d{1,1}$/
                         })}
                         className={`${styles.input} p-2 border `}
@@ -158,7 +158,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
 
                 {typeDocumentId === 'NIT' && (
                     <div className="w-100 position-relative">
-                        <h6 className={styles.label}>Nombre de la empresa</h6>
+                        <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Nombre de la empresa</h6>
                         <input
                             type="text"
                             {...register('corporateName')}
@@ -172,7 +172,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                 )}
 
                 <div className="w-100 position-relative">
-                    <h6 className={styles.label}>Email</h6>
+                    <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Email</h6>
                     <input
                         type="email"
                         {...register('email', {
@@ -191,7 +191,7 @@ function CreateSupplier({ token, onCreateComplete, onSupplierCreated }:CreateSup
                 </div>
 
                 <div className="w-100 position-relative">
-                    <h6 className={styles.label}>Celular o teléfono fijo</h6>
+                    <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Celular o teléfono fijo</h6>
                     <input
                         type="tel"
                         {...register('phone', { 

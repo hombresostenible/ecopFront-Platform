@@ -119,32 +119,42 @@
 .transaction__Date {
     height: 60px;
     min-width: 150px;
-    width: 16%;
+    width: 12%;
 }
 .branch {
     height: 60px;
-    min-width: 150px;
-    width: 20%;
+    min-width: 200px;
+    width: 16%;
 }
 .initial__Number_Payments {
     height: 60px;
     min-width: 150px;
-    width: 16%;
+    width: 12%;
+}
+.pending__Number_Payments {
+    height: 60px;
+    min-width: 150px;
+    width: 12%;
 }
 .payment__Value {
     height: 60px;
     min-width: 150px;
-    width: 16%;
+    width: 12%;
 }
-.transaction__Counterpart {
+.current__Balance {
     height: 60px;
     min-width: 150px;
-    width: 16%;
+    width: 12%;
 }
 .total__Value {
     height: 60px;
     min-width: 150px;
-    width: 16%;
+    width: 12%;
+}
+.transaction__Counterpart {
+    height: 60px;
+    min-width: 150px;
+    width: 12%;
 }
 
 /* CONTENIDO DE LA TABLA */
