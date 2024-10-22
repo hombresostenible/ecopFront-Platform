@@ -498,7 +498,7 @@ function SideBar() {
                 <div className={`${styles.container__Section} ${(location.pathname === '/sig/operations/policies') ? styles.active : ''} mb-2 d-flex align-items-center position-relative`} ref={crmClientsMenuRef}>
                     <div className={`${styles.section} px-1 d-flex align-items-center justify-content-center text-decoration-none`}>
                         <div className={`${styles.container__Icon} d-flex align-items-center justify-content-center`}>
-                            <TbCoin className={`${showCrmClientsClick ? styles.icon__Compact : styles.icon__Section} ${(location.pathname === '/crm-clients/consult-crm-clients' || location.pathname === '/crm-clients/customer-tracking') ? styles.active__Icon_Section : ''}`} onClick={handleCrmClientsClick}/>
+                            <TbCoin className={`${showCrmClientsClick ? styles.icon__Compact : styles.icon__Section} ${(location.pathname === '/crm-clients/consult-crm-clients' || location.pathname === '/crm-clients/create-crm-clients' || location.pathname === '/crm-clients/customer-tracking') ? styles.active__Icon_Section : ''}`} onClick={handleCrmClientsClick}/>
                         </div>
                         {menuVisible &&
                             <div className={`${styles.link__Side_Bar} p-1 d-flex align-items-center justify-content-between`} onClick={toggleCrmClientsSubMenuOpen} >CRM Clientes {isCrmClientsSubMenuOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}  </div>
@@ -516,7 +516,7 @@ function SideBar() {
                 </div>
                 {isCrmClientsSubMenuOpen && (
                     <div className={styles.sub__Menu}>
-                        <Link to='/crm-clients/consult-crm-clients' className={`${styles.link__Sub_Menu} ${(location.pathname === '/crm-clients/consult-crm-clients' || location.pathname === '/crm-clients/create-crm-clients') ? styles.active__Sub_Menu : ''} text-decoration-none`} >
+                        <Link to='/crm-clients/consult-crm-clients' className={`${styles.link__Sub_Menu} ${(location.pathname === '/crm-clients/consult-crm-clients' || location.pathname === '/crm-clients/create-crm-clients' || location.pathname === '/crm-clients/create-crm-clients') ? styles.active__Sub_Menu : ''} text-decoration-none`} >
                             Clientes
                         </Link>
                         <Link to='/crm-clients/customer-tracking' className={`${styles.link__Sub_Menu} ${location.pathname === '/crm-clients/customer-tracking' ? styles.active__Sub_Menu : ''} text-decoration-none`} >
@@ -529,7 +529,7 @@ function SideBar() {
                 <div className={`${styles.container__Section} ${(location.pathname === '/sig/operations/policies') ? styles.active : ''} mb-2 d-flex align-items-center position-relative`} ref={crmSuppliersMenuRef}>
                     <div className={`${styles.section} px-1 d-flex align-items-center justify-content-center text-decoration-none`}>
                         <div className={`${styles.container__Icon} d-flex align-items-center justify-content-center`}>
-                            <FaUsers className={`${showCrmSuppliersClick ? styles.icon__Compact : styles.icon__Section} ${(location.pathname === '/crm-suppliers/consult-crm-suppliers' || location.pathname === '/crm-suppliers/tracking-your-purchases') ? styles.active__Icon_Section : ''}`} onClick={handleCrmSuppliersClick}/>
+                            <FaUsers className={`${showCrmSuppliersClick ? styles.icon__Compact : styles.icon__Section} ${(location.pathname === '/crm-suppliers/consult-crm-suppliers' || location.pathname === '/crm-suppliers/create-crm-suppliers' || location.pathname === '/crm-suppliers/tracking-your-purchases') ? styles.active__Icon_Section : ''}`} onClick={handleCrmSuppliersClick}/>
                         </div>
                         {menuVisible &&
                             <div className={`${styles.link__Side_Bar} p-1 d-flex align-items-center justify-content-between`} onClick={toggleCrmSuppliersSubMenuOpen} >CRM Proveedores {isCrmSuppliersSubMenuOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}  </div>
@@ -547,7 +547,7 @@ function SideBar() {
                 </div>
                 {isCrmSuppliersSubMenuOpen && (
                     <div className={styles.sub__Menu}>
-                        <Link to='/crm-suppliers/consult-crm-suppliers' className={`${styles.link__Sub_Menu} ${(location.pathname === '/crm-suppliers/consult-crm-suppliers' || location.pathname === '/crm-suppliers/create-crm-suppliers') ? styles.active__Sub_Menu : ''} text-decoration-none`} >
+                        <Link to='/crm-suppliers/consult-crm-suppliers' className={`${styles.link__Sub_Menu} ${(location.pathname === '/crm-suppliers/consult-crm-suppliers' || location.pathname === '/crm-suppliers/create-crm-suppliers' || location.pathname === '/crm-suppliers/create-crm-suppliers') ? styles.active__Sub_Menu : ''} text-decoration-none`} >
                             Proveedores
                         </Link>
                         <Link to='/crm-suppliers/tracking-your-purchases' className={`${styles.link__Sub_Menu} ${location.pathname === '/crm-suppliers/tracking-your-purchases' ? styles.active__Sub_Menu : ''} text-decoration-none`} >
@@ -560,7 +560,7 @@ function SideBar() {
                 <div className={`${styles.container__Section} ${(location.pathname === '/sig/operations/policies') ? styles.active : ''} mb-2 d-flex align-items-center position-relative`} ref={reportsAndIndicatorsMenuRef}>
                     <div className={`${styles.section} px-1 d-flex align-items-center justify-content-center text-decoration-none`}>
                         <div className={`${styles.container__Icon} d-flex align-items-center justify-content-center`}>
-                            <PiChartLineUp className={`${showReportsIndicatorsClick ? styles.icon__Compact : styles.icon__Section} ${(location.pathname === '/reports-and-indicators/accounts-and-inventory-indicators' || location.pathname === '/reports-and-indicators/marketing-indicators') ? styles.active__Icon_Section : ''}`} onClick={handleReportsIndicatorsClick}/>
+                            <PiChartLineUp className={`${showReportsIndicatorsClick ? styles.icon__Compact : styles.icon__Section} ${(location.pathname === '/reports-and-indicators/accounts-and-inventory-indicators' || location.pathname === '/reports-and-indicators/accounts-and-inventory-indicators/calculate-financial-items' || location.pathname === '/reports-and-indicators/marketing-indicators' || location.pathname === '/reports-and-indicators/marketing-indicators/calculate-marketing-items') ? styles.active__Icon_Section : ''}`} onClick={handleReportsIndicatorsClick}/>
                         </div>
                         {menuVisible &&
                             <div className={`${styles.link__Side_Bar} p-1 d-flex align-items-center justify-content-between`} onClick={toggleReportsAndIndicatorsSubMenuOpen} >Reportes e indicadores {isReportsAndIndicatorsSubMenuOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}  </div>
@@ -581,7 +581,7 @@ function SideBar() {
                         <Link to='/reports-and-indicators/accounts-and-inventory-indicators' className={`${styles.link__Sub_Menu} ${(location.pathname === '/reports-and-indicators/accounts-and-inventory-indicators' || location.pathname === '/reports-and-indicators/accounts-and-inventory-indicators/calculate-financial-items') ? styles.active__Sub_Menu : ''} text-decoration-none`} >
                             Indicadores cuentas e inventarios
                         </Link>
-                        <Link to='/reports-and-indicators/marketing-indicators' className={`${styles.link__Sub_Menu} ${(location.pathname === '/reports-and-indicators/marketing-indicators' || location.pathname === '/reports-and-indicators/marketing-indicators/calculate-marketing-items') ? styles.active__Sub_Menu : ''} text-decoration-none`} >
+                        <Link to='/reports-and-indicators/marketing-indicators' className={`${styles.link__Sub_Menu} ${(location.pathname === '/reports-and-indicators/marketing-indicators' || location.pathname === '/reports-and-indicators/marketing-indicators/calculate-marketing-items' || location.pathname === '/reports-and-indicators/marketing-indicators/calculate-marketing-items') ? styles.active__Sub_Menu : ''} text-decoration-none`} >
                             Indicadores de mercadeo
                         </Link>
                     </div>

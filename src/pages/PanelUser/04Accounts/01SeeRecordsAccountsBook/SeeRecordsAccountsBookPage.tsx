@@ -38,6 +38,7 @@ function SeeRecordsAccountsBookPage() {
             dispatch(getBranches(token));
         }
     }, [token]);
+    console.log('accountsBook: ', accountsBook)
 
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsByPage, setItemsByPage] = useState<number>(20);
@@ -144,7 +145,7 @@ function SeeRecordsAccountsBookPage() {
         'Tipo de transacción',
         'Medio de pago',
         'Valor total',
-        'Comprador',
+        'Tercero',
     ]);
 
     const handleColumnChange = (column: string) => {
@@ -223,7 +224,7 @@ function SeeRecordsAccountsBookPage() {
                                                 'Tipo de transacción',
                                                 'Medio de pago',
                                                 'Valor total',
-                                                'Comprador',
+                                                'Tercero',
                                             ]}
                                         />
                                     </div>
@@ -299,8 +300,8 @@ function SeeRecordsAccountsBookPage() {
                                         {selectedColumns.includes('Valor total') && (
                                             <th className={`${styles.total__Value} d-flex align-items-center justify-content-center text-center`}>Total</th>
                                         )}
-                                        {selectedColumns.includes('Comprador') && (
-                                            <th className={`${styles.transaction__Counterpart} d-flex align-items-center justify-content-center text-center`}>Comprador</th>
+                                        {selectedColumns.includes('Tercero') && (
+                                            <th className={`${styles.transaction__Counterpart} d-flex align-items-center justify-content-center text-center`}>Tercero</th>
                                         )}
                                         <th className={`${styles.transaction__Approved} d-flex align-items-center justify-content-center text-center`}>Aprobada</th>
                                         <th className={`${styles.action} d-flex align-items-center justify-content-center text-center`}>Acciones</th>
@@ -334,7 +335,7 @@ function SeeRecordsAccountsBookPage() {
                                                 )}
                                                 {selectedColumns.includes('Medio de pago') && (
                                                     <td className={`${styles.mean__Payment} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
-                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsBook.creditCash}</span>
+                                                        <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsBook.creditDescription ? 'Pago cuota' : accountsBook.creditCash}</span>
                                                     </td>
                                                 )}
                                                 {selectedColumns.includes('Valor total') && (
@@ -342,7 +343,7 @@ function SeeRecordsAccountsBookPage() {
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsBook.totalValue? `$ ${formatNumber(accountsBook.totalValue)}` : 'N/A'}</span>
                                                     </td>
                                                 )}
-                                                {selectedColumns.includes('Comprador') && (
+                                                {selectedColumns.includes('Tercero') && (
                                                     <td className={`${styles.transaction__Counterpart} pt-0 pb-0 px-2 d-flex align-items-center justify-content-center overflow-hidden`}>
                                                         <span className={`${styles.text__Ellipsis} overflow-hidden`}>{accountsBook.transactionCounterpartId}</span>
                                                     </td>

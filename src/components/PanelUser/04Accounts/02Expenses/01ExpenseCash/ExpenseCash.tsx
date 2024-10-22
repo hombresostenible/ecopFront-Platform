@@ -291,7 +291,7 @@ function ExpenseCash({ token, decodeUserIdRegister, selectedBranch, defaultDates
                                             <td className={`${styles.description__Item} d-flex align-items-center justify-content-center`}>
                                                 <span className={`${styles.text__Ellipsis} text-center overflow-hidden`}>{item.nameItem}</span>
                                             </td>
-                                            <td className={`${styles.unit__Price} d-flex align-items-center justify-content-center`}>
+                                            <td className={`${styles.unit__Price} d-flex align-items-center justify-content-center position-relative`}>
                                                 <span className={`${styles.text__Ellipsis_Purchase_Price} overflow-hidden position-absolute`}>$</span>
                                                 <input
                                                     type="text"

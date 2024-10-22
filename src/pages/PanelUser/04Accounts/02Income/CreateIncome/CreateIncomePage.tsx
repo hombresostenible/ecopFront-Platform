@@ -43,6 +43,22 @@ function CreateIncomePage() {
         }
     }, [token]);
 
+    //DECODIFICA EL TOKEN
+    const [decodeUserIdRegister, setDecodeUserIdRegister] = useState<string>('');
+    const [decodeTypeRoleRegister, setDecodeTypeRoleRegister] = useState<string>('');
+    useEffect(() => {
+        if (token) {
+            try {
+                const decodedToken: DecodedToken = jwtDecode<DecodedToken>(token);
+                setDecodeUserIdRegister(decodedToken.userId);
+                setDecodeTypeRoleRegister(decodedToken.typeRole);
+            } catch (error) {
+                throw new Error(`Error al decodificar el token: ${error}`);
+            }
+        }
+    }, [token]);
+    console.log('decodeTypeRoleRegister: ', decodeTypeRoleRegister)
+
     //Selección de la sede
     const [selectedBranch, setSelectedBranch] = useState('');
 
@@ -52,19 +68,6 @@ function CreateIncomePage() {
         setSelectedBranch(selectedId);
     };
     
-    //Decodificar el token para saber quién hace la transacción
-    const [decodeUserIdRegister, setDecodeUserIdRegister] = useState<string>('');
-    useEffect(() => {
-        if (token) {
-            try {
-                const decodedToken: DecodedToken = jwtDecode<DecodedToken>(token);
-                setDecodeUserIdRegister(decodedToken.userId);
-            } catch (error) {
-                throw new Error(`Error al decodificar el token: ${error}`);
-            }
-        }
-    }, [token]);
-
     // Estado para manejar el checkbox de fechas automáticas
     const [checkDatesRegisterTx, setCheckDatesRegisterTx] = useState(true);
 
@@ -181,7 +184,7 @@ function CreateIncomePage() {
 
                         <div className="mb-4 d-flex align-items-center justify-content-between">
                             <div>
-                                <p className={`${styles.label} `}>¿Qué tipo de ingreso vas a registrar?</p>
+                                <p className={`${styles.label} m-0`}>¿Qué tipo de ingreso vas a registrar?</p>
                                 <div className="d-flex align-items-center justify-content-center gap-3">
                                     <div
                                         className={`${styles.type__Income} ${creditCashOption === 'VentaContado' ? styles.active : ''} d-flex align-items-center justify-content-center`}
