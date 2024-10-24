@@ -4,24 +4,23 @@ import Select from 'react-select';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../redux/store';
-import { getAccountsReceivableByBranch } from '../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
+import { getAccountsReceivable } from '../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 // ELEMENTOS DEL COMPONENTE
 import { IAccountsReceivable } from "../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsReceivable.types";
 
 interface SearchCXCProps {
     token: string;
-    selectedBranch: string;
     onCXCSelect: (selectedOption: IAccountsReceivable) => void;
 }
 
-function SearchCXC({ token, selectedBranch, onCXCSelect }: SearchCXCProps) {
+function SearchCXC({ token, onCXCSelect }: SearchCXCProps) {
     const dispatch: AppDispatch = useDispatch();
     const accountsReceivable = useSelector((state: RootState) => state.finantialIndicators.accountsReceivable);
 
     const [filteredAccounts, setFilteredAccounts] = useState<Array<any>>([]);
 
     useEffect(() => {
-        dispatch(getAccountsReceivableByBranch(selectedBranch, token));
+        dispatch(getAccountsReceivable(token));
     }, [ token ]);
 
     useEffect(() => {

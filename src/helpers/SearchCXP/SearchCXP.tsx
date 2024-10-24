@@ -4,24 +4,23 @@ import Select from 'react-select';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../redux/store';
-import { getAccountsPayableByBranch } from '../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
+import { getAccountsPayable } from '../../redux/User/10ReportsAndIndicators/finantialIndicators/actions';
 // ELEMENTOS DEL COMPONENTE
 import { IAccountsPayable } from "../../types/UserPanel/10ReportsAndIndicators/finantialIndicators/accountsPayable.types";
 
 interface SearchCXPProps {
     token: string;
-    selectedBranch: string | undefined;
     onCXPSelect: (selectedOption: IAccountsPayable) => void;
 }
 
-function SearchCXP({ token, selectedBranch, onCXPSelect }: SearchCXPProps) {
+function SearchCXP({ token, onCXPSelect }: SearchCXPProps) {
     const dispatch: AppDispatch = useDispatch();
     const accountsPayable = useSelector((state: RootState) => state.finantialIndicators.accountsPayable);
 
     const [ filteredAccounts, setFilteredAccounts ] = useState<Array<any>>([]);
 
     useEffect(() => {
-        if (selectedBranch) dispatch(getAccountsPayableByBranch(selectedBranch, token));
+        dispatch(getAccountsPayable(token));
     }, [ token ]);
 
     useEffect(() => {
