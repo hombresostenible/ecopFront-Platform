@@ -52,7 +52,6 @@ function AccountsPayable({ token, decodeUserIdRegister, selectedBranch, defaultD
         setCreditDescription(selectedCXP.creditDescription);
     };
 
-
     const onSubmit = async (values: IAccountsBook) => {
         setLoading(true);
         try {
@@ -111,7 +110,6 @@ function AccountsPayable({ token, decodeUserIdRegister, selectedBranch, defaultD
                 <p className={`${styles.label} m-0`}>Busca la cuenta por pagar</p>
                 <SearchCXP
                     token={token}
-                    selectedBranch={selectedBranch}
                     onCXPSelect={handleCXPSelect}
                 />
             </div>
