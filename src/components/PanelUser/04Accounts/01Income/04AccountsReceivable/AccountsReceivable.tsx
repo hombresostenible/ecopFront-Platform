@@ -52,7 +52,6 @@ function AccountsReceivable({ token, decodeUserIdRegister, selectedBranch, defau
         setCreditDescription(selectedCXP.creditDescription);
     };
 
-
     const onSubmit = async (values: IAccountsBook) => {
         setLoading(true);
         try {
@@ -111,7 +110,6 @@ function AccountsReceivable({ token, decodeUserIdRegister, selectedBranch, defau
                 <p className={`${styles.label} m-0`}>Busca la cuenta por cobrar</p>
                 <SearchCXC
                     token={token}
-                    selectedBranch={selectedBranch}
                     onCXCSelect={handleCXPSelect}
                 />
             </div>
